@@ -1,33 +1,32 @@
-# FresherNote
+# OKPizza
 
 [Heroku link][heroku] **Note:** This should be a link to your production site
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://okpizza.herokuapp.com/
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+OKPizza is a web application inspired by OKCupid that will be built using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] A production README, replacing this README (**NB**: check out the [sample production README](docs/production_readme.md) -- you'll write this later)
-- [ ] Notes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+- [ ] A production README, replacing this README
+- [ ] Profile Options
+  - [ ] Ability to select from different dropdown options
+  - [ ] Adequate seed data to demonstrate the dropdown features
   - [ ] Adequate CSS styling
-- [ ] Notebooks for organizing notes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+- [ ] User browsing
+  - [ ] Ability to browser other user profiles based on filters
+  - [ ] Adequate seed data to demonstrate diverse user profiles
   - [ ] Adequate CSS styling
-- [ ] Tags for notes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+- [ ] Messaging features
+  - [ ] Ability to message other logged in users
+  - [ ] Adequate seed data to begin demonstration of messaging features
   - [ ] Adequate CSS styling
-- [ ] Rich Text Editing of notes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+- [ ] Answering questions
+  - [ ] Answer questions to see how compatible you are with another user
+  - [ ] Adequate seed data to have questions you can choose answers for
   - [ ] Adequate CSS styling
-- [ ] Infinite Scroll for Notes
 
 ## Design Docs
 * [View Wireframes][views]
@@ -44,7 +43,7 @@ FresherNote is a web application inspired by Evernote that will be build using R
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days, W1 W 6pm)
+### Phase 1: Backend setup and Front End User Authentication (2 days, W1 T/W 6pm)
 
 **Objective:** Functioning rails project with front-end Authentication
 
@@ -56,7 +55,6 @@ FresherNote is a web application inspired by Evernote that will be build using R
 - [ ] setup `APIUtil` to interact with the API
 - [ ] set up flux cycle for frontend auth
 - [ ] user signup/signin components
-- [ ] blank landing component after signin
 - [ ] style signin/signup components
 - [ ] seed users
 

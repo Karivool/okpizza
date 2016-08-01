@@ -19,34 +19,50 @@
 - `DELETE /api/session`
 - `GET /api/session`
 
-### Notes
+- Users and Sessions in this case is your standard log in/log out
 
-- `GET /api/notes`
-  - Notes index/search
-  - accepts `tag_name` query param to list notes by tag
-  - accepts pagination params (if I get there)
-- `POST /api/notes`
-- `GET /api/notes/:id`
-- `PATCH /api/notes/:id`
-- `DELETE /api/notes/:id`
+### Matches
 
-### Notebooks
+- `GET /api/users`
+  - Retrieves all users in database
+- `POST /api/users`
+  - Adds a new user to the database
+- `GET /api/users/:id`
+  - Retrieves a specific user by ID
+- `PATCH /api/users/:id`
+  - Update database of users with edited params
+- `DELETE /api/users/:id`
+  - Delete users from database. Not the highest priority for now.
 
-- `GET /api/notebooks`
-- `POST /api/notebooks`
-- `GET /api/notebooks/:id`
-- `PATCH /api/notebooks/:id`
-- `DELETE /api/notebooks/:id`
-- `GET /api/notebooks/:id/notes`
-  - index of all notes for a notebook
-  - accepts pagination params (if I get there)
+### Likes
 
-### Tags
+- `GET /api/likes`
+  - Retrieves all likes in database
+- `POST /api/likes`
+- `GET /api/likes/:id`
+- `PATCH /api/likes/:id`
+- `DELETE /api/likes/:id/user`
+  - Deletes a like made on a specific user
+- `GET /api/likes/:id/user`
+  - Gets all likes a specific user has made
 
-- A note's tags will be included in the note show template
-- `GET /api/tags`
-  - includes query param for typeahead suggestions
-- `POST /api/notes/:note_id/tags`: add tag to note by name
-  - if note doesn't already exist, it will be created
-- `DELETE /api/notes/:note_id/tags/:tag_name`: remove tag from note by
-  name
+### Visitors
+
+- This feature may have to come later
+- `GET /api/visitors`
+  - Gets all user pages visited
+- `POST /api/visitors`
+- `GET /api/visitors/:id`
+  - Gets all visits a user has by ID
+- `GET /api/visitors/:id/user`
+  - Gets all visits made to a specific user
+
+### Profile
+
+- Should be able to reuse what was used for Matches, just for one user
+- `GET /api/users/:id`
+  - Retrieves a specific user by ID
+- `PATCH /api/users/:id`
+  - Update a specific user's profile params
+- `DELETE /api/users/:id`
+  - Delete a specific user's profile

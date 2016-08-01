@@ -23,9 +23,13 @@ OKPizza is a web application inspired by OKCupid that will be built using Ruby o
   - [ ] Ability to message other logged in users
   - [ ] Adequate seed data to begin demonstration of messaging features
   - [ ] Adequate CSS styling
-- [ ] Answering questions
-  - [ ] Answer questions to see how compatible you are with another user
-  - [ ] Adequate seed data to have questions you can choose answers for
+- [ ] Likes features
+  - [ ] Ability to like other users
+  - [ ] Adequate seed data so there are some users already liked
+  - [ ] Adequate CSS styling
+- [ ] Visitors features
+  - [ ] Ability to see who visited your page
+  - [ ] Adequate seed data so some users have already made visits
   - [ ] Adequate CSS styling
 
 ## Design Docs
@@ -58,76 +62,79 @@ OKPizza is a web application inspired by OKCupid that will be built using Ruby o
 - [ ] style signin/signup components
 - [ ] seed users
 
-### Phase 2: Notes Model, API, and components (2 days, W1 F 6pm)
+### Phase 2: Users Model, API, and components (2 days, W1 Th/F 6pm)
 
-**Objective:** Notes can be created, read, edited and destroyed through
+**Objective:** Users can be created, edited and (maybe) destroyed through
 the API.
 
-- [ ] create `Note` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
-- [ ] jBuilder views for notes
+- [ ] create `User` model
+- [ ] seed the database with a decent amount of fun test data
+- [ ] CRUD API for users (`UsersController`)
+- [ ] jBuilder views for users
 - [ ] test out API interaction in the console.
-- implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle after editing.
-- [ ] style notes components
-- [ ] seed notes
+- implement each user component, building out the flux loop as needed.
+  - [ ] `UsersIndex`
+  - [ ] `UserIndexItem`
+  - [ ] `ProfileEdit`
+- [ ] update Users info to the DB when user updates their own profile
+- [ ] style users components
 
-### Phase 3: Notebooks (2 day, W2 Tu 6pm)
+### Phase 3: Messages (2 days, W2 M/T 6pm)
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+**Objective:** Messages belongs to users, and can be viewed by users who are making said messages.
 
-- [ ] create `Notebook` model
+- [ ] create `Message` model and join table
 - build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
+  - [ ] Message CRUD (excluding editing and deleting perhaps)
+  - [ ] Users can currently message any user they desire
+  - [ ] viewing messages by user messaged
+  - [ ] Users should be able to view messages in real time
 - [ ] Use CSS to style new components
-- [ ] Seed Notebooks
+- [ ] Seed messages
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
+Phase 3 adds user interaction so users can hook up and get a slice or find someone to have some slices.
 
-### Phase 4: Tags (1 days, W2 W 6pm)
+### Phase 4: Likes (1 day, W2 W 6pm)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Users can see who liked their profile.
 
-- [ ] create `Tag` model and join table
+- [ ] create `Visitor` model and join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
-- [ ] Style new elements
-- [ ] Seed tags and tag the seeded Notebooks
+  - [ ] Seeing who liked your profile
+  - [ ] Liked time should be updated by 'modified-at'
+  - [ ] Users should see who liked them, who they liked, and mutual likes
+- [ ] Style CSS to display all the different like styles
+- [ ] Seed likes adequately and make sure they all work right
 
-### Phase 5: Allow Complex Styling in Notes (1 days, W2 Th 6pm)
+Phase 4 lets users see who likes them so they can have an idea of who to message
 
-**objective:** Enable complex styling of notes.
+### Phase 5: Visitors (1 day, T W 6pm)
 
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
-- [ ] Add Quill styling to seeded notes
+**Objective:** Users can see who visited their page, as well as be tracked if they visit another person's page
 
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+- [ ] create `Visitor` model and join table
+- build out API, Flux loop, and components for:
+  - [ ] Seeing who visited your page
+  - [ ] Being logged every time you visit a user's page
+  - [ ] Visited time should be updated by 'modified-at'
+- [ ] Style CSS to nicely display both visited/visited by
+- [ ] Seed visited/visited by adequately
 
-**objective:** Add infinite scroll to Notes Index
+Phase 5 lets you see who visited your page but didn't message or like you, giving you hints at something possibly being wrong
 
-- [ ] Paginate Notes Index API to send 20 results at a time
-- [ ] Append next set of results when user scrolls and is near bottom
-- [ ] Make sure styling still looks good
-- [ ] Ensure we have enough seeded notes to demo infinite scroll
+### Phase 6: - Final touchups, bonus features (1 day, W2 F 6pm)
+
+**Objective:** Ensure project is as polished as it can get at this point. If ahead of schedule, begin work on bonus features
+
+- [ ] Ensure everything is in working order
+- [ ] Make sure the bare minimum needed is present
+- [ ] Good CSS
+- [ ] Start on bonus features if possible!
 
 ### Bonus Features (TBD)
-- [ ] Search through notes for blocks of text
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+- [ ] Have questions and answers you can make
+- [ ] Algorithms will determine match and enemy % based on questions
+- [ ] Block users
 
 [phase-one]: docs/phases/phase1.md
 [phase-two]: docs/phases/phase2.md

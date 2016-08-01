@@ -21,8 +21,8 @@
 ## MessagesIndex
 ![messages-index]
 
-[new-user]: ./wireframes/signin-wireframe.png
-[new-session]: ./wireframes/signup-wireframe.png
+[new-user]: ./wireframes/signup-wireframe.png
+[new-session]: ./wireframes/signin-wireframe.png
 [users-index]: ./wireframes/users_index_wire.jpg
 [users-index-item]: ./wireframes/users_index_item_wire.jpg
 [visitors-index]: ./wireframes/visitors_index_wire.jpg

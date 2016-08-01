@@ -6,17 +6,25 @@
 ## New Session
 ![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## UsersIndex
+![users-index]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## UsersIndexItem
+![users-index-item]
 
-## NotebookForm
-![notebook-form]
+## VisitorsIndexItem
+![visitors-index]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+## LikesIndexItem
+![likes-index]
+
+## MessagesIndex
+![messages-index]
+
+[new-user]: ./wireframes/signin-wireframe.png
+[new-session]: ./wireframes/signup-wireframe.png
+[users-index]: ./wireframes/users_index_wire.jpg
+[users-index-item]: ./wireframes/users_index_item_wire.jpg
+[visitors-index]: ./wireframes/visitors_index_wire.jpg
+[likes-index]: ./wireframes/likes_index_wire.jpg
+[messages-index]: ./wireframes/messages_index_wire.jpg

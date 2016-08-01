@@ -8,30 +8,31 @@ _**exactly**_ match the nesting of your routes.)
 
 * **App**
   * Navbar
-  * NotebooksIndex
-    * Search
-    * NotebookIndexItem
-    * NotebookForm
   * **LoginForm**
   * **SignupForm**
-  * **NotesIndex**
-    * NoteForm
-    * NoteIndexItem
-    * **NoteDetail**
-      * NoteTags
-      * NoteEditArea
+  * **UsersIndex**
+    * Search
+    * UsersIndexItem
+  * **Visitors**
+    * VisitorsIndex
+  * **Likes**
+    * LikesIndex
+  * **Messages**
+    * MessageDetail
+  * **Profile**
+    * UsersIndexItem
 
+
+Profile would lead to a specific UsersIndexItem, but for yourself.
 
 ## Routes
 
 * **component:** `App` **path:** `/`
   * **component** `LoginForm` **path:** /login
   * **component** `SignupForm` **path:** /signup
-  * **component:** `NotesIndex` **path:** index
-  * **component:** `NotesIndex` **path:** `notebooks/:notebookId`
-    * **component:** `NoteDetail` **path:** `notes/:noteId`
-  * **component:** `NotesIndex` **path:** none
-    * **component:** `NoteDetail` **path:** `notes/:noteId`
-
-For Routes that have no `notebookId`, `NotesIndex` will render all
-notes.
+  * **component:** `UsersIndex` **path:** index
+    * **component:** `UserDetail` **path:** `users/:userId`
+  * **component:** `VisitorsIndex` **path:** `visitors/:userId`
+  * **component:** `LikesIndex` **path:** `likes/:userId`
+  * **component:** `MessagesIndex` **path:** `messages/:userId`
+    * **component:** `MessageDetail` **path:** `messages/message/:userId`

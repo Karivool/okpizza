@@ -1,12 +1,12 @@
 # OKPizza
 
-[Heroku link][heroku] **Note:** This should be a link to your production site
+[Heroku link][heroku]
 
 [heroku]: https://okpizza.herokuapp.com/
 
 ## Minimum Viable Product
 
-OKPizza is a web application inspired by OKCupid that will be built using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+OKPizza is a saucy web application inspired by OKCupid that will be built using Ruby on Rails and React.js.  By the end of Week 9, this app will, with any luck, satisfy the following criteria:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login

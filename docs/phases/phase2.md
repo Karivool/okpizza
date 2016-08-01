@@ -1,40 +1,40 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days, W1 F 6pm)
+# Phase 2: Users Model, API, and components (2 days, W1 Th/F 6pm)
 
 ## Rails
 ### Models
-* Note
+* User
 
 ### Controllers
-* Api::NotesController (create, destroy, index, show, update)
+* Api::UsersController (create, destroy, index, show, update)
 
 ### Views
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* users/index.json.jbuilder
+* users/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* UsersIndex
+  - UsersIndexItem
+* UserForm
 
 ### Stores
-* Note
+* User
 
 ### Actions
-* `ApiActions.receiveAllNotes`
-* `ApiActions.receiveSingleNote`
-* `ApiActions.deleteNote`
-* `NoteActions.fetchAllNotes`
-* `NoteActions.fetchSingleNote`
-* `NoteActions.createNote`
-* `NoteActions.editNote`
-* `NoteActions.destroyNote`
+* `ApiActions.receiveAllUsers`
+* `ApiActions.receiveSingleUser`
+* `ApiActions.deleteUser`
+* `UserActions.fetchAllUsers`
+* `UserActions.fetchSingleUser`
+* `UserActions.createUser`
+* `UserActions.editUser`
+* `UserActions.destroyUser`
 
 ### ApiUtil
-* `ApiUtil.fetchAllNotes`
-* `ApiUtil.fetchSingleNote`
-* `ApiUtil.createNote`
-* `ApiUtil.editNote`
-* `ApiUtil.destroyNote`
+* `ApiUtil.fetchAllUsers`
+* `ApiUtil.fetchSingleUser`
+* `ApiUtil.createUser`
+* `ApiUtil.editUser`
+* `ApiUtil.destroyUser`
 
 ## Gems/Libraries

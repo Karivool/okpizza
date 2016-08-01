@@ -1,42 +1,35 @@
-# Phase 3: Notebooks (2 day, W2 Tu 6pm)
+# Phase 3: Messages (2 days, W2 M/T 6pm)
 
 ## Rails
 ### Models
-* Notebook
-* Tag
-* Tagging
+* Message
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
+* Api::MessagesController (create, index, show)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
+* messages/index.json.jbuilder
+* messages/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
+* MessagesIndex
+  - MessageIndexItem
+* MessageForm
 
 ### Stores
-* Notebook
+* Message
 
 ### Actions
-* `ApiActions.receiveAllNotebooks`
-* `ApiActions.receiveSingleNotebook`
-* `ApiActions.deleteNotebook`
-* `NotebookActions.fetchAllNotebooks`
-* `NotebookActions.fetchSingleNotebook`
-* `NotebookActions.createNotebook`
-* `NotebookActions.editNotebook`
-* `NotebookActions.destroyNotebook`
+* `ApiActions.receiveAllMessages`
+* `ApiActions.receiveSingleMessage`
+* `MessageActions.fetchAllMessages`
+* `MessageActions.fetchSingleMessage`
+* `MessageActions.createMessage`
 
 ### ApiUtil
-* `ApiUtil.fetchAllNotebooks`
-* `ApiUtil.fetchSingleNotebook`
-* `ApiUtil.createNotebook`
-* `ApiUtil.editNotebook`
-* `ApiUtil.destroyNotebook`
+* `ApiUtil.fetchAllMessages`
+* `ApiUtil.fetchSingleMessage`
+* `ApiUtil.createMessage`
 
 ## Gems/Libraries

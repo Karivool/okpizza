@@ -51,118 +51,171 @@ what you'll need to do.
   0. invoked from API callbacks on success for actions that generate POST requests
   0. removes `_errors` for a given `form` in the `ErrorStore`
 
-## Note Cycles
+## User Cycles
 
-### Notes API Request Actions
+### Users API Request Actions
 
-* `fetchAllNotes`
-  0. invoked from `NotesIndex` `didMount`/`willReceiveProps`
+* `fetchAllUsers`
+  0. invoked from `UsersIndex` `didMount`/`willReceiveProps`
   0. `GET /api/notes` is called.
-  0. `receiveAllNotes` is set as the success callback.
+  0. `receiveAllUsers` is set as the success callback.
 
-* `createNote`
+* `createUser`
   0. invoked from new note button `onClick`
   0. `POST /api/notes` is called.
-  0. `receiveSingleNote` is set as the success callback.
+  0. `receiveSingleUser` is set as the success callback.
 
-* `fetchSingleNote`
-  0. invoked from `NoteDetail` `didMount`/`willReceiveProps`
+* `fetchSingleUser`
+  0. invoked from `UserDetail` `didMount`/`willReceiveProps`
   0. `GET /api/notes/:id` is called.
-  0. `receiveSingleNote` is set as the success callback.
+  0. `receiveSingleUser` is set as the success callback.
 
-* `updateNote`
-  0. invoked from `NoteForm` `onSubmit`
+* `updateUser`
+  0. invoked from `UserForm` `onSubmit`
   0. `POST /api/notes` is called.
-  0. `receiveSingleNote` is set as the success callback.
+  0. `receiveSingleUser` is set as the success callback.
 
-* `destroyNote`
+* `destroyUser`
   0. invoked from delete note button `onClick`
   0. `DELETE /api/notes/:id` is called.
-  0. `removeNote` is set as the success callback.
+  0. `removeUser` is set as the success callback.
 
-### Notes API Response Actions
+### Users API Response Actions
 
-* `receiveAllNotes`
+* `receiveAllUsers`
   0. invoked from an API callback.
-  0. `Note` store updates `_notes` and emits change.
+  0. `User` store updates `_notes` and emits change.
 
-* `receiveSingleNote`
+* `receiveSingleUser`
   0. invoked from an API callback.
-  0. `Note` store updates `_notes[id]` and emits change.
+  0. `User` store updates `_notes[id]` and emits change.
 
-* `removeNote`
+* `removeUser`
   0. invoked from an API callback.
-  0. `Note` store removes `_notes[id]` and emits change.
+  0. `User` store removes `_notes[id]` and emits change.
 
 ### Store Listeners
 
-* `NotesIndex` component listens to `Note` store.
-* `NoteDetail` component listens to `Note` store.
+* `UsersIndex` component listens to `User` store.
+* `UserDetail` component listens to `User` store.
 
 
-## Notebook Cycles
+## Visitor Cycles
 
-### Notebooks API Request Actions
+### Visitors API Request Actions
 
-* `fetchAllNotebooks`
-  0. invoked from `NotebooksIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks` is called.
-  0. `receiveAllNotebooks` is set as the success callback.
+* `fetchAllVisitors`
+  0. invoked from `VisitorsIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/visitors` is called.
+  0. `receiveAllVisitors` is set as the success callback.
 
-* `createNotebook`
-  0. invoked from new notebook button `onClick`
-  0. `POST /api/notebooks` is called.
-  0. `receiveSingleNotebook` is set as the callback.
+* `createVisitor`
+  0. invoked from `UsersIndexItem` `onVisit`
+  0. `POST /api/visitors` is called.
+  0. `receiveSingleVisitor` is set as the callback.
 
-* `fetchSingleNotebook`
-  0. invoked from `NotebookDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks/:id` is called.
-  0. `receiveSingleNotebook` is set as the success callback.
+* `fetchSingleVisitor`
+  0. invoked from `VisitorDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/visitors/:id` is called.
+  0. `receiveSingleVisitor` is set as the success callback.
 
-* `updateNotebook`
-  0. invoked from `NotebookForm` `onSubmit`
-  0. `POST /api/notebooks` is called.
-  0. `receiveSingleNotebook` is set as the success callback.
+* `updateVisitor`
+  0. invoked from `UsersIndexItem` `onVisit`
+  0. `POST /api/visitors` is called.
+  0. `receiveSingleVisitor` is set as the success callback.
 
-* `destroyNotebook`
-  0. invoked from delete notebook button `onClick`
-  0. `DELETE /api/notebooks/:id` is called.
-  0. `removeNotebook` is set as the success callback.
+### Visitors API Response Actions
 
-### Notebooks API Response Actions
-
-* `receiveAllNotebooks`
+* `receiveAllVisitors`
   0. invoked from an API callback.
-  0. `Notebook` store updates `_notebooks` and emits change.
+  0. `Visitor` store updates `_visitors` and emits change.
 
-* `receiveSingleNotebook`
+* `receiveSingleVisitor`
   0. invoked from an API callback.
-  0. `Notebook` store updates `_notebooks[id]` and emits change.
+  0. `Visitor` store updates `_visitors[id]` and emits change.
 
-* `removeNotebook`
+* `updateVisitor`
   0. invoked from an API callback.
-  0. `Notebook` store removes `_notebooks[id]` and emits change.
+  0. `Visitor` store updates `modified-at` for `_visitors[id]` and emits change.
 
 ### Store Listeners
 
-* `NotebooksIndex` component listens to `Notebook` store.
+* `VisitorsIndex` component listens to `Visitor` store.
 
 
-## SearchSuggestion Cycles
 
-* `fetchSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when there is text
-  0. `GET /api/notes` is called with `text` param.
-  0. `receiveSearchSuggestions` is set as the success callback.
+## Like Cycles
 
-* `receiveSearchSuggestions`
+### Likes API Request Actions
+
+* `fetchAllLikes`
+  0. invoked from `LikesIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/likes` is called.
+  0. `receiveAllLikes` is set as the success callback.
+
+* `createLike`
+  0. invoked from `UsersIndexItem` `onSubmit`
+  0. `POST /api/likes` is called.
+  0. `receiveSingleLike` is set as the callback.
+
+* `fetchSingleLike`
+  0. invoked from `LikeDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/likes/:id` is called.
+  0. `receiveSingleLike` is set as the success callback.
+
+* `updateLike`
+  0. invoked from `UsersIndexItem` `onSubmit`
+  0. `POST /api/likes` is called.
+  0. `receiveSingleLike` is set as the success callback.
+
+### Likes API Response Actions
+
+* `receiveAllLikes`
   0. invoked from an API callback.
-  0. `SearchSuggestion` store updates `_suggestions` and emits change.
+  0. `Like` store updates `_likes` and emits change.
 
-* `removeSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when empty
-  0. `SearchSuggestion` store resets `_suggestions` and emits change.
+* `receiveSingleLike`
+  0. invoked from an API callback.
+  0. `Like` store updates `_likes[id]` and emits change.
+
+* `removeLike`
+  0. invoked from an API callback.
+  0. `Like` store deletes `_likes[id]` and emits change.
 
 ### Store Listeners
 
-* `SearchBarSuggestions` component listens to `SearchSuggestion` store.
+* `LikesIndex` component listens to `Like` store.
+
+
+## Message Cycles
+
+### Messages API Request Actions
+
+* `fetchAllMessages`
+  0. invoked from `MessagesIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/messages` is called.
+  0. `receiveAllMessages` is set as the success callback.
+
+* `createMessage`
+  0. invoked from `UsersIndexItem` `onSubmit`
+  0. `POST /api/messages` is called.
+  0. `receiveSingleMessage` is set as the callback.
+
+* `fetchSingleMessage`
+  0. invoked from `MessageDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/messages/:id` is called.
+  0. `receiveSingleMessage` is set as the success callback.
+
+### Messages API Response Actions
+
+* `receiveAllMessages`
+  0. invoked from an API callback.
+  0. `Message` store updates `_messages` and emits change.
+
+* `receiveSingleMessage`
+  0. invoked from an API callback.
+  0. `Message` store updates `_messages[id]` and emits change.
+
+### Store Listeners
+
+* `MessagesIndex` component listens to `Message` store.

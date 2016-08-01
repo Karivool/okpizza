@@ -1,18 +1,5 @@
 # Schema Information
 
-## tags
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
-
 ## users
 column name     | data type | details
 ----------------|-----------|-----------------------
@@ -36,3 +23,25 @@ race            | string    | not null
 height          | integer   | not null
 body            | string    | not null
 relationship    | string    | not null
+
+## likes
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+liked_user_id   | integer   | not null, foreign key, belongs to user_id
+liking_user_id  | integer   | not null, foreign key, belongs to user_id
+
+## visitors
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+visitor_id      | integer   | not null, foreign key, belongs to user_id
+visited_id      | integer   | not null, foreign key, belongs to user_id
+
+## messages
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+message         | string    | not null
+message_id      | integer   | not null, belongs to user_id
+messenger_id    | integer   | not null, belongs to user_id

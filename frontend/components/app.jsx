@@ -10,6 +10,7 @@ const App = React.createClass({
         OKPizza: Find the pizza of your dreams!
         <br></br>
         "Whether you're looking for a one slice night, a whole box dedication or a pizza party, find the saucy pie you want here."
+        {this.props.children}
       </div>
     );
   }

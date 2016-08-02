@@ -14,7 +14,7 @@
 ## Flux
 ### Views (React Components)
 * UsersIndex
-  - UsersIndexItem
+  - UsersShow
 * UserForm
 
 ### Stores
@@ -25,6 +25,7 @@
 * `ApiActions.receiveSingleUser`
 * `ApiActions.deleteUser`
 * `UserActions.fetchAllUsers`
+* `UserActions.fetchFilteredUsers`
 * `UserActions.fetchSingleUser`
 * `UserActions.createUser`
 * `UserActions.editUser`
@@ -32,6 +33,7 @@
 
 ### ApiUtil
 * `ApiUtil.fetchAllUsers`
+* `ApiUtil.fetchFilteredUsers`
 * `ApiUtil.fetchSingleUser`
 * `ApiUtil.createUser`
 * `ApiUtil.editUser`

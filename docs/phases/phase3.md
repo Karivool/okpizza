@@ -1,35 +1,35 @@
-# Phase 3: Messages (2 days, W2 M/T 6pm)
+# Phase 3: Questions (2 days, W2 M/T 6pm)
 
 ## Rails
 ### Models
-* Message
+* Question
 
 ### Controllers
-* Api::MessagesController (create, index, show)
+* Api::QuestionsController (create, index, show)
 
 ### Views
-* messages/index.json.jbuilder
-* messages/show.json.jbuilder
+* questions/index.json.jbuilder
+* questions/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* MessagesIndex
-  - MessageIndexItem
-* MessageForm
+* QuestionsIndex
+  - QuestionIndexItem
+* QuestionForm
 
 ### Stores
-* Message
+* Question
 
 ### Actions
-* `ApiActions.receiveAllMessages`
-* `ApiActions.receiveSingleMessage`
-* `MessageActions.fetchAllMessages`
-* `MessageActions.fetchSingleMessage`
-* `MessageActions.createMessage`
+* `ApiActions.receiveAllQuestions`
+* `ApiActions.receiveSingleQuestion`
+* `QuestionActions.fetchAllQuestions`
+* `QuestionActions.fetchSingleQuestion`
+* `QuestionActions.createQuestion`
 
 ### ApiUtil
-* `ApiUtil.fetchAllMessages`
-* `ApiUtil.fetchSingleMessage`
-* `ApiUtil.createMessage`
+* `ApiUtil.fetchAllQuestions`
+* `ApiUtil.fetchSingleQuestion`
+* `ApiUtil.createQuestion`
 
 ## Gems/Libraries

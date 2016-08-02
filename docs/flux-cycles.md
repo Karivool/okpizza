@@ -57,134 +57,103 @@ what you'll need to do.
 
 * `fetchAllUsers`
   0. invoked from `UsersIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notes` is called.
+  0. `GET /api/users` is called.
   0. `receiveAllUsers` is set as the success callback.
+  0. `This should eventually be obsolete. We won't want ALL users.`
+
+* `fetchFilteredUsers`
+  0. invoked from `UsersIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/users` is called.
+  0. `receiveFilteredUsers` is set as the success callback.
 
 * `createUser`
-  0. invoked from new note button `onClick`
-  0. `POST /api/notes` is called.
+  0. invoked from new user button `onClick`
+  0. `POST /api/users` is called.
   0. `receiveSingleUser` is set as the success callback.
 
 * `fetchSingleUser`
   0. invoked from `UserDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/notes/:id` is called.
+  0. `GET /api/users/:id` is called.
   0. `receiveSingleUser` is set as the success callback.
 
 * `updateUser`
   0. invoked from `UserForm` `onSubmit`
-  0. `POST /api/notes` is called.
+  0. `POST /api/users` is called.
   0. `receiveSingleUser` is set as the success callback.
 
 * `destroyUser`
-  0. invoked from delete note button `onClick`
-  0. `DELETE /api/notes/:id` is called.
+  0. invoked from delete user button `onClick`
+  0. `DELETE /api/users/:id` is called.
   0. `removeUser` is set as the success callback.
 
 ### Users API Response Actions
 
 * `receiveAllUsers`
   0. invoked from an API callback.
-  0. `User` store updates `_notes` and emits change.
+  0. `User` store updates `_users` and emits change.
+  0. make eventually obsolete.
+
+* `receiveFilteredUsers`
+  0. invoked from an API callback.
+  0. `User` store updates `_users` and emits change.
 
 * `receiveSingleUser`
   0. invoked from an API callback.
-  0. `User` store updates `_notes[id]` and emits change.
+  0. `User` store updates `_users[id]` and emits change.
 
 * `removeUser`
   0. invoked from an API callback.
-  0. `User` store removes `_notes[id]` and emits change.
+  0. `User` store removes `_users[id]` and emits change.
 
 ### Store Listeners
 
 * `UsersIndex` component listens to `User` store.
 * `UserDetail` component listens to `User` store.
 
+## Question Cycles
 
-## Visitor Cycles
+### Questions API Request Actions
 
-### Visitors API Request Actions
+* `fetchAllQuestions`
+  0. invoked from `QuestionsIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/questions` is called.
+  0. `receiveAllQuestions` is set as the success callback.
 
-* `fetchAllVisitors`
-  0. invoked from `VisitorsIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/visitors` is called.
-  0. `receiveAllVisitors` is set as the success callback.
+* `fetchFilteredQuestions`
+  0. invoked from `QuestionsIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/questions` is called.
+  0. `receiveFilteredQuestions` is set as the success callback.
 
-* `createVisitor`
-  0. invoked from `UsersIndexItem` `onVisit`
-  0. `POST /api/visitors` is called.
-  0. `receiveSingleVisitor` is set as the callback.
+* `createQuestion`
+  0. invoked from new user button `onClick`
+  0. `POST /api/questions` is called.
+  0. `receiveSingleQuestion` is set as the success callback.
 
-* `fetchSingleVisitor`
-  0. invoked from `VisitorDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/visitors/:id` is called.
-  0. `receiveSingleVisitor` is set as the success callback.
+* `fetchSingleQuestion`
+  0. invoked from `QuestionDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/questions/:id` is called.
+  0. `receiveSingleQuestion` is set as the success callback.
 
-* `updateVisitor`
-  0. invoked from `UsersIndexItem` `onVisit`
-  0. `POST /api/visitors` is called.
-  0. `receiveSingleVisitor` is set as the success callback.
+### Questions API Response Actions
 
-### Visitors API Response Actions
-
-* `receiveAllVisitors`
+* `receiveAllQuestions`
   0. invoked from an API callback.
-  0. `Visitor` store updates `_visitors` and emits change.
+  0. `Question` store updates `_questions` and emits change.
+  0. make eventually obsolete.
 
-* `receiveSingleVisitor`
+* `receiveFilteredQuestions`
   0. invoked from an API callback.
-  0. `Visitor` store updates `_visitors[id]` and emits change.
+  0. `Question` store updates `_questions` and emits change.
 
-* `updateVisitor`
+* `receiveSingleQuestion`
   0. invoked from an API callback.
-  0. `Visitor` store updates `modified-at` for `_visitors[id]` and emits change.
+  0. `Question` store updates `_questions[id]` and emits change.
 
 ### Store Listeners
 
-* `VisitorsIndex` component listens to `Visitor` store.
+* `QuestionsIndex` component listens to `Question` store.
+* `QuestionDetail` component listens to `Question` store.
 
-
-
-## Like Cycles
-
-### Likes API Request Actions
-
-* `fetchAllLikes`
-  0. invoked from `LikesIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/likes` is called.
-  0. `receiveAllLikes` is set as the success callback.
-
-* `createLike`
-  0. invoked from `UsersIndexItem` `onSubmit`
-  0. `POST /api/likes` is called.
-  0. `receiveSingleLike` is set as the callback.
-
-* `fetchSingleLike`
-  0. invoked from `LikeDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/likes/:id` is called.
-  0. `receiveSingleLike` is set as the success callback.
-
-* `updateLike`
-  0. invoked from `UsersIndexItem` `onSubmit`
-  0. `POST /api/likes` is called.
-  0. `receiveSingleLike` is set as the success callback.
-
-### Likes API Response Actions
-
-* `receiveAllLikes`
-  0. invoked from an API callback.
-  0. `Like` store updates `_likes` and emits change.
-
-* `receiveSingleLike`
-  0. invoked from an API callback.
-  0. `Like` store updates `_likes[id]` and emits change.
-
-* `removeLike`
-  0. invoked from an API callback.
-  0. `Like` store deletes `_likes[id]` and emits change.
-
-### Store Listeners
-
-* `LikesIndex` component listens to `Like` store.
 
 
 ## Message Cycles
@@ -195,6 +164,7 @@ what you'll need to do.
   0. invoked from `MessagesIndex` `didMount`/`willReceiveProps`
   0. `GET /api/messages` is called.
   0. `receiveAllMessages` is set as the success callback.
+  0. this should be set to fetch messages only from two specific users.
 
 * `createMessage`
   0. invoked from `UsersIndexItem` `onSubmit`
@@ -205,6 +175,7 @@ what you'll need to do.
   0. invoked from `MessageDetail` `didMount`/`willReceiveProps`
   0. `GET /api/messages/:id` is called.
   0. `receiveSingleMessage` is set as the success callback.
+  0. this can be used for showing the most recent messages for each user.
 
 ### Messages API Response Actions
 

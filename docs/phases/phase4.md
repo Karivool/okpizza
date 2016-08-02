@@ -1,38 +1,35 @@
-# Phase 4: Likes (1 day, W2 W 6pm)
+# Phase 4: Messages (2 days, W2 W/Th 6pm)
 
 ## Rails
 ### Models
-* Likes
+* Message
 
 ### Controllers
-* Api::LikesController (create, destroy, index, show)
+* Api::MessagesController (create, index, show)
 
 ### Views
-* likes/index.json.jbuilder
-* likes/show.json.jbuilder
+* messages/index.json.jbuilder
+* messages/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* LikesIndex
-  - LikeIndexItem
-* LikeForm
+* MessagesIndex
+  - MessageIndexItem
+* MessageForm
 
 ### Stores
-* Like
+* Message
 
 ### Actions
-* `ApiActions.receiveAllLikes`
-* `ApiActions.receiveSingleLike`
-* `ApiActions.deleteLike`
-* `LikeActions.fetchAllLikes`
-* `LikeActions.fetchSingleLike`
-* `LikeActions.createLike`
-* 'LikeActions.destroyLike'
+* `ApiActions.receiveAllMessages`
+* `ApiActions.receiveSingleMessage`
+* `MessageActions.fetchAllMessages`
+* `MessageActions.fetchSingleMessage`
+* `MessageActions.createMessage`
 
 ### ApiUtil
-* `ApiUtil.fetchAllLikes`
-* `ApiUtil.fetchSingleLike`
-* `ApiUtil.createLike`
-* `ApiUtil.destroyLike`
+* `ApiUtil.fetchAllMessages`
+* `ApiUtil.fetchSingleMessage`
+* `ApiUtil.createMessage`
 
 ## Gems/Libraries

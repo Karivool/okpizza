@@ -12,18 +12,16 @@ _**exactly**_ match the nesting of your routes.)
   * **SignupForm**
   * **UsersIndex**
     * Search
-    * UsersIndexItem
+    * UsersShow
+  * **Questions**
+    * QuestionsIndex
   * **Visitors**
     * VisitorsIndex
-  * **Likes**
-    * LikesIndex
-  * **Messages**
-    * MessageDetail
   * **Profile**
-    * UsersIndexItem
+    * UsersShow
 
 
-Profile would lead to a specific UsersIndexItem, but for yourself.
+Profile would lead to your own UsersShow.
 
 ## Routes
 
@@ -31,8 +29,7 @@ Profile would lead to a specific UsersIndexItem, but for yourself.
   * **component** `LoginForm` **path:** /login
   * **component** `SignupForm` **path:** /signup
   * **component:** `UsersIndex` **path:** index
-    * **component:** `UserDetail` **path:** `users/:userId`
-  * **component:** `VisitorsIndex` **path:** `visitors/:userId`
-  * **component:** `LikesIndex` **path:** `likes/:userId`
+    * **component:** `UserShow` **path:** `users/:userId`
+  * **component:** `QuestionIndex` **path:** `questions`
   * **component:** `MessagesIndex` **path:** `messages/:userId`
     * **component:** `MessageDetail` **path:** `messages/message/:userId`

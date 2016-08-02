@@ -3,7 +3,6 @@
 ## Rails
 ### Models
 * ~~User~~
-* Session
 
 ### Controllers
 * ~~Api::UsersController (create)~~

@@ -28,6 +28,16 @@ User.create(
 
 User.create(
   username: "krnpizzalvr1",
+  email: "krnpizza4lyfe@naver.com",
+  birthdate: "07111995",
+  gender: "human",
+  orientation: "piecurious",
+  city_name: "Los Angeles",
+  state_name: "California",
+  summary: "안녕하세요 피자씨. I like korea pizza very much. Pizza with corn, yam and mayonase make me happy. :)")
+
+User.create(
+  username: "krnpizzalvr1",
   email: "jpepperoni@jpepp.com",
   birthdate: "10102014",
   gender: "pizza",

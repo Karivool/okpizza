@@ -1,13 +1,13 @@
-# Phase 1: User Authentication, Note Model and JSON API (2 days, W1 W 6pm)
+# Phase 1: User Authentication, User Model and JSON API (2 days, W1 W 6pm)
 
 ## Rails
 ### Models
-* User
+* ~~User~~
 * Session
 
 ### Controllers
-* Api::UsersController (create)
-* Api::SessionsController (create, destroy, show)
+* ~~Api::UsersController (create)~~
+* ~~Api::SessionsController (create, destroy, show)~~
 
 ### Views
 * api/users/new.html.erb
@@ -19,7 +19,7 @@
 * App
 * LoginForm
 * SignupForm
-* NotesIndex (just a skeleton)
+* UsersIndex (just a skeleton)
 
 ### Stores
 * CurrentUser

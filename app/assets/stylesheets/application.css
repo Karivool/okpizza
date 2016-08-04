@@ -89,6 +89,17 @@ html, body {
   line-height: 22px;
 }
 
+.login-form-container {
+  color: white;
+  margin: 0 auto 30px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+  width: 660px;
+  line-height: 22px;
+}
+
+
 .saucy-reasons {
   font-size: 24px;
   display: block;

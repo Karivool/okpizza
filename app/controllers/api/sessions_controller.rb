@@ -28,4 +28,8 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  def show
+    render "api/users/index"
+  end
+
 end

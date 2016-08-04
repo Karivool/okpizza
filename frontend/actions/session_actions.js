@@ -6,14 +6,14 @@ module.exports = {
   logIn (form) {
     ApiUtil.logIn(
       form,
-      SessionActions.takeInCurrentUser,
+      this.takeInCurrentUser,
       ErrorActions.setErrors);
   },
 
   signUp (form) {
     ApiUtil.signUp(
       form,
-      SessionActions.takeInCurrentUser,
+      this.takeInCurrentUser,
       ErrorActions.setErrors);
   },
 

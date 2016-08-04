@@ -9,6 +9,8 @@
 User.create(
   username: "jtrapepperonison",
   email: "jpepperoni@jpepp.com",
+  password_digest: "lma0",
+  session_token: "1234",
   birthdate: "10101974",
   gender: "pizza",
   orientation: "piesexual",
@@ -19,6 +21,8 @@ User.create(
 User.create(
   username: "pizzasalant420",
   email: "pizzasalant420@gmail.com",
+  password_digest: "lma0",
+  session_token: "12345",
   birthdate: "04201982",
   gender: "pizza",
   orientation: "humansexual",
@@ -29,19 +33,12 @@ User.create(
 User.create(
   username: "krnpizzalvr1",
   email: "krnpizza4lyfe@naver.com",
+  password_digest: "lma0",
+  session_token: "123456",
   birthdate: "07111995",
   gender: "human",
   orientation: "piecurious",
   city_name: "Los Angeles",
   state_name: "California",
   summary: "안녕하세요 피자씨. I like korea pizza very much. Pizza with corn, yam and mayonase make me happy. :)")
-
-User.create(
-  username: "krnpizzalvr1",
-  email: "jpepperoni@jpepp.com",
-  birthdate: "10102014",
-  gender: "pizza",
-  orientation: "piecurious",
-  city_name: "Hoboken",
-  state_name: "New Jersey",
-  summary: "Eatza me, Juuuuuuliooooo!")
+  

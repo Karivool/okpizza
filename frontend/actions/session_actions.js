@@ -8,7 +8,6 @@ module.exports = {
       form,
       SessionActions.takeInCurrentUser,
       ErrorActions.setErrors);
-    )
   },
 
   signUp (form) {
@@ -16,7 +15,6 @@ module.exports = {
       form,
       SessionActions.takeInCurrentUser,
       ErrorActions.setErrors);
-    )
   },
 
   fetchCurrentUser (id) {

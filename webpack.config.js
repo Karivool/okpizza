@@ -5,7 +5,9 @@ module.exports = {
   entry: "./frontend/okpizza.jsx",
   output: {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    devtoolModuleFilenameTemplate: '[resourcePath]',
+    devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
   },
   resolve: {
     extensions: ["", ".js", ".jsx"]

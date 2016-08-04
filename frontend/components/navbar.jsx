@@ -7,7 +7,7 @@ const Navbar = React.createClass({
   render: function() {
     return (
       <div className="navbar">
-        OKPizza Logo
+        <img src={window.okPizzaLogo}></img>
       </div>
     );
   }

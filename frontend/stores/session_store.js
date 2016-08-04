@@ -4,6 +4,8 @@ const SessionConstants = require('../constants/session_constants.js');
 
 let _currentUser = {};
 
+const SessionStore = new Store(AppDispatcher);
+
 const _login = function(currentUser) {
   _currentUser = currentUser;
 };

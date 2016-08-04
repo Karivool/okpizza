@@ -16,8 +16,8 @@
 ## Flux
 ### Views (React Components)
 * App
-* LoginForm
-* SignupForm
+* ~~LoginForm~~
+* ~~SignupForm~~
 * UsersIndex (just a skeleton)
 
 ### Stores

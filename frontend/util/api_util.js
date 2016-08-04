@@ -48,6 +48,6 @@ const ApiUtil = {
       }
     });
   }
-}
+};
 
 module.exports = ApiUtil;

@@ -12,6 +12,7 @@ module.exports = {
   resolve: {
     extensions: ["", ".js", ".jsx"]
   },
+  devtool: 'source-maps',
   module: {
     loaders: [
       {

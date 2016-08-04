@@ -11,7 +11,7 @@ const _login = function(currentUser) {
 };
 
 const _signout = function() {
-  _currentUser = {}
+  _currentUser = {};
 };
 
 SessionStore.__onDispatch = sessload => {
@@ -33,6 +33,6 @@ SessionStore.currentUser = function() {
 
 SessionStore.isUserLoggedIn = function() {
   return !!_currentUser.id;
-}
+};
 
 module.exports = SessionStore;

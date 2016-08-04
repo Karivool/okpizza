@@ -1,6 +1,6 @@
 const ApiUtil = require('../util/api_util.js');
 const Dispatcher = require('../dispatcher/dispatcher.js');
-const SessionConstants = require('../constants/session_constants.js')
+const SessionConstants = require('../constants/session_constants.js');
 
 module.exports = {
   logIn (form) {
@@ -22,7 +22,7 @@ module.exports = {
   },
 
   signOut () {
-    ApiUtil.signOut(this.signoutCurrentUser)
+    ApiUtil.signOut(this.signoutCurrentUser);
   },
 
   takeInCurrentUser (user) {

@@ -20,11 +20,20 @@ const App = React.createClass({
 
   },
 
+  sessionRenders() {
+    if (SessionStore.isUserLoggedIn()) {
+      return (<Navbar />);
+    } else {
+      return (
+        <div>Hell0</div>
+      )
+    }
+  },
+
   render() {
     return (
       <div className="mainapp">
-      <Navbar />
-        <LoginForm />
+        { this.sessionRenders() }
       </div>
     );
   }

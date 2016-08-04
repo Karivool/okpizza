@@ -20,3 +20,18 @@
   border-bottom: 1px;
   background-color: #104da1;
 }
+
+.navbar-signin {
+  color: white;
+  float: right;
+  display: inline-block;
+}
+
+.sign-up-button {
+  color: inherit;
+  float: inherit;
+  display: inherit;
+  border-color: #4879c1;
+  border-width: 10px;
+  width: 86px;
+}

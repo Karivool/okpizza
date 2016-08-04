@@ -4,7 +4,6 @@ const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
 const HashHistory = require('react-router').hashHistory;
-let PropTypes = React.PropTypes;
 
 const LoginForm = React.createClass({
 
@@ -34,14 +33,15 @@ const LoginForm = React.createClass({
   handleSubmit(e) {
     e.preventDefault();
 
-    // if (this.props.location.pathname === "/login") {
-    //   SessionActions.logIn(this.state);
-    // } else {
-    //   SessionActions.signUp(this.state);
-    // }
+    if (this.props.pathname === "/login") {
+      SessionActions.logIn(this.state);
+    } else {
+      SessionActions.signUp(this.state);
+    }
   },
 
   errors() {
+    debugger
     const errors = ErrorStore.errors(this.formType());
     const messages = errors.map ( (errorMessage, idx) => {
       return <li key={ idx }>{ errorMsg }</li>;
@@ -51,7 +51,8 @@ const LoginForm = React.createClass({
   },
 
   formType() {
-    // return this.props.location.pathname.slice(1);
+    debugger
+    return this.props.pathname.slice(1);
   },
 
   inputHandler(property, e) {
@@ -76,19 +77,21 @@ const LoginForm = React.createClass({
           { this.errors () }
           <div className="login-form">
             <br></br>
-            <label> Username:
+            <label>
               <input type="text" className="login-input"
+                placeholder="Your email"
                 value={ this.state.username }
                 onChange={ this.inputHandler("username") }/>
             </label>
             <br></br>
-            <label> Password:
+            <label>
               <input type="password" className="login-input"
+                placeholder="Password"
                 value={ this.state.password }
                 onChange={ this.inputHandler("password") }/>
             </label>
             <br></br>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Let's go" />
           </div>
         </form>
       </div>

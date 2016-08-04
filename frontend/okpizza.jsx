@@ -7,9 +7,9 @@ const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 
-const App = require('./components/app');
+const App = require('./components/app.jsx');
 
-const okPizzaRouter = (
+const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={App}></IndexRoute>
   </Route>
@@ -18,5 +18,7 @@ const okPizzaRouter = (
 document.addEventListener('DOMContentLoaded', function () {
 
   const root = document.getElementById('content');
-  ReactDOM.render(okPizzaRouter, root);
+  ReactDOM.render(
+    <Router history={hashHistory}>{routes}</Router>,
+    root);
 });

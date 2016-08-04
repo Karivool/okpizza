@@ -21,24 +21,24 @@
 * UsersIndex (just a skeleton)
 
 ### Stores
-* CurrentUser
-* Error
+* ~~Session~~
+* ~~Error~~
 
 ### Actions
-* `SessionActions.logIn`
-* `SessionActions.signUp`
-* `SessionActions.fetchCurrentUser`
-* `SessionActions.signOut`
-* `SessionActions.receiveCurrentUser`
-* `SessionActions.removeCurrentUser`
-* `ErrorActions.setErrors`
-* `ErrorActions.removeErrors`
+* ~~`SessionActions.logIn`~~
+* ~~`SessionActions.signUp`~~
+* ~~`SessionActions.fetchCurrentUser`~~
+* ~~`SessionActions.signOut`~~
+* ~~`SessionActions.receiveCurrentUser`~~
+* ~~`SessionActions.removeCurrentUser`~~
+* ~~`ErrorActions.setErrors`~~
+* ~~`ErrorActions.clearErrors`~~
 
 ### ApiUtil
-* `logIn`
-* `logOut`
-* `signUp`  
-* `fetchCurrentUser`
+* ~~`logIn`~~
+* ~~`signOut`~~
+* ~~`signUp`~~  
+* ~~`fetchCurrentUser`~~
 
 ## Gems/Libraries
 * BCrypt (Gem)

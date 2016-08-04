@@ -1,16 +1,17 @@
 const React = require('react');
 const Link = require('react-router').Link;
+const LoginForm = require('./session/login.jsx');
+const SignupForm = require('./session/signup.jsx');
+const Navbar = require('./navbar.jsx');
 
 const App = React.createClass({
 
-
   render() {
     return (
-      <div>
-        OKPizza: Find the pizza of your dreams!
-        <br></br>
-        "Whether you're looking for a one slice night, a whole box dedication or a pizza party, find the saucy pie you want here."
-        {this.props.children}
+      <div className="mainapp">
+      <Navbar />
+        <LoginForm />
+        <SignupForm />
       </div>
     );
   }

@@ -15,6 +15,8 @@
  */
 
 .navbar {
-  padding: 10px;
+  margin: -8px;
+  padding: 24px;
+  border-bottom: 1px;
   background-color: #104da1;
 }

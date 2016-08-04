@@ -1,6 +1,6 @@
 
 const SessionConstants = {
-  LOGIN: "LOGIN",
+  USER_TAKEN_IN: "USER_TAKEN_IN",
   SIGNOUT: "SIGNOUT"
 };
 

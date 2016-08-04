@@ -9,12 +9,14 @@ const hashHistory = ReactRouter.hashHistory;
 
 const App = require('./components/app.jsx');
 const LoginForm = require('./components/login.jsx');
+const UsersIndex = require('./components/usersindex.jsx');
 
 const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={App} />
     <Route path="/login" component={ LoginForm } />
     <Route path="/signup" component={ LoginForm } />
+    <Route path="/index" component={ UsersIndex } />
   </Route>
 );
 

@@ -1,6 +1,7 @@
 const ApiUtil = require('../util/api_util.js');
 const Dispatcher = require('../dispatcher/dispatcher.js');
 const SessionConstants = require('../constants/session_constants.js');
+const ErrorActions = require('./error_actions.js');
 
 module.exports = {
   logIn (form) {

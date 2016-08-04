@@ -26,13 +26,15 @@ const ApiUtil = {
 
   signUp(user, success, error) {
     $.ajax({
-      url: "api/user",
+      url: "api/users",
       method: "POST",
       dataType: "json",
       data: { user },
       success,
       error(renderError) {
+        debugger
         const errors = renderError.responseJSON;
+        console.log(errors);
         error("signup", errors);
       }
     });

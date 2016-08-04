@@ -16,8 +16,8 @@ const _signout = function() {
 
 SessionStore.__onDispatch = sessload => {
   switch (sessload.actionType) {
-    case SessionConstants.LOGIN:
-      _login(sessload.currentUser);
+    case SessionConstants.USER_TAKEN_IN:
+      _login(sessload.user);
       SessionStore.__emitChange();
       break;
     case SessionConstants.SIGNOUT:
@@ -32,7 +32,7 @@ SessionStore.currentUser = function() {
 };
 
 SessionStore.isUserLoggedIn = function() {
-  return !!_currentUser.id;
+  return !!_currentUser.username;
 };
 
 module.exports = SessionStore;

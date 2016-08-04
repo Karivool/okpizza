@@ -2,10 +2,12 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const Link = require('react-router').Link;
 const LoginForm = require('./login.jsx');
+const SignUpForm = require('./signup.jsx');
+const UsersIndex = require('./usersindex.jsx');
 const Navbar = require('./navbar.jsx');
 const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../stores/session_store');
-const SessionActions = require('../actions/session_Actions');
+const SessionActions = require('../actions/session_actions');
 const Button = require('react-button');
 
 const App = React.createClass({
@@ -16,16 +18,24 @@ const App = React.createClass({
   },
 
   handleListeners() {
+    this.sessionListener = SessionStore.addListener(this._onChange);
+  },
 
+  componentWillUnmount() {
+    this.sessionListener.remove();
   },
 
   _onChange() {
+    this.forceUpdate();
+  },
 
+  showFormLogin() {
+    console.log("This shouldn't work unless the button is clicked");
   },
 
   sessionRenders() {
     if (SessionStore.isUserLoggedIn()) {
-      return (<Navbar />);
+      return (<UsersIndex />);
     } else {
       let signupTheme = {
         style: { color: 'white' },
@@ -38,13 +48,14 @@ const App = React.createClass({
                 <img src={window.okPizzaLogo}></img>
               </div>
               <div className="main-page-login">
-                <span className="mp-su">Have an account?                </span>
-                <Button theme={ signupTheme } href="#/login" className="sign-up-button">Sign in</Button>
+                <span className="mp-su">Have an account?  </span>
+                <Button theme={ signupTheme } href="#/login" onClick={this.showFormLogin()} className="sign-up-button">Sign in</Button>
               </div>
             </header>
             <div className="main-page-slogan">
               Find the Pizza of Your Dreams.
             </div>
+            <SignUpForm />
           </div>
           <div className="saucy-reasons">
             PIC1

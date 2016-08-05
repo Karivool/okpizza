@@ -14,7 +14,9 @@ const SignUpForm = React.createClass({
   getInitialState() {
     return {
       username: "",
-      password: ""
+      password: "",
+      orientation: "Pizzasexual",
+      gender: "Milady"
     };
   },
 
@@ -47,36 +49,37 @@ const SignUpForm = React.createClass({
   },
 
   inputHandler(property, e) {
+    console.log(property + " property handled by inputHandler");
     return (e) => this.setState({[property]: e.target.value});
   },
 
   render() {
-    // let entryType = <Link to="/signup">Sign Up</Link>;
-
     return (
       <div className="login-form-container">
         <form onSubmit={ this.handleSubmit } className="login-form-box">
           <br>
-
           </br>
           { this.errors () }
           <div className="login-form">
             <br>
-
             </br>
-            I am a
-            <label>
-              <input type="text" className="login-input"
-                placeholder="Pizzasexual"
-                value={ this.state.orientation }
-                onChange={ this.inputHandler("orientation") }/>
-            </label>
-            <label>
-              <input type="text" className="login-input"
-                placeholder="Human"
-                value={ this.state.gender }
-                onChange={ this.inputHandler("gender") }/>
-            </label>
+            <span className="big-form-span">I am a</span>
+              <div className="login-input-1">
+                <select className="signup-1" onChange={this.inputHandler('orientation')}>
+                  <option value={ this.state.orientation }>Pizzasexual</option>
+                  <option value={ this.state.orientation }>Humansexual</option>
+                  <option value={ this.state.orientation }>Piesexual</option>
+                  <option value={ this.state.orientation }>Piecurious</option>
+
+                </select>
+                <select className="signup-1" onChange={this.inputHandler('gender')}>
+                  <option value={ this.state.gender }>Milady</option>
+                  <option value={ this.state.gender }>Milord</option>
+                  <option value={ this.state.gender }>Pizza</option>
+                  <option value={ this.state.gender }>Transgrainder</option>
+                  <option value={ this.state.gender }>Non-pienary</option>
+                </select>
+              </div>
             <br>
 
             </br>

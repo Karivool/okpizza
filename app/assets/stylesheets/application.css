@@ -99,6 +99,29 @@ html, body {
   line-height: 22px;
 }
 
+.big-form-span {
+  font-size: 22px;
+  vertical-align: top;
+  padding-right: 14px;
+  margin-right: -4px;
+}
+
+.login-input-1 {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.signup-1 {
+  background: #3260c7;
+  color: white;
+  font-size: 18px;
+  border: 0px;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
+}
+
 
 .saucy-reasons {
   font-size: 24px;

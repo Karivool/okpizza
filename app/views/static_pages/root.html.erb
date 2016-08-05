@@ -1,1 +1,14 @@
-<div id="content">root.html.erb</div>
+<script id="hold-current-user" type="text/javascript">
+  <% if logged_in? %>
+    window.currentUser = <%= render("api/users/user.json.jbuilder",
+      user: current_user).html_safe %>
+  <% end %>
+</script>
+
+<div id="content">
+  Zaetom∞ Descended!
+    Academic App King - Mythical Plus
+                        Stamina: 50
+    Academic App King - Legend Plus
+                        Stamina: 40
+</div>

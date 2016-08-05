@@ -7,7 +7,12 @@ const Navbar = React.createClass({
   render: function() {
     return (
       <div className="navbar">
-        <img src={window.okPLogo}></img>
+        <div className="mini-logo">
+          <a href="#/index"><img src={okPLogo}/></a>
+        </div>
+        <div className="user-nav-detail">
+          "le user"
+        </div>
       </div>
     );
   }

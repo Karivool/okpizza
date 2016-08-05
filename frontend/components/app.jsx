@@ -10,6 +10,8 @@ const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
 const Button = require('react-button');
 
+window.current_user = SessionStore.currentUser;
+
 const App = React.createClass({
 
   componentDidMount() {
@@ -30,7 +32,7 @@ const App = React.createClass({
   },
 
   showFormLogin() {
-    console.log("This shouldn't work unless the button is clicked");
+
   },
 
   guestSignIn() {
@@ -40,11 +42,13 @@ const App = React.createClass({
   sessionRenders() {
     // debugger
     if (SessionStore.isUserLoggedIn()) {
-      return (<UsersIndex />);
+      return (
+        <div className="mainpage-render">
+          <UsersIndex /><br/>
+          USERS!!!!!! XD
+        </div>
+      );
     } else {
-      let signupTheme = {
-        style: { color: 'white' },
-      };
       return (
         <div className="homepage-render">
           <div className="splash-page-1">
@@ -54,8 +58,7 @@ const App = React.createClass({
               </div>
               <div className="main-page-login">
                 <span className="mp-su">Have an account?  </span>
-                <Link className="sign-up-button" to="#/login">Sign In</Link>
-                <Button theme={ signupTheme } href="#/login" onClick={this.showFormLogin} className="sign-up-button">Sign in</Button>
+                <Link className="sign-up-link" to="#/login">Sign In</Link>
                 <button onClick={this.guestSignIn} className="sign-up-button">Guest</button>
               </div>
             </header>
@@ -76,7 +79,7 @@ const App = React.createClass({
             <br></br>
           </div>
         </div>
-      )
+      );
     }
   },
 

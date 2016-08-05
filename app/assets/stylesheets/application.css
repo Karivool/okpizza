@@ -15,15 +15,28 @@
  */
 
 .navbar {
-  padding: 24px;
-  border-bottom: 1px;
+  border-bottom: 1px solid;
+  border-color: 275eaa;
   background-color: #104da1;
+  height: 66px;
+}
+
+.mini-logo {
+  position: absolute;
+  margin-left: 30px;
+  top: 14px;
+}
+
+.user-nav-detail {
+  margin-right: 30px;
+  margin-top: 25px;
+  color: white;
+  float: right;
 }
 
 .splash-page-1 {
   background-color: #104da1;
   height: 618px;
-  /*margin: -8px;*/
   display: block;
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
@@ -53,6 +66,9 @@
   bottom: 0px;
 }
 
+.mainpage-render {
+}
+
 .mp-su {
 
 }
@@ -68,12 +84,25 @@
   font-weight: 400;
 }
 
+.sign-up-link {
+  margin: 10px;
+  border: 1px solid;
+  border-color: #4879c1;
+  color: white;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .sign-up-button {
   border: 1px solid;
   border-color: #4879c1;
   width: 86px;
-  height: 42px;
+  height: 43px;
   color: white;
+  text-align: center;
+  margin-bottom: 1px;
 }
 
 .main-page-slogan {

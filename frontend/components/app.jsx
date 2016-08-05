@@ -1,14 +1,15 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const Link = require('react-router').Link;
+const hashHistory = require('react-router').hashHistory;
+const Button = require('react-button');
+
 const LoginForm = require('./login.jsx');
 const SignUpForm = require('./signup.jsx');
 const UsersIndex = require('./usersindex.jsx');
 const Navbar = require('./navbar.jsx');
-const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
-const Button = require('react-button');
 
 window.current_user = SessionStore.currentUser;
 

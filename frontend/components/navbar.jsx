@@ -1,8 +1,12 @@
 const React = require('react');
 const Link = require('react-router').Link;
+const SessionActions = require('../actions/session_actions.js');
 
 const Navbar = React.createClass({
 
+  _signOut() {
+    SessionActions.signOut();
+  },
 
   render: function() {
     return (
@@ -12,6 +16,9 @@ const Navbar = React.createClass({
         </div>
         <div className="user-nav-detail">
           "le user"
+        </div>
+        <div className="sign-out">
+          <button onClick={this._signOut} className="sign-out-button">Log out</button>
         </div>
       </div>
     );

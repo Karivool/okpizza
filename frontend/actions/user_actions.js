@@ -1,6 +1,6 @@
 const ApiUtil = require('../util/api_util.js');
-const AppDispatcher = require('../dispatcher/dispatcher.js');
-const SessionConstants = require('../constants/session_constants.js');
+const Dispatcher = require('../dispatcher/dispatcher.js');
+const UserConstants = require('../constants/user_constants.js');
 const ErrorActions = require('./error_actions.js');
 
 module.exports = {
@@ -23,20 +23,20 @@ module.exports = {
   },
 
   signOut () {
-    ApiUtil.logOut(this.signoutCurrentUser);
+    ApiUtil.signOut(this.signoutCurrentUser);
   },
 
   takeInCurrentUser (user) {
-    AppDispatcher.dispatch({
-      actionType: SessionConstants.USER_TAKEN_IN,
+    Dispatcher.dispatch({
+      actionType: UserConstants.USER_TAKEN_IN,
       user: user
     });
   },
 
   signoutCurrentUser () {
     AppDispatcher.dispatch({
-      actionType: SessionConstants.SIGNOUT
+      actionType: UserConstants.SIGNOUT
     });
-    hashHistory.push("/");
+    hashHistory.push("/login");
   }
 };

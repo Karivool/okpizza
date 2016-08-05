@@ -5,9 +5,8 @@ class Api::SessionsController < ApplicationController
       params[:user][:username],
       params[:user][:password]
     )
-
     if @user
-      login(@user)
+      log_in(@user)
       render "api/users/show"
     else
       render(

@@ -33,13 +33,18 @@ const App = React.createClass({
     console.log("This shouldn't work unless the button is clicked");
   },
 
+  guestSignIn() {
+    SessionActions.logIn({username: "Bungh0", password: "lma0lma0umad"});
+  },
+
   sessionRenders() {
+    // debugger
     if (SessionStore.isUserLoggedIn()) {
       return (<UsersIndex />);
     } else {
       let signupTheme = {
         style: { color: 'white' },
-      }
+      };
       return (
         <div className="homepage-render">
           <div className="splash-page-1">
@@ -49,7 +54,9 @@ const App = React.createClass({
               </div>
               <div className="main-page-login">
                 <span className="mp-su">Have an account?  </span>
-                <Button theme={ signupTheme } href="#/login" onClick={this.showFormLogin()} className="sign-up-button">Sign in</Button>
+                <Link className="sign-up-button" to="#/login">Sign In</Link>
+                <Button theme={ signupTheme } href="#/login" onClick={this.showFormLogin} className="sign-up-button">Sign in</Button>
+                <button onClick={this.guestSignIn} className="sign-up-button">Guest</button>
               </div>
             </header>
             <div className="main-page-slogan">

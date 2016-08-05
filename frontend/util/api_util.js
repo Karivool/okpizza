@@ -6,8 +6,8 @@ const ApiUtil = {
       data: { user },
       success,
       error(renderError) {
+        debugger
         const errors = renderError.responseJSON;
-
         error("login", errors);
       }
     });
@@ -32,9 +32,7 @@ const ApiUtil = {
       data: { user },
       success,
       error(renderError) {
-        debugger
         const errors = renderError.responseJSON;
-        console.log(errors);
         error("signup", errors);
       }
     });

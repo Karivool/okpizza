@@ -7,6 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(
+  username: "Bungh0",
+  email: "mungoga@gmail.com",
+  password_digest: "$2a$10$o6xNCWVjWEp7jbSq9hGIQOwmTcBvkukvl2/ZYmFcM37deoWE9FPPS",
+  session_token: "aAuXR1DQuXzxzO65sFHtVQ",
+  birthdate: "07271992",
+  gender: "Milord",
+  orientation: "piecurious",
+  city_name: "Cambridge",
+  state_name: "England",
+  summary: "Hell0, I w0uld like t0 see what it's like t0 be with and enj0y a pizza.")
+
+User.create(
   username: "jtrapepperonison",
   email: "jpepperoni@jpepp.com",
   password_digest: "lma0",
@@ -41,4 +53,3 @@ User.create(
   city_name: "Los Angeles",
   state_name: "California",
   summary: "안녕하세요 피자씨. I like korea pizza very much. Pizza with corn, yam and mayonase make me happy. :)")
-  

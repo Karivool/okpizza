@@ -27,7 +27,7 @@
   position: absolute;
   left: 50%;
   margin-left: -103px;
-  bottom: 0px;
+  bottom: 18px;
 }
 
 .main-page-login {
@@ -70,7 +70,7 @@
   color: white;
   margin: 0 auto 30px;
   text-align: center;
-  font-weight: 300;
+  font-weight: 100;
   width: 660px;
   line-height: 22px;
 }
@@ -87,14 +87,14 @@
 
 .big-form-span {
   font-size: 22px;
-  vertical-align: top;
+  vertical-align: middle;
   padding-right: 14px;
-  margin-right: -4px;
 }
 
 .login-input-1 {
   display: inline-block;
   white-space: nowrap;
+  vertical-align: middle;
 }
 
 .login-input {
@@ -103,6 +103,9 @@
   border-radius: 2px;
   border: 1px solid;
   border-color: #9dbaf2;
+  margin: 5px;
+  height: 40px;
+  box-shadow: 1px 2px 6px #07408d;
 }
 
 .signup-1 {
@@ -113,10 +116,38 @@
   white-space: nowrap;
   display: inline-block;
   vertical-align: top;
-  margin-right: -4px;
+  margin-right: 20px;
+  height: 58px;
+  width: 230px;
+  box-shadow: 1px 2px 6px #07408d;
 }
 
 .saucy-reasons {
-  font-size: 24px;
+  display: flex;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 62px;
+}
+
+.saucy-reasons-each {
+  float: left;
   display: block;
+  margin-right: 2%;
+  width: 32%;
+}
+
+.saucy-image {
+  width: 104px;
+  height: 116px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.saucy-texts {
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  width: 240px;
+  margin-left: 60px;
+  margin-right: 60px;
 }

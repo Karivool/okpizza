@@ -68,16 +68,28 @@ const App = React.createClass({
             </div>
             <SignUpForm />
           </div>
-          <div className="saucy-reasons">
-            PIC1
-            Sign up in a flash and browse saucy profiles, free! What could be better than free pizza?
-            <br></br>
-            PIC2
-            Whether you are in for a one slice night, commitment to an entire box or a pizza party, we got you covered.
-            <br></br>
-            PIC3
-            Amazing pizzas and humans come together, bringing you back, hungry for more.
-            <br></br>
+          <div className="saucy-reasons group">
+            <div className="saucy-reason-each">
+              <img src={window.saucyPic1} className="saucy-image"></img>
+              <p className="saucy-texts">
+                Sign up in a flash and browse saucy profiles, free! What could be better than free pizza?
+              </p>
+              <br></br>
+            </div>
+            <div className="saucy-reason-each">
+              <img src={window.saucyPic1} className="saucy-image"></img>
+              <p className="saucy-texts">
+                Whether you are in for a one slice night, commitment to an entire box or a pizza party, we got you covered.
+              </p>
+              <br></br>
+            </div>
+            <div className="saucy-reason-each">
+              <img src={window.saucyPic1} className="saucy-image"></img>
+              <p className="saucy-texts">
+                Amazing pizzas and humans come together, bringing you back, hungry for more.
+              </p>
+              <br></br>
+            </div>
           </div>
         </div>
       );

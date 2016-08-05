@@ -1,0 +1,19 @@
+.navbar {
+  border-bottom: 1px solid;
+  border-color: 275eaa;
+  background-color: #104da1;
+  height: 66px;
+}
+
+.mini-logo {
+  position: absolute;
+  margin-left: 30px;
+  top: 14px;
+}
+
+.user-nav-detail {
+  margin-right: 30px;
+  margin-top: 25px;
+  color: white;
+  float: right;
+}

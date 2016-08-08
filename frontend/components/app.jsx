@@ -77,14 +77,14 @@ const App = React.createClass({
               <br></br>
             </div>
             <div className="saucy-reason-each">
-              <img src={window.saucyPic1} className="saucy-image"></img>
+              <img src={window.saucyPic2} className="saucy-image"></img>
               <p className="saucy-texts">
                 Whether you are in for a one slice night, commitment to an entire box or a pizza party, we got you covered.
               </p>
               <br></br>
             </div>
             <div className="saucy-reason-each">
-              <img src={window.saucyPic1} className="saucy-image"></img>
+              <img src={window.saucyPic3} className="saucy-image"></img>
               <p className="saucy-texts">
                 Amazing pizzas and humans come together, bringing you back, hungry for more.
               </p>

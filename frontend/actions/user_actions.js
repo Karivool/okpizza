@@ -4,39 +4,48 @@ const UserConstants = require('../constants/user_constants.js');
 const ErrorActions = require('./error_actions.js');
 
 module.exports = {
-  logIn (form) {
-    ApiUtil.logIn(
-      form,
-      this.takeInCurrentUser,
+  fetchAllUsers () {
+    ApiUtil.fetchAllUsers(
+      this.takeInAllUsers,
       ErrorActions.setErrors);
   },
 
-  signUp (form) {
-    ApiUtil.signUp(
-      form,
-      this.takeInCurrentUser,
+  fetchFilteredUsers () {
+    ApiUtil.fetchFilteredUsers(
+      this.takeInFilteredUsers,
       ErrorActions.setErrors);
   },
 
-  fetchCurrentUser (id) {
-    ApiUtil.fetchCurrentUser(id, this.takeInCurrentUser);
+  fetchSingleUser (id) {
+    ApiUtil.fetchSingleUser(id, this.takeInSingleUser);
   },
 
-  signOut () {
-    ApiUtil.signOut(this.signoutCurrentUser);
+  editUser (data) {
+    ApiUtil.editUser(data, this.takeinSingleUser);
   },
 
-  takeInCurrentUser (user) {
+  destroyUser (id) {
+    ApiUtil.destroyUser(id, this.destroyCurrentUser);
+  },
+
+  takeInAllUsers (users) {
     Dispatcher.dispatch({
+      actionType: UserConstants.ALL_USERS_TAKEN_IN,
+      users: users
+    });
+  },
+
+  takeInSingleUser (user) {
+    AppDispatcher.dispatch({
       actionType: UserConstants.USER_TAKEN_IN,
       user: user
     });
   },
 
-  signoutCurrentUser () {
-    AppDispatcher.dispatch({
-      actionType: UserConstants.SIGNOUT
+  takeInFilteredUsers (users) {
+    Dispatcher.dispatch({
+      actionType: UserConstants.ALL_USERS_FILTERED,
+      users: users
     });
-    hashHistory.push("/login");
-  }
+  },
 };

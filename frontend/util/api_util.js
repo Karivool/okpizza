@@ -49,99 +49,65 @@ const ApiUtil = {
     });
   },
 
-  receiveAllUsers() {
+  fetchAllUsers(callback) {
     $.ajax({
-      url: "",
-      method: "",
-      success,
+      url: `api/users`,
+      method: "GET",
+      success (users){
+        callback(users);
+      },
       error(){
 
       }
     });
   },
 
-  receiveSingleUser() {
+  fetchFilteredUsers(callback) {
     $.ajax({
-      url: "",
-      method: "",
-      success,
+      url: `api/users`,
+      method: "GET",
+      success (users){
+        callback(users);
+      },
       error(){
 
       }
     });
   },
 
-  deleteUser() {
+  fetchSingleUser(userid, callback) {
     $.ajax({
-      url: "",
-      method: "",
-      success,
+      url: `api/users/${userid}`,
+      method: "GET",
+      success (user) {
+        callback(user);
+      },
       error(){
 
       }
     });
   },
 
-  fetchAllUsers() {
+  editUser(userdata, callback) {
     $.ajax({
-      url: "",
-      method: "",
-      success,
+      url: `api/users/${userdata.id}`,
+      method: "POST",
+      data: { user },
+      success (user) {
+        callback(user);
+      },
       error(){
-
       }
     });
   },
 
-  fetchFilteredUsers() {
+  destroyUser(userid, callback) {
     $.ajax({
-      url: "",
-      method: "",
-      success,
-      error(){
-
-      }
-    });
-  },
-
-  fetchSingleUser() {
-    $.ajax({
-      url: "",
-      method: "",
-      success,
-      error(){
-
-      }
-    });
-  },
-
-  createUser() {
-    $.ajax({
-      url: "",
-      method: "",
-      success,
-      error(){
-
-      }
-    });
-  },
-
-  editUser() {
-    $.ajax({
-      url: "",
-      method: "",
-      success,
-      error(){
-
-      }
-    });
-  },
-
-  destroyUser() {
-    $.ajax({
-      url: "",
-      method: "",
-      success,
+      url: `api/users/${userid}`,
+      method: "DELETE",
+      success (user) {
+        callback(user);
+      },
       error(){
 
       }

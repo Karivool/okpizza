@@ -49,7 +49,6 @@ const SignUpForm = React.createClass({
   },
 
   inputHandler(property, e) {
-    console.log(property + " property handled by inputHandler");
     return (e) => this.setState({[property]: e.target.value});
   },
 

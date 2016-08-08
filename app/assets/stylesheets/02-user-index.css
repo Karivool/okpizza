@@ -1,2 +1,36 @@
 .mainpage-render {
 }
+
+.match-display-li {
+  position: relative;
+  list-style: none;
+  float: left;
+  text-align: center;
+  padding-top: 10px;
+  margin: 5px;
+  height: auto;
+  box-shadow: 0px 1px 3px #000;
+  font-family: 'Open-Sans', sans-serif;
+  display: inline-block;
+  width: 300px;
+  height: 470px;
+}
+
+.match-display-image {
+  float: right;
+  height: 200px;
+  width: 280px;
+}
+
+.match-display-name {
+  font-size: 22px;
+  font-weight: 300;
+  color: #5e6573;
+}
+
+.match-display-details {
+  font-size: 14px;
+  font-weight: 200;
+  padding-bottom: 20px;
+  color: #949aa6;
+}

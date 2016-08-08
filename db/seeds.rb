@@ -19,28 +19,16 @@ User.create(
   summary: "Hell0, I w0uld like t0 see what it's like t0 be with and enj0y a pizza.")
 
 User.create(
-  username: "jtrapepperonison",
-  email: "jpepperoni@pizzamail.com",
+  username: "RedBaronCarl",
+  email: "redbaroncarl@gmail.com",
   password_digest: "password",
-  session_token: "1",
-  birthdate: '1974-10-10',
-  gender: "transgrainder",
-  orientation: "piesexual",
-  city_name: "Hoboken",
-  state_name: "New Jersey",
-  summary: "Eatza me, Juuuuuuliooooo!")
-
-User.create(
-  username: "Pizzasaladnt420",
-  email: "pizzasaladnt420@pizzamail.com",
-  password_digest: "password",
-  session_token: "12",
-  birthdate: '1982-04-20',
+  session_token: "0",
+  birthdate: '1972-02-03',
   gender: "pizza",
-  orientation: "humansexual",
-  city_name: "Pittsburgh",
-  state_name: "Pennsylvania",
-  summary: "Pick me if you want a smokin pizza.")
+  orientation: "piesexual",
+  city_name: "Mountain View",
+  state_name: "California",
+  summary: "I'm the best pie you'll ever have. Worth every penny, and don't take my shape into account. When fun is to be had, I can tell you I'm definitely not square.")
 
 User.create(
   username: "BigDerekSchlicer",
@@ -89,6 +77,18 @@ User.create(
   city_name: "Baltimore",
   state_name: "Maryland",
   summary: "When life gives you bagels, make a pizza. Or two. Or four.")
+
+User.create(
+  username: "jtrapepperonison",
+  email: "jpepperoni@pizzamail.com",
+  password_digest: "password",
+  session_token: "1",
+  birthdate: '1974-10-10',
+  gender: "transgrainder",
+  orientation: "piesexual",
+  city_name: "Hoboken",
+  state_name: "New Jersey",
+  summary: "Eatza me, Juuuuuuliooooo!")
 
 User.create(
   username: "kmongeatyouregreenz",
@@ -197,6 +197,18 @@ User.create(
   city_name: "Park Slope",
   state_name: "New York",
   summary: "I got the best of both worlds, whether you're looking to rub your hand up and down my hairy arm, or feel the sausages and olives on my topping arm.")
+
+User.create(
+  username: "Pizzasaladnt420",
+  email: "pizzasaladnt420@pizzamail.com",
+  password_digest: "password",
+  session_token: "12",
+  birthdate: '1982-04-20',
+  gender: "pizza",
+  orientation: "humansexual",
+  city_name: "Pittsburgh",
+  state_name: "Pennsylvania",
+  summary: "Pick me if you want a smokin pizza.")
 
 User.create(
   username: "Pizza_Lady",

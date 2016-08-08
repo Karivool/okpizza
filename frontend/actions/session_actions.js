@@ -2,6 +2,7 @@ const ApiUtil = require('../util/api_util.js');
 const AppDispatcher = require('../dispatcher/dispatcher.js');
 const SessionConstants = require('../constants/session_constants.js');
 const ErrorActions = require('./error_actions.js');
+const hashHistory = require('react-router').hashHistory;
 
 module.exports = {
   logIn (form) {

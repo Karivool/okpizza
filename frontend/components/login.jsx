@@ -32,17 +32,11 @@ const LoginForm = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
-
-    if (this.props.pathname === "/login") {
-      SessionActions.logIn(this.state);
-    } else {
-      SessionActions.signUp(this.state);
-    }
+    SessionActions.logIn(this.state);
   },
 
   errors() {
-    debugger
-    const errors = ErrorStore.errors(this.formType());
+    const errors = ErrorStore.errors(this.inputHandler);
     const messages = errors.map ( (errorMessage, idx) => {
       return <li key={ idx }>{ errorMsg }</li>;
     });
@@ -50,27 +44,16 @@ const LoginForm = React.createClass({
     return <ul>{ messages }</ul>;
   },
 
-  formType() {
-    debugger
-    return this.props.pathname.slice(1);
-  },
-
   inputHandler(property, e) {
     return (e) => this.setState({[property]: e.target.value});
   },
 
   render() {
-    let entryType;
-    if (this.formType() === "login") {
-      entryType = <Link to="/signup">Sign Up</Link>;
-    } else {
-      entryType = <Link to="/login">Log In</Link>;
-    }
+    let entryType = <Link to="/login">Log In</Link>;
 
     return (
       <div className="login-form-container">
         <form onSubmit={ this.handleSubmit } className="login-form-box">
-          { this.formType() }
           <br></br>
           { entryType }
 
@@ -79,7 +62,7 @@ const LoginForm = React.createClass({
             <br></br>
             <label>
               <input type="text" className="login-input"
-                placeholder="Your email"
+                placeholder="Your username"
                 value={ this.state.username }
                 onChange={ this.inputHandler("username") }/>
             </label>

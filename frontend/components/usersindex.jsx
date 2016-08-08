@@ -13,6 +13,7 @@ const UsersIndex = React.createClass({
   componentDidMount () {
     this.userListener = UserStore.addListener(this.getUsers);
     UserActions.fetchAllUsers();
+    this._onChange();
   },
 
   componentWillUnmount () {
@@ -23,12 +24,17 @@ const UsersIndex = React.createClass({
     this.setState({ users: UserStore.all() });
   },
 
+  _onChange() {
+    this.forceUpdate();
+  },
+
   render: function() {
 
     const users = this.state.users;
     return (
       <div className="users-index">
         <Navbar />
+        
         <div className="users-listing">
           { users.map(function (user) {
             if (user.id !== currentUser.id){

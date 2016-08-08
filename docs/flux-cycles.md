@@ -66,11 +66,6 @@ what you'll need to do.
   0. `GET /api/users` is called.
   0. `receiveFilteredUsers` is set as the success callback.
 
-* `createUser`
-  0. invoked from new user button `onClick`
-  0. `POST /api/users` is called.
-  0. `receiveSingleUser` is set as the success callback.
-
 * `fetchSingleUser`
   0. invoked from `UserDetail` `didMount`/`willReceiveProps`
   0. `GET /api/users/:id` is called.

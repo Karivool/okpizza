@@ -5,7 +5,7 @@
 * User
 
 ### Controllers
-* Api::UsersController (create, destroy, index, show, update)
+* Api::UsersController (create, index, show, update, destroy)
 
 ### Views
 * users/index.json.jbuilder
@@ -18,25 +18,20 @@
 * UserForm
 
 ### Stores
-* User
+* ~~User~~
 
 ### Actions
-* `ApiActions.receiveAllUsers`
-* `ApiActions.receiveSingleUser`
-* `ApiActions.deleteUser`
-* `UserActions.fetchAllUsers`
-* `UserActions.fetchFilteredUsers`
-* `UserActions.fetchSingleUser`
-* `UserActions.createUser`
-* `UserActions.editUser`
-* `UserActions.destroyUser`
+* ~~`UserActions.fetchAllUsers`~~
+* ~~`UserActions.fetchFilteredUsers`~~
+* ~~`UserActions.fetchSingleUser`~~
+* ~~`UserActions.editUser`~~
+* ~~`UserActions.destroyUser`~~
 
 ### ApiUtil
-* `ApiUtil.fetchAllUsers`
-* `ApiUtil.fetchFilteredUsers`
-* `ApiUtil.fetchSingleUser`
-* `ApiUtil.createUser`
-* `ApiUtil.editUser`
-* `ApiUtil.destroyUser`
+* ~~`ApiUtil.fetchAllUsers`~~
+* ~~`ApiUtil.fetchFilteredUsers`~~
+* ~~`ApiUtil.fetchSingleUser`~~
+* ~~`ApiUtil.editUser`~~
+* ~~`ApiUtil.destroyUser`~~
 
 ## Gems/Libraries

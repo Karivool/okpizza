@@ -46,7 +46,6 @@ const App = React.createClass({
       return (
         <div className="mainpage-render">
           <UsersIndex /><br/>
-          USERS!!!!!! XD
         </div>
       );
     } else {

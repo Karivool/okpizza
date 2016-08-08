@@ -11,8 +11,8 @@ const UsersIndex = React.createClass({
   },
 
   componentDidMount () {
-    this.userListener = UserStore.addListener(this.fetchAllUsers);
-    UserActions.getUsers();
+    this.userListener = UserStore.addListener(this.getUsers);
+    UserActions.fetchAllUsers();
   },
 
   componentWillUnmount () {
@@ -25,14 +25,15 @@ const UsersIndex = React.createClass({
 
   render: function() {
     const users = this.state.users;
-
     return (
       <div className="users-index">
         <Navbar />
         <div className="users-listing">
-          { this.state.users.map(function (user) {
-            return (<UserIndexItem key={user.id}
-            user={user} />);
+          { users.map(function (user) {
+            if (user.id !== currentUser.id){
+              return (<UserIndexItem key={user.id}
+              user={user} />);
+            }
             })
           }
         </div>

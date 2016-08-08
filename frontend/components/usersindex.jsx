@@ -24,7 +24,7 @@ const UsersIndex = React.createClass({
   },
 
   render: function() {
-    
+
     const users = this.state.users;
     return (
       <div className="users-index">

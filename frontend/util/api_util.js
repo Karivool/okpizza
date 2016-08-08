@@ -101,6 +101,20 @@ const ApiUtil = {
     });
   },
 
+  editUserProfile(userdata, callback) {
+    $.ajax({
+      url: "/api/users",
+      method: "POST",
+      dataType: "json",
+      contentType: false,
+      processData: false,
+      data: formData,
+      success: function() {
+        callback();
+      }
+    });
+  },
+
   destroyUser(userid, callback) {
     $.ajax({
       url: `api/users/${userid}`,

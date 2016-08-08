@@ -13,7 +13,35 @@
 
 .user-nav-detail {
   margin-right: 30px;
-  margin-top: 25px;
+  margin-top: 15px;
   color: white;
   float: right;
+}
+
+.profile-mini-pic {
+  width: 42px;
+  border-radius: 20px;
+  background-color: gainsboro;
+}
+
+.sign-out {
+  float: right;
+  background: white;
+  width: 180px;
+  padding: 10px 20px;
+  font-family: sans-serif;
+  margin-right: -220px;
+  margin-top: 105px;
+  box-shadow: 0px 1px 1px black;
+}
+
+.profile-click {
+  float: right;
+  background: white;
+  width: 180px;
+  padding: 10px 20px;
+  font-family: sans-serif;
+  margin-right: -72px;
+  margin-top: 67px;
+  box-shadow: 0px 1px 1px black;
 }

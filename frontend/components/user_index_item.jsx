@@ -23,14 +23,17 @@ const UsersIndexItem = React.createClass({
 
     return age;
   },
+  // <img className="match-image" src={ user.image_url }/>
 
   render () {
+    const pics = [window.pic1, window.pic2, window.pic3, window.pic4, window.pic5, window.pic6, window.pic7, window.pic8, window.pic9, window.pic10, window.pic11, window.pic12, window.pic13, window.pic14, window.pic15, window.pic16, window.pic17, window.pic18, window.pic19, window.pic20, window.pic21, window.pic22, window.pic23, window.pic24, window.pic25];
+
     const user = this.props.user;
     const birthdate = this.getBday(user.birthdate);
     return (
       <li className="match-display-li">
         <div className="match-display-image">
-          [Picture]
+          <img className="match-image" src={ pics[user.id - 2] }/>
         </div>
         <br></br>
         <div className="match-display-name">

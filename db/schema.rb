@@ -11,24 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802163020) do
+ActiveRecord::Schema.define(version: 20160808145056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
-    t.string   "email",           null: false
-    t.string   "session_token",   null: false
-    t.string   "birthdate",       null: false
-    t.string   "gender",          null: false
-    t.string   "orientation",     null: false
-    t.string   "city_name",       null: false
-    t.string   "state_name",      null: false
+    t.string   "username",           null: false
+    t.string   "password_digest",    null: false
+    t.string   "email",              null: false
+    t.string   "session_token",      null: false
+    t.string   "birthdate",          null: false
+    t.string   "gender",             null: false
+    t.string   "orientation",        null: false
+    t.string   "city_name",          null: false
+    t.string   "state_name",         null: false
     t.string   "summary"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

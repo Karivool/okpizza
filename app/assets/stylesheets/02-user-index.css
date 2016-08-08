@@ -20,6 +20,8 @@
   float: right;
   height: 200px;
   width: 280px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .match-display-name {
@@ -33,4 +35,9 @@
   font-weight: 200;
   padding-bottom: 20px;
   color: #949aa6;
+}
+
+.match-image {
+  width: inherit;
+  height: inherit;
 }

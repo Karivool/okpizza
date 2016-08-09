@@ -93,6 +93,13 @@ const Profile = React.createClass({
             <input type="file" onChange={ this.updateFile }/>
             <img src={this.state.imageUrl}/>
           </div>
+
+          <div className="profile-body">
+            <div className="profile-body-section">
+              <p className="body-info-label">My self-summary</p>
+              <p className="body-info-text">{ user.summary }</p>
+            </div>
+          </div>
         </div>
       </div>
     );

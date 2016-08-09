@@ -51,3 +51,25 @@
   color: #949aa6;
   font-size: 15px;
 }
+
+.profile-body {
+  padding-bottom: 120px;
+}
+
+.profile-body-section {
+  padding-left: 30px;
+  font-family: sans-serif;
+  max-width: 550px;
+  float: left;
+}
+.body-info-label {
+  font-weight: 600;
+  font-family: 'Open Sans',sans-serif;
+  color: #474d59;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.body-info-text {
+
+}

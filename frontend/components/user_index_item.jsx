@@ -25,7 +25,6 @@ const UsersIndexItem = React.createClass({
         <div className="match-display-details">
           {birthdate} • {user.city_name}, {user.state_name}
         </div>
-          {user.summary}
       </li>
     );
   }

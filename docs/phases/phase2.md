@@ -2,19 +2,19 @@
 
 ## Rails
 ### Models
-* User
+* ~~User~~
 
 ### Controllers
-* Api::UsersController (create, index, show, update, destroy)
+* ~~Api::UsersController (create, index, show, update, destroy)~~
 
 ### Views
-* users/index.json.jbuilder
-* users/show.json.jbuilder
+* ~~users/index.json.jbuilder~~
+* ~~users/show.json.jbuilder~~
 
 ## Flux
 ### Views (React Components)
-* UsersIndex
-  - UsersShow
+* ~~UsersIndex~~
+  - ~~UsersShow~~
 * UserForm
 
 ### Stores

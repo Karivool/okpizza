@@ -9,12 +9,12 @@
 OKPizza is a saucy web application inspired by OKCupid that will be built using Ruby on Rails and React.js.  By the end of Week 9, this app will, with any luck, satisfy the following criteria:
 
 - [x] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Profile Options
   - [ ] Ability to select from different dropdown options
   - [x] Adequate seed data to demonstrate the dropdown features
-  - [ ] Adequate CSS styling
+  - [x] Adequate CSS styling
 - [ ] Questions features
   - [ ] Ability to answer questions
   - [ ] Adequate seed data so there are some questions made and answered
@@ -54,8 +54,8 @@ OKPizza is a saucy web application inspired by OKCupid that will be built using 
 - [x] set up webpack & flux scaffold with skeleton files
 - [x] setup `APIUtil` to interact with the API
 - [x] set up flux cycle for frontend auth
-- [ ] user signup/signin components
-- [ ] style signin/signup components
+- [x] user signup/signin components
+- [x] style signin/signup components
 - [x] seed users
 
 ### Phase 2: Users Model, API, and components (2 days, W1 Th/F 6pm)
@@ -70,7 +70,7 @@ the API.
 - [x] test out API interaction in the console.
 - implement each user component, building out the flux loop as needed.
   - [x] `UsersIndex`
-  - [ ] `UserIndexItem`
+  - [x] `UserIndexItem`
   - [ ] `ProfileEdit`
 - [ ] update Users info to the DB when user updates their own profile
 - [ ] style users components

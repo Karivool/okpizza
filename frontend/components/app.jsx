@@ -6,7 +6,7 @@ const Button = require('react-button');
 
 const LoginForm = require('./login.jsx');
 const SignUpForm = require('./signup.jsx');
-const UsersIndex = require('./usersindex.jsx');
+const UsersIndex = require('./users_index.jsx');
 const Navbar = require('./navbar.jsx');
 const Profile = require('./profile.jsx');
 const SessionStore = require('../stores/session_store');

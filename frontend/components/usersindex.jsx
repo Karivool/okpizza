@@ -34,7 +34,7 @@ const UsersIndex = React.createClass({
     return (
       <div className="users-index">
         <Navbar />
-        
+
         <div className="users-listing">
           { users.map(function (user) {
             if (user.id !== currentUser.id){

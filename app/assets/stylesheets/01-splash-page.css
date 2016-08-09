@@ -92,12 +92,14 @@
 }
 
 .login-input-1 {
+  color: black;
   display: inline-block;
   white-space: nowrap;
   vertical-align: middle;
 }
 
 .login-input {
+  color: black;
   display: inline-block;
   background: white;
   border-radius: 2px;

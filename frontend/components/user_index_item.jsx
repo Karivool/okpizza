@@ -15,7 +15,7 @@ const UsersIndexItem = React.createClass({
     return (
       <li className="match-display-li">
         <div className="match-display-image">
-          <img className="match-image" src={ pics[user.id - 2] }/>
+          <a href={"#/profile/" + user.username}><img className="match-image" src={ pics[user.id - 2] }/></a>
         </div>
         <br></br>
         <div className="match-display-name">

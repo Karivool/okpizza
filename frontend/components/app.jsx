@@ -48,15 +48,24 @@ const App = React.createClass({
 
   sessionRenders() {
     const route = this.props.routes[this.props.routes.length - 1];
-
     if (SessionStore.isUserLoggedIn()) {
       if (route.path === "/profile")
       {
+        window.viewedUser = window.currentUser.username;
+
         return (
           <div className="profile-page">
             <Profile />
           </div>
         );
+      } else if (route.path === "/profile/:username") {
+        window.viewedUser = this.props.params.username;
+        return (
+          <div className="profile-page">
+            <Profile />
+          </div>
+        );
+
       } else {
         return (
           <div className="mainpage-render">

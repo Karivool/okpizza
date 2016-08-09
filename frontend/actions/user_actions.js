@@ -20,6 +20,10 @@ module.exports = {
     ApiUtil.fetchSingleUser(id, this.takeInSingleUser);
   },
 
+  fetchUserByName (username) {
+    ApiUtil.fetchUserByName(username, this.takeInUserByName);
+  },
+
   editUser (data) {
     ApiUtil.editUser(data, this.takeinSingleUser);
   },
@@ -46,6 +50,13 @@ module.exports = {
     Dispatcher.dispatch({
       actionType: UserConstants.ALL_USERS_FILTERED,
       users: users
+    });
+  },
+
+  takeInUserByName (user) {
+    Dispatcher.dispatch({
+      actionType: UserConstants.USERNAME_TAKEN_IN,
+      user: user
     });
   },
 };

@@ -88,6 +88,21 @@ const ApiUtil = {
     });
   },
 
+  fetchUserByName(username, callback) {
+    $.ajax({
+      url: `api/user/username`,
+      method: "GET",
+      dataType: "json",
+      data: { user: {username: username} },
+      success (user) {
+        callback(user);
+      },
+      error(failure){
+        console.log(failure.responseText);
+      }
+    });
+  },
+
   editUser(userdata, callback) {
     $.ajax({
       url: `api/users/${userdata.id}`,

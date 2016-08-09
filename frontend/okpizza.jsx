@@ -24,7 +24,7 @@ const routes = (
       <Route path="/signup" component={ SignUpForm } />
       <Route path="/index" component={ UsersIndex } onEnter={ _ensureLoggedIn }/>
       <Route path="/profile" component={ Profile } onEnter={ _ensureLoggedIn }/>
-      <Route path="/profile/:username" component={ UsersShow } onEnter={ _ensureLoggedIn }/>
+      <Route path="/profile/:username" component={ Profile } onEnter={ _ensureLoggedIn }/>
     </Route>
   </Router>
 );

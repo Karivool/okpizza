@@ -9,18 +9,18 @@ const UserStore = new Store(AppDispatcher);
 
 const resetUsers = function (users) {
   _users = {};
-
   users.forEach(function (user) {
     _users[user.id] = user;
   });
 };
 
-const setUser = function (user) {
+const resetUser = function (user) {
+  _user = {};
   _user[user.id] = user;
 };
 
-const viewUser = function () {
-  return _user;
+const setUser = function (user) {
+  _user[user.id] = user;
 };
 
 // const removeUser = function (user) {
@@ -33,8 +33,14 @@ UserStore.all = function () {
   });
 };
 
+UserStore.viewProfile = function () {
+  for (var obj in _user) {
+    let pointer = parseInt(obj);
+    return _user[pointer];
+  }
+};
+
 UserStore.findFiltered = function (filter) {
-  debugger
   return Object.keys(_users).map(function (userId) {
     if (this.hasOwnProperty(filter)) {
       return _users[userId];
@@ -54,6 +60,10 @@ UserStore.__onDispatch = userload => {
       break;
     case UserConstants.ALL_USERS_FILTERED:
       findFiltered(userload.users);
+      UserStore.__emitChange();
+      break;
+    case UserConstants.USERNAME_TAKEN_IN:
+      resetUser(userload.user);
       UserStore.__emitChange();
       break;
   }

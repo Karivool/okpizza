@@ -14,13 +14,14 @@ const Profile = React.createClass({
 
   getInitialState: function () {
     return ({
+      userName: window.viewedUser,
       imageFile: null,
       imageUrl: null
     });
   },
 
   componentDidMount () {
-    this.userListener = UserStore.addListener(this.getUsers);
+    this.userListener = UserStore.addListener(this.getProfileInfo);
     this._onChange();
   },
 
@@ -29,7 +30,7 @@ const Profile = React.createClass({
   },
 
   getProfileInfo() {
-    this.setState({ profile: UserStore.all() });
+    this.setState({ userName: UserStore.viewProfile() });
   },
 
   _onChange() {
@@ -54,9 +55,18 @@ const Profile = React.createClass({
   },
 
   render: function() {
-    const user = window.currentUser;
+    let user = window.currentUser;
+    let birthdate = Helpers.getBday(user.birthdate);
+    if (this.state.userName !== undefined) {
+      let finder = this.state.userName;
+      if (typeof(finder) === "object") {
+        user = finder;
+        birthdate = Helpers.getBday(user.birthdate);
+      } else if (typeof(finder) === "string"){
+        finder = UserActions.fetchUserByName(finder);
+      }
+    }
 
-    const birthdate = Helpers.getBday(user.birthdate);
     return (
       <div className="user-profile">
         <Navbar />

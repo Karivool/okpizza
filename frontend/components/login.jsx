@@ -10,7 +10,7 @@ const LoginForm = React.createClass({
   getInitialState() {
     return {
       username: "",
-      password: ""
+      password: "",
     };
   },
 
@@ -74,7 +74,10 @@ const LoginForm = React.createClass({
                 onChange={ this.inputHandler("password") }/>
             </label>
             <br></br>
-            <input type="submit" value="Let's go" />
+            <input type="submit"
+              className="submit-button"
+              value="Let's go"
+              onClick = { this.handleSubmit } />
           </div>
         </form>
       </div>

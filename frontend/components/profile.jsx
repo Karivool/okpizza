@@ -2,6 +2,7 @@ const React = require('react');
 const Link = require('react-router').Link;
 const Navbar = require('./navbar.jsx');
 const UserStore = require('../stores/user_store.js');
+const SessionStore = require('../stores/session_store.js');
 const UserActions = require('../actions/user_actions.js');
 const UserIndexItem = require('./user_index_item.jsx');
 const Helpers = require ('./helpers.jsx');
@@ -23,6 +24,14 @@ const Profile = React.createClass({
   componentDidMount () {
     this.userListener = UserStore.addListener(this.getProfileInfo);
     this._onChange();
+  },
+
+  componentWillReceiveProps (newProps) {
+    if (newProps.params){
+      this.setState({userName: newProps.params.username });
+    } else {
+      this.setState({userName: undefined});
+    }
   },
 
   componentWillUnmount () {
@@ -55,7 +64,7 @@ const Profile = React.createClass({
   },
 
   render: function() {
-    let user = window.currentUser;
+    let user = SessionStore.currentUser();
     let birthdate = Helpers.getBday(user.birthdate);
     if (this.state.userName !== undefined) {
       let finder = this.state.userName;

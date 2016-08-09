@@ -11,7 +11,6 @@ const App = require('./components/app.jsx');
 const LoginForm = require('./components/login.jsx');
 const SignUpForm = require('./components/signup.jsx');
 const UsersIndex = require('./components/usersindex.jsx');
-const UsersShow = require('./components/usersshow.jsx');
 const Profile = require('./components/profile.jsx');
 const SessionStore = require('./stores/session_store.js');
 const SessionActions = require('./actions/session_actions.js');

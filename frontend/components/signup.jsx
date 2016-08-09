@@ -22,6 +22,7 @@ const SignUpForm = React.createClass({
 
   componentDidMount() {
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
+    this._onChange();
   },
 
   componentWillUnmount() {
@@ -37,6 +38,10 @@ const SignUpForm = React.createClass({
   handleSubmit(e) {
     e.preventDefault();
     SessionActions.signUp(this.state);
+  },
+
+  _onChange() {
+    this.forceUpdate();
   },
 
   errors() {
@@ -83,46 +88,52 @@ const SignUpForm = React.createClass({
 
             </br>
             <label>
-              <input type="text" className="login-input"
-                placeholder="MMDDYYYY"
+              Birthday
+              <input type="date" className="login-input"
+                placeholder="YYYYMMDD"
                 value={ this.state.birthdate }
                 onChange={ this.inputHandler("birthdate") }/>
             </label>
             <label>
+              City
               <input type="text" className="login-input"
                 placeholder="Pizzburgh"
                 value={ this.state.city_name }
                 onChange={ this.inputHandler("city_name") }/>
             </label>
             <label>
+              State
               <input type="text" className="login-input"
                 placeholder="Pizzavanyia"
                 value={ this.state.state_name }
-                onChange={ this.inputHandler("state_name") }/>
+                onChange={ this.inputHandler("state_name") }/><br/>
             </label>
             <label>
+              E-mail
               <input type="text" className="login-input"
                 placeholder="e.g. example@url.com"
                 value={ this.state.email }
                 onChange={ this.inputHandler("email") }/>
             </label>
-            <br>
-
-
-            </br>
             <label>
+              Username
               <input type="text" className="login-input"
                 placeholder="Enter your username"
                 value={ this.state.username }
                 onChange={ this.inputHandler("username") }/>
             </label>
             <label>
+              Password
               <input type="password" className="login-input"
                 placeholder="Password"
                 value={ this.state.password }
                 onChange={ this.inputHandler("password") }/>
             </label>
-            <input type="submit" value="Let's go" />
+            <br></br>
+            <input type="submit"
+                   className="submit-button"
+                   value="Let's go"
+                  onClick = { this.handleSubmit } />
           </div>
         </form>
       </div>

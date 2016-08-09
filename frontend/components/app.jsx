@@ -62,7 +62,7 @@ const App = React.createClass({
         window.viewedUser = this.props.params.username;
         return (
           <div className="profile-page">
-            <Profile />
+            <Profile params={this.props.params} />
           </div>
         );
 

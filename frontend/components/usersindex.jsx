@@ -2,6 +2,7 @@ const React = require('react');
 const Link = require('react-router').Link;
 const Navbar = require('./navbar.jsx');
 const UserStore = require('../stores/user_store.js');
+const SessionStore = require('../stores/session_store.js');
 const UserActions = require('../actions/user_actions.js');
 const UserIndexItem = require('./user_index_item.jsx');
 
@@ -29,7 +30,7 @@ const UsersIndex = React.createClass({
   },
 
   render: function() {
-
+    let currentUser = SessionStore.currentUser();
     const users = this.state.users;
     return (
       <div className="users-index">

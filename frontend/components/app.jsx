@@ -47,11 +47,12 @@ const App = React.createClass({
   },
 
   sessionRenders() {
+    const currentUser = SessionStore.currentUser;
     const route = this.props.routes[this.props.routes.length - 1];
     if (SessionStore.isUserLoggedIn()) {
       if (route.path === "/profile")
       {
-        window.viewedUser = window.currentUser.username;
+        window.viewedUser = currentUser.username;
 
         return (
           <div className="profile-page">

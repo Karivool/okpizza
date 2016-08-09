@@ -81,7 +81,7 @@
   text-align: center;
   font-size: 15px;
   font-weight: 300;
-  width: 660px;
+  width: 760px;
   line-height: 22px;
 }
 
@@ -125,16 +125,19 @@
 }
 
 .saucy-reasons {
-  display: flex;
+  position: relative;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 1140px;
+  max-width: 1140px;
   padding-top: 40px;
   padding-bottom: 62px;
 }
 
-.saucy-reasons-each {
+.saucy-reason-each {
   float: left;
   display: block;
-  margin-right: 2%;
   width: 32%;
 }
 
@@ -152,4 +155,16 @@
   width: 240px;
   margin-left: 60px;
   margin-right: 60px;
+}
+
+.submit-button {
+  background-color: #00d280;
+  border-radius: 3px;
+  width: 154px;
+  height: 58px;
+  color: white;
+  text-align: center;
+  margin-bottom: 1px;
+  font-weight: 500;
+  font-size: 18px;
 }

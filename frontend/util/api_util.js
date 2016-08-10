@@ -33,6 +33,7 @@ const ApiUtil = {
       success,
       error(renderError) {
         const errors = renderError.responseJSON;
+        console.log(errors);
         error("signup", errors);
       }
     });

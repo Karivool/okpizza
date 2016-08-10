@@ -7,6 +7,7 @@ const hashHistory = require('react-router').hashHistory;
 module.exports = {
   logIn (form) {
     ApiUtil.logIn(
+
       form,
       this.takeInCurrentUser,
       ErrorActions.setErrors);

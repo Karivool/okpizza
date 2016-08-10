@@ -14,8 +14,13 @@ const Profile = React.createClass({
   },
 
   getInitialState: function () {
+    let viewed;
+    if (this.props) {
+      viewed = this.props.params.username;
+    }
+
     return ({
-      userName: window.viewedUser,
+      userName: viewed,
       imageFile: null,
       imageUrl: null
     });
@@ -57,12 +62,24 @@ const Profile = React.createClass({
     };
   },
 
+  routeHandler() {
+    const routes = this.props.routes;
+    const path = routes[routes.length - 1].path;
+    if (path == "/profile/:username") {
+      let username = this.props.params.username;
+      return `/profile/${username}`;
+    } else {
+      return "/profile";
+    }
+  },
+
   handleSubmit: function (e) {
     let formData = new FormData();
     formData.append("user[image]", this.state.imageFile);
     ApiUtil.editProfile(this.state);
   },
 
+  // <input type="file" onChange={ this.updateFile }/>
   render: function() {
     let user = SessionStore.currentUser();
     let birthdate = Helpers.getBday(user.birthdate);
@@ -75,8 +92,7 @@ const Profile = React.createClass({
         finder = UserActions.fetchUserByName(finder);
       }
     }
-
-    // <input type="file" onChange={ this.updateFile }/>
+    let routeToGo = this.routeHandler();
     return (
       <div className="user-profile">
         <Navbar />
@@ -90,6 +106,10 @@ const Profile = React.createClass({
               <p className="profile-deets">
                 { birthdate } • { user.city_name }, { user.state_name } • { user.gender }
               </p>
+            </div>
+            <div className="profile-tabs">
+              <Link to={ routeToGo } className="profile-tab-link">About</Link>
+              <Link to={ routeToGo + "/questions" } className="profile-tab-link">Questions</Link>
             </div>
             <img src={this.state.imageUrl}/>
           </div>

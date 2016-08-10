@@ -1,15 +1,32 @@
 .questions-index{
-  
+  font-family: 'Open-Sans', sans-serif;
 }
 
 .question-each{
-
+  width: 50%;
+  border-bottom: 1px solid #ccd0d9;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  padding: 30px;
+  background: #FFF;
+  border-radius: 3px;
 }
 
 .question-asked{
-
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5e6573;
+  margin-bottom: 15px;
 }
 
 .answers-given{
-
+  font-size: 14px;
+  position: relative;
+  color: #949aa6;
+  line-height: 32px;
+  list-style-type: initial;
+  margin-left: 18px;
+  text-decoration: line-through;
 }

@@ -9,7 +9,6 @@
   border-radius: 3px;
   margin: 0 auto;
   padding-top: 80px;
-  padding-bottom: 60px;
 }
 
 .profile-header {
@@ -55,6 +54,7 @@
 
 .profile-body {
   padding-bottom: 120px;
+  margin-bottom: 50px;
 }
 
 .profile-body-section {
@@ -93,4 +93,11 @@
   -webkit-font-smoothing: antialiased;
   font-size: 18px;
   line-height: 25px;
+}
+
+.profile-footer {
+  background-color: #104da1;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  color: #4c7bd9;
 }

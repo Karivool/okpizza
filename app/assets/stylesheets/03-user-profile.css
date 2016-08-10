@@ -74,3 +74,23 @@
 .body-info-text {
 
 }
+
+.profile-tabs{
+  position: absolute;
+  height: 30px;
+  padding-top: 70px;
+}
+
+.profile-tab-link {
+  bottom: 0;
+  left: 0;
+  float: left;
+  padding: 0;
+  margin-right: 30px;
+  height: 31px;
+  color: #474d59;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  line-height: 25px;
+}

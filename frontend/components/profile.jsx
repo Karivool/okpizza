@@ -76,6 +76,7 @@ const Profile = React.createClass({
       }
     }
 
+    // <input type="file" onChange={ this.updateFile }/>
     return (
       <div className="user-profile">
         <Navbar />
@@ -90,7 +91,6 @@ const Profile = React.createClass({
                 { birthdate } • { user.city_name }, { user.state_name } • { user.gender }
               </p>
             </div>
-            <input type="file" onChange={ this.updateFile }/>
             <img src={this.state.imageUrl}/>
           </div>
 

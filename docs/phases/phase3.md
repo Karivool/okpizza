@@ -18,14 +18,14 @@
 * QuestionForm
 
 ### Stores
-* Question
+* ~~Question~~
 
 ### Actions
 * `ApiActions.receiveAllQuestions`
 * `ApiActions.receiveSingleQuestion`
-* `QuestionActions.fetchAllQuestions`
-* `QuestionActions.fetchSingleQuestion`
-* `QuestionActions.createQuestion`
+* ~~`QuestionActions.fetchAllQuestions`~~
+* ~~`QuestionActions.fetchSingleQuestion`~~
+* ~~`QuestionActions.createQuestion`~~
 
 ### ApiUtil
 * `ApiUtil.fetchAllQuestions`

@@ -18,6 +18,9 @@ bundle.js
 bundle.js.map
 /config/application.yml
 .byebug_history
+test
+test/fixtures
+test/models
 
 # Ignore application configuration
 /config/application.yml

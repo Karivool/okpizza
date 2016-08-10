@@ -1,0 +1,5 @@
+SELECT users.username
+FROM responses
+JOIN questions ON questions.id = responses.question_id
+JOIN users ON users.id = responses.user_id
+WHERE (questions.id = 2 AND responses.answer = 2);

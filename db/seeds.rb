@@ -317,3 +317,871 @@ User.create(
   city_name: "Manhattan",
   state_name: "New York",
   summary: "Fun, tasty non-pienarist who loves arugula and nice toppings. If you like what you see, give me a call. You can do it! :)")
+
+##########################################################
+####### QUESTION SEEDS                        ############
+##########################################################
+
+Question.create(
+  question: "What is the worst topping?",
+  ans_one: "Pepperoni",
+  ans_two: "Pineapple",
+  ans_three: "Anchovies",
+  ans_four: "Veggies",
+)
+
+Question.create(
+  question: "What is the raddest topping?",
+  ans_one: "Gummi worms",
+  ans_two: "Bacon!!!!1 XD",
+  ans_three: "Heavy metals and rocks",
+  ans_four: "bRad Pitt",
+)
+
+Question.create(
+  question: "Opinion on splitting toppings on a pie in half?",
+  ans_one: "I love it! More variety that way.",
+  ans_two: "I like it. Easier to get what everyone wants.",
+  ans_three: "I don't like it. It should be homogenous.",
+  ans_four: "I hate it! This is the sort of thing that's ruining our once beloved pizzas!",
+)
+
+Question.create(
+  question: "Calzones?",
+  ans_one: "Better than pizzas.",
+  ans_two: "Pretty okay!",
+  ans_three: "Ugh, not a fan.",
+  ans_four: "Wannabe pizzas guising themselves as a foodstuff.",
+)
+
+Question.create(
+  question: "Your feelings on $1 pizza slices?",
+  ans_one: "The cheaper the better!",
+  ans_two: "Pretty good on a budget.",
+  ans_three: "Ehhh, lacks quality.",
+  ans_four: "They have no dignity.",
+)
+
+Question.create(
+  question: "Leftover pizza in the morning?",
+  ans_one: "A whole new flavor! It's great.",
+  ans_two: "Yeah it's pretty good, especially for the lazy.",
+  ans_three: "No thanks, tastes soggy.",
+  ans_four: "Uggh, no way!",
+)
+
+Question.create(
+  question: "Eating pizza with a fork and knife?",
+  ans_one: "Yes! Good manners, and it keeps your hands clean.",
+  ans_two: "Yeah, I'm down! It's a good way to portion control.",
+  ans_three: "No, pizza is meant to be consumed by hand.",
+  ans_four: "Are you pizzing serious?",
+)
+
+Question.create(
+  question: "How do you feel about vegetarian pizzas?",
+  ans_one: "I love them! They're top notch!",
+  ans_two: "I like them! They're good for you.",
+  ans_three: "Eh, not a fan. I need some meat.",
+  ans_four: "LOL, they're food for rabbits! LOL! XD",
+)
+
+Question.create(
+  question: "Thoughts on the Pizza Lady?",
+  ans_one: "She's the best.",
+  ans_two: "She's pretty awesome.",
+  ans_three: "She's an alright lass.",
+  ans_four: "Who?",
+)
+
+Question.create(
+  question: "Who does pizza the worst?",
+  ans_one: "Hot Pockets",
+  ans_two: "Totinos",
+  ans_three: "Pizza Hut",
+  ans_four: "Tony",
+)
+
+Question.create(
+  question: "Eight pizza slices in a box at a party. The night is over. How many are left?",
+  ans_one: "8",
+  ans_two: "4",
+  ans_three: "1",
+  ans_four: "0",
+)
+
+Question.create(
+  question: "How do you feel about Korean pizza (toppings such as corn, sweet potato, and mayo)?",
+  ans_one: "O. M. G. They are the B O M B diggity!",
+  ans_two: "It's a unique flavor! I like it.",
+  ans_three: "Gross, no thanks.",
+  ans_four: "UGH. Pizzas like that should be tossed in the garbage!",
+)
+
+Question.create(
+  question: "Frying leftover pizza on a pan?",
+  ans_one: "YES! It's amazing!",
+  ans_two: "Yeah, it's good!",
+  ans_three: "No thanks, too much oil.",
+  ans_four: "LOL. Stupid greaseball PIE SLICES!",
+)
+
+Question.create(
+  question: "What is the most you're willing to pay for a slice of pizza?",
+  ans_one: "$1",
+  ans_two: "$2.50",
+  ans_three: "$5",
+  ans_four: "My friend, when it comes to pizza, there is no 'most you're willing to pay' that comes into play.",
+)
+
+Question.create(
+  question: "If you had to eat only one type of pizza for the rest of your life, what would it be?",
+  ans_one: "Meat lovers",
+  ans_two: "Vegetarian",
+  ans_three: "Supreme",
+  ans_four: "Cheese or pepperoni",
+)
+
+Question.create(
+  question: "Eating the end crust of a slice?",
+  ans_one: "Yes! Gimme those carbs.",
+  ans_two: "Yeah, gotta finish up!",
+  ans_three: "No, too many calories.",
+  ans_four: "Eat the pizza? I threw it on the GROUND.",
+)
+
+Question.create(
+  question: "You see a poor helpless pizza get tossed on the street. What do you do?",
+  ans_one: "I help the poor thing!",
+  ans_two: "I go and check to see if it's okay.",
+  ans_three: "Those slices are a dollar a dozen.",
+  ans_four: "I go over and stomp it to pizza oblivion. LMAO.",
+)
+
+Question.create(
+  question: "What would be your pizza themed slogan?",
+  ans_one: "Trust the crust.",
+  ans_two: "My slices are nice.",
+  ans_three: "A pie to die for.",
+  ans_four: "No stopping my topping.",
+)
+
+Question.create(
+  question: "What would be your signature pizza attack?",
+  ans_one: "Power of Flour",
+  ans_two: "Robust Crust Thrust",
+  ans_three: "Dough Spinner Deluxe",
+  ans_four: "Cake Bake Remake",
+)
+
+Question.create(
+  question: "There's a pizza, calzone and burrito in danger of being attacked by a hungry dog. Which do you save?",
+  ans_one: "Pizza",
+  ans_two: "Calzone",
+  ans_three: "Burrito",
+  ans_four: "Yes",
+)
+
+##########################################################
+####### RESPONSE SEEDS                        ############
+##########################################################
+
+Response.create(
+  answer: 3,
+  question_id: 1,
+  user_id: 1,
+)
+Response.create(
+  answer: 3,
+  question_id: 2,
+  user_id: 1,
+)
+Response.create(
+  answer: 2,
+  question_id: 3,
+  user_id: 1,
+)
+Response.create(
+  answer: 1,
+  question_id: 4,
+  user_id: 1,
+)
+Response.create(
+  answer: 2,
+  question_id: 5,
+  user_id: 1,
+)
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 4,
+  question_id: 1,
+  user_id: 2,
+)
+Response.create(
+  answer: 4,
+  question_id: 2,
+  user_id: 2,
+)
+Response.create(
+  answer: 3,
+  question_id: 3,
+  user_id: 2,
+)
+Response.create(
+  answer: 2,
+  question_id: 4,
+  user_id: 2,
+)
+Response.create(
+  answer: 2,
+  question_id: 5,
+  user_id: 2,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 1,
+  question_id: 1,
+  user_id: 3,
+)
+Response.create(
+  answer: 2,
+  question_id: 2,
+  user_id: 3,
+)
+Response.create(
+  answer: 2,
+  question_id: 3,
+  user_id: 3,
+)
+Response.create(
+  answer: 3,
+  question_id: 4,
+  user_id: 3,
+)
+Response.create(
+  answer: 2,
+  question_id: 5,
+  user_id: 3,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 1,
+  question_id: 1,
+  user_id: 4,
+)
+Response.create(
+  answer: 2,
+  question_id: 2,
+  user_id: 4,
+)
+Response.create(
+  answer: 4,
+  question_id: 3,
+  user_id: 4,
+)
+Response.create(
+  answer: 1,
+  question_id: 4,
+  user_id: 4,
+)
+Response.create(
+  answer: 4,
+  question_id: 5,
+  user_id: 4,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 4,
+  question_id: 1,
+  user_id: 5,
+)
+Response.create(
+  answer: 3,
+  question_id: 2,
+  user_id: 5,
+)
+Response.create(
+  answer: 3,
+  question_id: 3,
+  user_id: 5,
+)
+Response.create(
+  answer: 2,
+  question_id: 4,
+  user_id: 5,
+)
+Response.create(
+  answer: 1,
+  question_id: 5,
+  user_id: 5,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 3,
+  question_id: 1,
+  user_id: 6,
+)
+Response.create(
+  answer: 1,
+  question_id: 2,
+  user_id: 6,
+)
+Response.create(
+  answer: 1,
+  question_id: 3,
+  user_id: 6,
+)
+Response.create(
+  answer: 4,
+  question_id: 4,
+  user_id: 6,
+)
+Response.create(
+  answer: 2,
+  question_id: 5,
+  user_id: 6,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 4,
+  question_id: 1,
+  user_id: 7,
+)
+Response.create(
+  answer: 4,
+  question_id: 2,
+  user_id: 7,
+)
+Response.create(
+  answer: 4,
+  question_id: 3,
+  user_id: 7,
+)
+Response.create(
+  answer: 2,
+  question_id: 4,
+  user_id: 7,
+)
+Response.create(
+  answer: 3,
+  question_id: 5,
+  user_id: 7,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 1,
+  question_id: 1,
+  user_id: 8,
+)
+Response.create(
+  answer: 3,
+  question_id: 2,
+  user_id: 8,
+)
+Response.create(
+  answer: 1,
+  question_id: 3,
+  user_id: 8,
+)
+Response.create(
+  answer: 2,
+  question_id: 4,
+  user_id: 8,
+)
+Response.create(
+  answer: 4,
+  question_id: 5,
+  user_id: 8,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 2,
+  question_id: 1,
+  user_id: 9,
+)
+Response.create(
+  answer: 3,
+  question_id: 2,
+  user_id: 9,
+)
+Response.create(
+  answer: 4,
+  question_id: 3,
+  user_id: 9,
+)
+Response.create(
+  answer: 4,
+  question_id: 4,
+  user_id: 9,
+)
+Response.create(
+  answer: 4,
+  question_id: 5,
+  user_id: 9,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 3,
+  question_id: 1,
+  user_id: 10,
+)
+Response.create(
+  answer: 1,
+  question_id: 2,
+  user_id: 10,
+)
+Response.create(
+  answer: 3,
+  question_id: 3,
+  user_id: 10,
+)
+Response.create(
+  answer: 3,
+  question_id: 4,
+  user_id: 10,
+)
+Response.create(
+  answer: 3,
+  question_id: 5,
+  user_id: 10,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 4,
+  question_id: 1,
+  user_id: 11,
+)
+Response.create(
+  answer: 2,
+  question_id: 2,
+  user_id: 11,
+)
+Response.create(
+  answer: 4,
+  question_id: 3,
+  user_id: 11,
+)
+Response.create(
+  answer: 1,
+  question_id: 4,
+  user_id: 11,
+)
+Response.create(
+  answer: 4,
+  question_id: 5,
+  user_id: 11,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 1,
+  question_id: 1,
+  user_id: 12,
+)
+Response.create(
+  answer: 3,
+  question_id: 2,
+  user_id: 12,
+)
+Response.create(
+  answer: 2,
+  question_id: 3,
+  user_id: 12,
+)
+Response.create(
+  answer: 1,
+  question_id: 4,
+  user_id: 12,
+)
+Response.create(
+  answer: 1,
+  question_id: 5,
+  user_id: 12,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 4,
+  question_id: 1,
+  user_id: 13,
+)
+Response.create(
+  answer: 3,
+  question_id: 2,
+  user_id: 13,
+)
+Response.create(
+  answer: 1,
+  question_id: 3,
+  user_id: 13,
+)
+Response.create(
+  answer: 2,
+  question_id: 4,
+  user_id: 13,
+)
+Response.create(
+  answer: 2,
+  question_id: 5,
+  user_id: 13,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 1,
+  question_id: 1,
+  user_id: 14,
+)
+Response.create(
+  answer: 4,
+  question_id: 2,
+  user_id: 14,
+)
+Response.create(
+  answer: 2,
+  question_id: 3,
+  user_id: 14,
+)
+Response.create(
+  answer: 3,
+  question_id: 4,
+  user_id: 14,
+)
+Response.create(
+  answer: 2,
+  question_id: 5,
+  user_id: 14,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 3,
+  question_id: 1,
+  user_id: 15,
+)
+Response.create(
+  answer: 3,
+  question_id: 2,
+  user_id: 15,
+)
+Response.create(
+  answer: 1,
+  question_id: 3,
+  user_id: 15,
+)
+Response.create(
+  answer: 3,
+  question_id: 4,
+  user_id: 15,
+)
+Response.create(
+  answer: 1,
+  question_id: 5,
+  user_id: 15,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 3,
+  question_id: 1,
+  user_id: 16,
+)
+Response.create(
+  answer: 1,
+  question_id: 2,
+  user_id: 16,
+)
+Response.create(
+  answer: 1,
+  question_id: 3,
+  user_id: 16,
+)
+Response.create(
+  answer: 2,
+  question_id: 4,
+  user_id: 16,
+)
+Response.create(
+  answer: 3,
+  question_id: 5,
+  user_id: 16,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 4,
+  question_id: 1,
+  user_id: 17,
+)
+Response.create(
+  answer: 2,
+  question_id: 2,
+  user_id: 17,
+)
+Response.create(
+  answer: 4,
+  question_id: 3,
+  user_id: 17,
+)
+Response.create(
+  answer: 4,
+  question_id: 4,
+  user_id: 17,
+)
+Response.create(
+  answer: 4,
+  question_id: 5,
+  user_id: 17,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 3,
+  question_id: 1,
+  user_id: 18,
+)
+Response.create(
+  answer: 3,
+  question_id: 2,
+  user_id: 18,
+)
+Response.create(
+  answer: 2,
+  question_id: 3,
+  user_id: 18,
+)
+Response.create(
+  answer: 4,
+  question_id: 4,
+  user_id: 18,
+)
+Response.create(
+  answer: 4,
+  question_id: 5,
+  user_id: 18,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 1,
+  question_id: 1,
+  user_id: 19,
+)
+Response.create(
+  answer: 2,
+  question_id: 2,
+  user_id: 19,
+)
+Response.create(
+  answer: 4,
+  question_id: 3,
+  user_id: 19,
+)
+Response.create(
+  answer: 3,
+  question_id: 4,
+  user_id: 19,
+)
+Response.create(
+  answer: 3,
+  question_id: 5,
+  user_id: 19,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 1,
+  question_id: 1,
+  user_id: 20,
+)
+Response.create(
+  answer: 4,
+  question_id: 2,
+  user_id: 20,
+)
+Response.create(
+  answer: 1,
+  question_id: 3,
+  user_id: 20,
+)
+Response.create(
+  answer: 2,
+  question_id: 4,
+  user_id: 20,
+)
+Response.create(
+  answer: 1,
+  question_id: 5,
+  user_id: 20,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 3,
+  question_id: 1,
+  user_id: 21,
+)
+Response.create(
+  answer: 2,
+  question_id: 2,
+  user_id: 21,
+)
+Response.create(
+  answer: 2,
+  question_id: 3,
+  user_id: 21,
+)
+Response.create(
+  answer: 2,
+  question_id: 4,
+  user_id: 21,
+)
+Response.create(
+  answer: 2,
+  question_id: 5,
+  user_id: 21,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 2,
+  question_id: 1,
+  user_id: 22,
+)
+Response.create(
+  answer: 4,
+  question_id: 2,
+  user_id: 22,
+)
+Response.create(
+  answer: 3,
+  question_id: 3,
+  user_id: 22,
+)
+Response.create(
+  answer: 1,
+  question_id: 4,
+  user_id: 22,
+)
+Response.create(
+  answer: 2,
+  question_id: 5,
+  user_id: 22,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 2,
+  question_id: 1,
+  user_id: 23,
+)
+Response.create(
+  answer: 4,
+  question_id: 2,
+  user_id: 23,
+)
+Response.create(
+  answer: 3,
+  question_id: 3,
+  user_id: 23,
+)
+Response.create(
+  answer: 3,
+  question_id: 4,
+  user_id: 23,
+)
+Response.create(
+  answer: 3,
+  question_id: 5,
+  user_id: 23,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 1,
+  question_id: 1,
+  user_id: 24,
+)
+Response.create(
+  answer: 4,
+  question_id: 2,
+  user_id: 24,
+)
+Response.create(
+  answer: 2,
+  question_id: 3,
+  user_id: 24,
+)
+Response.create(
+  answer: 3,
+  question_id: 4,
+  user_id: 24,
+)
+Response.create(
+  answer: 2,
+  question_id: 5,
+  user_id: 24,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 4,
+  question_id: 1,
+  user_id: 25,
+)
+Response.create(
+  answer: 3,
+  question_id: 2,
+  user_id: 25,
+)
+Response.create(
+  answer: 4,
+  question_id: 3,
+  user_id: 25,
+)
+Response.create(
+  answer: 4,
+  question_id: 4,
+  user_id: 25,
+)
+Response.create(
+  answer: 1,
+  question_id: 5,
+  user_id: 25,
+)
+
+###### ONE STANDARD RESPONSE SEED #######################
+Response.create(
+  answer: 3,
+  question_id: 1,
+  user_id: 26,
+)
+Response.create(
+  answer: 4,
+  question_id: 2,
+  user_id: 26,
+)
+Response.create(
+  answer: 1,
+  question_id: 3,
+  user_id: 26,
+)
+Response.create(
+  answer: 3,
+  question_id: 4,
+  user_id: 26,
+)
+Response.create(
+  answer: 4,
+  question_id: 5,
+  user_id: 26,
+)

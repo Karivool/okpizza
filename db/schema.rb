@@ -26,26 +26,25 @@ ActiveRecord::Schema.define(version: 20160809234922) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "questions", ["question"], name: "index_questions_on_question", using: :btree
+  add_index "questions", ["question"], name: "index_questions_on_question", unique: true, using: :btree
 
   create_table "responses", force: :cascade do |t|
-    t.boolean  "ans_one",     default: false, null: false
-    t.boolean  "ans_two",     default: false, null: false
-    t.boolean  "ans_three",   default: false, null: false
-    t.boolean  "ans_four",    default: false, null: false
-    t.integer  "question_id",                 null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "answer",      null: false
+    t.integer  "question_id", null: false
+    t.integer  "user_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "responses", ["question_id"], name: "index_responses_on_question_id", using: :btree
+  add_index "responses", ["user_id"], name: "index_responses_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",           null: false
     t.string   "password_digest",    null: false
     t.string   "email",              null: false
     t.string   "session_token",      null: false
-    t.string   "birthdate",          null: false
+    t.date     "birthdate",          null: false
     t.string   "gender",             null: false
     t.string   "orientation",        null: false
     t.string   "city_name",          null: false

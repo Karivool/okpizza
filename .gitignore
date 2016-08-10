@@ -19,8 +19,8 @@ bundle.js.map
 /config/application.yml
 .byebug_history
 test
-test/fixtures
-test/models
+test/fixtures/users.yml
+test/models/user_test.rb
 
 # Ignore application configuration
 /config/application.yml

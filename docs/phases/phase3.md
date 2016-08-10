@@ -13,8 +13,8 @@
 
 ## Flux
 ### Views (React Components)
-* QuestionsIndex
-  - QuestionIndexItem
+* ~~QuestionsIndex~~
+  - ~~QuestionIndexItem~~
 * QuestionForm
 
 ### Stores

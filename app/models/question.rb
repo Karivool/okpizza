@@ -13,4 +13,9 @@
 #
 
 class Question < ActiveRecord::Base
+  has_many :responses
+
+  validates :question, :ans_one, :ans_two, :ans_three, :ans_four, presence: true
+  validates :question, uniqueness: true
+
 end

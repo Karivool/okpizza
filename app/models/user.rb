@@ -7,7 +7,7 @@
 #  password_digest    :string           not null
 #  email              :string           not null
 #  session_token      :string           not null
-#  birthdate          :string           not null
+#  birthdate          :date             not null
 #  gender             :string           not null
 #  orientation        :string           not null
 #  city_name          :string           not null
@@ -22,6 +22,8 @@
 #
 
 class User < ActiveRecord::Base
+
+  has_many :responses
 
   attr_reader :password
 

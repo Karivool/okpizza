@@ -7,7 +7,7 @@ const QuestionsIndexItem = React.createClass({
 
   render () {
     const question = this.props.question;
-
+    
     return (
       <li className="question-each">
         <div className="question-asked">
@@ -23,3 +23,5 @@ const QuestionsIndexItem = React.createClass({
     );
   }
 });
+
+module.exports = QuestionsIndexItem;

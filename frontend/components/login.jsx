@@ -28,7 +28,6 @@ const LoginForm = React.createClass({
   },
 
   redirectIfLoggedIn() {
-    debugger
     if (SessionStore.isUserLoggedIn()) {
       this.context.router.push("/index");
     }

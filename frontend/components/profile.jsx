@@ -21,6 +21,8 @@ const Profile = React.createClass({
 
     return ({
       userName: viewed,
+      userInfo: viewed,
+      viewTab: "about",
       imageFile: null,
       imageUrl: null
     });
@@ -34,6 +36,7 @@ const Profile = React.createClass({
   componentWillReceiveProps (newProps) {
     if (newProps.params){
       this.setState({userName: newProps.params.username });
+      this.setState({userInfo: newProps.params});
     } else {
       this.setState({userName: undefined});
     }
@@ -63,14 +66,16 @@ const Profile = React.createClass({
   },
 
   routeHandler() {
-    const routes = this.props.routes;
-    const path = routes[routes.length - 1].path;
-    if (path == "/profile/:username") {
-      let username = this.props.params.username;
-      return `/profile/${username}`;
-    } else {
-      return "/profile";
+    if (this.state.userName) {
+      let user = this.state.userName;
+
+      if (typeof(user) === "object") {
+        return `/profile/${user.username}`;
+      } else {
+        return "/profile/user";
+      }
     }
+    return "/profile";
   },
 
   handleSubmit: function (e) {
@@ -83,6 +88,7 @@ const Profile = React.createClass({
   render: function() {
     let user = SessionStore.currentUser();
     let birthdate = Helpers.getBday(user.birthdate);
+    let routeToGo;
     if (this.state.userName !== undefined) {
       let finder = this.state.userName;
       if (typeof(finder) === "object") {
@@ -92,13 +98,15 @@ const Profile = React.createClass({
         finder = UserActions.fetchUserByName(finder);
       }
     }
-    let routeToGo = this.routeHandler();
+
+    routeToGo = this.routeHandler();
+
     return (
       <div className="user-profile">
         <Navbar />
         <div className="profile-content">
           <div className="profile-header">
-            <img src= {user.image_url} className="user-picture"></img>
+            <img src= { user.image_url } className="user-picture"></img>
             <div className="profile-info">
               <p className="profile-username">
                 { user.username }
@@ -108,17 +116,19 @@ const Profile = React.createClass({
               </p>
             </div>
             <div className="profile-tabs">
-              <Link to={ routeToGo } className="profile-tab-link">About</Link>
-              <Link to={ routeToGo + "/questions" } className="profile-tab-link">Questions</Link>
+              <Link
+                to={`${routeToGo}` + "/about"}
+                className="profile-tab-link"
+                params={ {user: user} }>About</Link>
+              <Link
+                to={`${routeToGo}` + "/questions"}
+                className="profile-tab-link">Questions</Link>
             </div>
-            <img src={this.state.imageUrl}/>
+            <img src={ this.state.imageUrl }/>
           </div>
 
           <div className="profile-body">
-            <div className="profile-body-section">
-              <p className="body-info-label">My self-summary</p>
-              <p className="body-info-text">{ user.summary }</p>
-            </div>
+            { React.cloneElement(this.props.children, {user: user } )}
           </div>
         </div>
       </div>

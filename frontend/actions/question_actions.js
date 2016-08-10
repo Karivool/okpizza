@@ -1,4 +1,4 @@
-const ApiUtil = require('../util/api_util.js');
+const ApiUtil = require('../util/question_util.js');
 const Dispatcher = require('../dispatcher/dispatcher.js');
 const QuestionConstants = require('../constants/question_constants.js');
 const ErrorActions = require('./error_actions.js');

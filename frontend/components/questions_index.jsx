@@ -7,7 +7,7 @@ const QuestionIndexItem = require('./question_index_item.jsx');
 
 const QuestionsIndex = React.createClass({
   getInitialState () {
-    return {questions: [] };
+    return { questions: [] };
   },
 
   componentDidMount () {
@@ -20,7 +20,7 @@ const QuestionsIndex = React.createClass({
     this.questionListener.remove();
   },
 
-  getQuesitons() {
+  getQuestions() {
     this.setState({ questions: QuestionStore.all() });
   },
 
@@ -30,17 +30,14 @@ const QuestionsIndex = React.createClass({
 
   render: function () {
     const questions = this.state.questions;
-
     return (
       <div className="questions-index">
-        <Navbar />
         LOL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<p/>
         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<p/>
         XDDDDDDDDDDDDDDD
         <div className="questions-listing">
           { questions.map(function (question) {
-            return (<QuestionIndexItem key={question.id}
-            question={question} />);
+            return (<QuestionIndexItem key={question.id} question={question} />);
           })
         }
         </div>

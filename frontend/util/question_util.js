@@ -8,8 +8,9 @@ const ApiUtil = {
       success (questions){
         callback(questions);
       },
-      error(){
-
+      error(renderError) {
+        const errors = renderError.responseJSON;
+        error("login", errors);
       }
     });
   },

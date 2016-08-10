@@ -4,4 +4,4 @@ const QuestionConstants = {
   QUESTION_TAKEN_IN: "QUESTION_TAKEN_IN"
 };
 
-module.exports = UserConstants;
+module.exports = QuestionConstants;

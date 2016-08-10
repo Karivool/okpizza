@@ -2,14 +2,14 @@
 
 ## Rails
 ### Models
-* Question
+* ~~Question~~
 
 ### Controllers
-* Api::QuestionsController (create, index, show)
+* ~~Api::QuestionsController (create, index, show)~~
 
 ### Views
-* questions/index.json.jbuilder
-* questions/show.json.jbuilder
+* ~~questions/index.json.jbuilder~~
+* ~~questions/show.json.jbuilder~~
 
 ## Flux
 ### Views (React Components)
@@ -28,8 +28,8 @@
 * ~~`QuestionActions.createQuestion`~~
 
 ### ApiUtil
-* `ApiUtil.fetchAllQuestions`
-* `ApiUtil.fetchSingleQuestion`
-* `ApiUtil.createQuestion`
+* ~~`ApiUtil.fetchAllQuestions`~~
+* ~~`ApiUtil.fetchSingleQuestion`~~
+* ~~`ApiUtil.createQuestion`~~
 
 ## Gems/Libraries

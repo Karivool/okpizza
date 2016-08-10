@@ -7,19 +7,17 @@ const QuestionsIndexItem = React.createClass({
 
   render () {
     const question = this.props.question;
-    
+
     return (
-      <li className="question-each">
+      <ul className="question-each">
         <div className="question-asked">
           { question.question }<br/>
         </div>
-        <div className="answers-given">
-          { question.ans_one }<br/>
-          { question.ans_two }<br/>
-          { question.ans_three }<br/>
-          { question.ans_four }<br/>
-        </div>
-      </li>
+          <li className="answers-given">{ question.ans_one }<br/></li>
+          <li className="answers-given">{ question.ans_two }<br/></li>
+          <li className="answers-given">{ question.ans_three }<br/></li>
+          <li className="answers-given">{ question.ans_four }<br/></li>
+      </ul>
     );
   }
 });

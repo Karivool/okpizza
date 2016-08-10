@@ -131,6 +131,9 @@ const Profile = React.createClass({
             { React.cloneElement(this.props.children, {user: user } )}
           </div>
         </div>
+        <div className="profile-footer">
+          © OkPizza 2016 🍕°·.°.·°.·°·.·°🍕
+        </div>
       </div>
     );
   }

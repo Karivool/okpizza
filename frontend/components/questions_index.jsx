@@ -32,9 +32,6 @@ const QuestionsIndex = React.createClass({
     const questions = this.state.questions;
     return (
       <div className="questions-index">
-        LOL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<p/>
-        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<p/>
-        XDDDDDDDDDDDDDDD
         <div className="questions-listing">
           { questions.map(function (question) {
             return (<QuestionIndexItem key={question.id} question={question} />);

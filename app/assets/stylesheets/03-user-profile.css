@@ -7,8 +7,9 @@
   background-color: #f3f5f9;
   width: 940px;
   border-radius: 3px;
-  padding-bottom: 60px;
   margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 60px;
 }
 
 .profile-header {

@@ -2,6 +2,7 @@
 }
 
 .users-listing {
+  padding-top: 80px;
   width: 1000px;
   background-color: #fafbfd;
 }

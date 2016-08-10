@@ -3,6 +3,9 @@
   border-color: 275eaa;
   background-color: #104da1;
   height: 66px;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
 }
 
 .mini-logo {

@@ -19,11 +19,11 @@ module.exports = {
     this.takeInAnsweredQuestions);
   },
 
-  takeInAnsweredQuestions (responses) {
+  takeInAnsweredQuestions (questions) {
     Dispatcher.dispatch({
       actionType:
       QuestionConstants.ANSWERED_QUESTIONS_TAKEN_IN,
-      responses: responses
+      questions: questions
     });
   },
 

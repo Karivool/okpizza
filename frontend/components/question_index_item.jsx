@@ -7,16 +7,31 @@ const QuestionsIndexItem = React.createClass({
 
   render () {
     const question = this.props.question;
+    const answers = question.answers;
 
     return (
       <ul className="question-each">
         <div className="question-asked">
           { question.question }<br/>
         </div>
-          <li className="answers-given">{ question.ans_one }<br/></li>
-          <li className="answers-given">{ question.ans_two }<br/></li>
-          <li className="answers-given">{ question.ans_three }<br/></li>
-          <li className="answers-given">{ question.ans_four }<br/></li>
+        <div className="answers-given">
+          { answers.map(function (answer, idx) {
+              if (answer.selected) {
+                return (
+                  <li className="chosen-answer" key={idx}>
+                    { answer.answer } 🍕
+                  </li>
+                );
+              } else {
+                return (
+                  <li className="unchosen-answer" key={idx}>
+                    { answer.answer }
+                  </li>
+                );
+              }
+            })
+          }
+        </div>
       </ul>
     );
   }

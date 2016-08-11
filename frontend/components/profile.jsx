@@ -132,7 +132,7 @@ const Profile = React.createClass({
           </div>
         </div>
         <div className="profile-footer">
-          © OkPizza 2016 🍕°·.°.·°.·°·.·°🍕
+          © OkPizza 2016
         </div>
       </div>
     );

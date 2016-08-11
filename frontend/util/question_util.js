@@ -35,7 +35,6 @@ const ApiUtil = {
       dataType: "json",
       data: {  user_id: userid },
       success (questions) {
-        debugger
         callback(questions);
       },
       error(failure){

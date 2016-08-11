@@ -20,9 +20,9 @@ const resetQuestion = function (question) {
   _question[question.id] = question;
 };
 
-const getQuestionsFromResponses = function (respQuestion) {
+const getQuestionsFromResponses = function (questions) {
   _questions = {};
-  respQuestion.forEach(function (question) {
+  questions.forEach(function (question) {
     _questions[question.id] = question;
   });
 };
@@ -54,7 +54,7 @@ QuestionStore.__onDispatch = questionload => {
       QuestionStore.__emitChange();
       break;
     case QuestionConstants.ANSWERED_QUESTIONS_TAKEN_IN:
-      getQuestionsFromResponses(questionload.responses);
+      getQuestionsFromResponses(questionload.questions);
       QuestionStore.__emitChange();
       break;
   }

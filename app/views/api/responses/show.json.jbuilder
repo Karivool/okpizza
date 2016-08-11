@@ -1,1 +1,1 @@
-json.partial! "api/responses/response", response: @response
+json.array! @response, partial: "api/responses/response", as: :response

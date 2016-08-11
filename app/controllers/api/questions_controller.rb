@@ -1,7 +1,8 @@
 class Api::QuestionsController < ApplicationController
   def index
-    debugger
-    @questions = Question.all
+    user = User.find(params[:user_id])
+    @responses = user.responses
+    @questions = user.answered_questions
     render "api/questions/index"
   end
 

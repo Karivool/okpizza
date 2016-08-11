@@ -14,6 +14,19 @@ module.exports = {
     ApiUtil.fetchSingleQuestion(id, this.takeInSingleQuestion);
   },
 
+  fetchAnsweredQuestions (id) {
+    ApiUtil.fetchQuestionsByResponse (id,
+    this.takeInAnsweredQuestions);
+  },
+
+  takeInAnsweredQuestions (responses) {
+    Dispatcher.dispatch({
+      actionType:
+      QuestionConstants.ANSWERED_QUESTIONS_TAKEN_IN,
+      responses: responses
+    });
+  },
+
   takeInAllQuestions (questions) {
     Dispatcher.dispatch({
       actionType: QuestionConstants.ALL_QUESTIONS_TAKEN_IN,

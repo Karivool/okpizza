@@ -1,6 +1,7 @@
 const AppDispatcher = require('../dispatcher/dispatcher.js');
 const Store = require('flux/utils').Store;
 const QuestionConstants = require('../constants/question_constants.js');
+const ApiUtil = require('../util/question_util.js');
 
 let _question = {};
 let _questions = {};
@@ -19,6 +20,13 @@ const resetQuestion = function (question) {
   _question[question.id] = question;
 };
 
+const getQuestionsFromResponses = function (respQuestion) {
+  _questions = {};
+  respQuestion.forEach(function (question) {
+    _questions[question.id] = question;
+  });
+};
+
 const setQuestion = function (question) {
   _question[question.id] = question;
 };
@@ -29,11 +37,9 @@ QuestionStore.all = function () {
   });
 };
 
-QuestionStore.findFiltered = function (filter) {
+QuestionStore.answered = function (responses) {
   return Object.keys(_questions).map(function (questionId) {
-    if (this.hasOwnProperty(filter)) {
-      return _questions[questionId];
-    }
+    return _questions[questionId];
   });
 };
 
@@ -45,6 +51,10 @@ QuestionStore.__onDispatch = questionload => {
       break;
     case QuestionConstants.ALL_QUESTIONS_TAKEN_IN:
       resetQuestions(questionload.questions);
+      QuestionStore.__emitChange();
+      break;
+    case QuestionConstants.ANSWERED_QUESTIONS_TAKEN_IN:
+      getQuestionsFromResponses(questionload.responses);
       QuestionStore.__emitChange();
       break;
   }

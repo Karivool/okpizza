@@ -28,6 +28,22 @@ const ApiUtil = {
     });
   },
 
+  fetchQuestionsByResponse(userid, callback) {
+    $.ajax({
+      url: `api/questions`,
+      method: "GET",
+      dataType: "json",
+      data: { responses: { user_id: userid } },
+      success (questions) {
+        debugger
+        callback(questions);
+      },
+      error(failure){
+        console.log(failure.responseText);
+      }
+    });
+  },
+
   createQuestion(question, success, error) {
     $.ajax({
       url: "api/questions",

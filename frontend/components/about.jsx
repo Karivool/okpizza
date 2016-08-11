@@ -8,28 +8,27 @@ const AboutProfile = React.createClass({
   getInitialState () {
     return { user: this.props.user };
   },
-  componentDidMount () {
-    this._onChange();
-  },
 
-  componentWillUnmount () {
+  // componentDidMount () {
+  // },
 
-  },
+  // componentWillUnmount () {
+  // },
 
-  componentWillReceiveProps (newProps) {
-    if (newProps.params){
-      this.setState({userName: newProps.params.username });
-    } else {
-      this.setState({userName: undefined});
-    }
-  },
+  // componentWillReceiveProps (newProps) {
+  //   if (newProps.params){
+  //     this.setState({userName: newProps.params.username });
+  //   } else {
+  //     this.setState({userName: undefined});
+  //   }
+  // },
 
-  _onChange() {
-    this.forceUpdate();
-  },
+  // _onChange() {
+  //   this.forceUpdate();
+  // },
 
   render: function () {
-    const user = this.state.user;
+    const user = this.props.user;
 
     return (
       <div className="questions-index">

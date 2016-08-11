@@ -7,12 +7,13 @@ const QuestionIndexItem = require('./question_index_item.jsx');
 
 const QuestionsIndex = React.createClass({
   getInitialState () {
-    return { questions: [] };
+    return { questions: [],
+             user: this.props.user };
   },
 
   componentDidMount () {
-    this.questionListener = QuestionStore.addListener(this.getQuestions);
-    QuestionActions.fetchAllQuestions();
+    this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
+    QuestionActions.fetchAnsweredQuestions(this.props.user.id);
     this._onChange();
   },
 
@@ -20,8 +21,16 @@ const QuestionsIndex = React.createClass({
     this.questionListener.remove();
   },
 
+  componentWillReceiveProps () {
+    debugger
+  },
+
   getQuestions() {
     this.setState({ questions: QuestionStore.all() });
+  },
+
+  getAnsweredQuestions() {
+    this.setState({ questions: QuestionStore.answered() });
   },
 
   _onChange() {
@@ -30,6 +39,7 @@ const QuestionsIndex = React.createClass({
 
   render: function () {
     const questions = this.state.questions;
+    const user = this.props.user;
     return (
       <div className="questions-index">
         <div className="questions-listing">

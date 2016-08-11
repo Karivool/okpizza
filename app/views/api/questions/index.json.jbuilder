@@ -2,6 +2,7 @@ json.array! @questions do |question|
 
   chosen = current_user.answer(question)
 
+  json.id question.id
   json.question question.question
   answer_texts = [
     [question.ans_one, 1],

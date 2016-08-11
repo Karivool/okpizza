@@ -1,5 +1,6 @@
 class Api::QuestionsController < ApplicationController
   def index
+    debugger
     @questions = Question.all
     render "api/questions/index"
   end
@@ -15,7 +16,8 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find_by(question: params[:question][:question])
+    debugger
+    @question = Question.find(params[:questions][:question_id])
     render "api/questions/show"
   end
 

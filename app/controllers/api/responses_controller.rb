@@ -15,7 +15,7 @@ class Api::ResponsesController < ApplicationController
   end
 
   def show
-    @response = Response.find_by(response: params[:response][:answer])
+    @response = Response.where(user_id: params[:responses][:user_id])
     render "api/responses/show"
   end
 

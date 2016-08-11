@@ -33,7 +33,7 @@ const ApiUtil = {
       url: `api/questions`,
       method: "GET",
       dataType: "json",
-      data: { responses: { user_id: userid } },
+      data: {  user_id: userid },
       success (questions) {
         debugger
         callback(questions);

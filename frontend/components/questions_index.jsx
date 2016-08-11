@@ -22,7 +22,6 @@ const QuestionsIndex = React.createClass({
   },
 
   componentWillReceiveProps () {
-    debugger
   },
 
   getQuestions() {

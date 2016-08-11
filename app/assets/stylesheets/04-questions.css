@@ -24,9 +24,17 @@
 .answers-given{
   font-size: 14px;
   position: relative;
-  color: #949aa6;
   line-height: 32px;
-  list-style-type: initial;
   margin-left: 18px;
+}
+
+.chosen-answer{
+  color: #00d280;
+  list-style-type: circle;
+}
+
+.unchosen-answer{
+  color: #949aa6;
+  list-style-type: initial;
   text-decoration: line-through;
 }

@@ -23,7 +23,18 @@
 
 class User < ActiveRecord::Base
 
-  has_many :responses
+  has_many(
+    :responses,
+    :class_name => "Response",
+    :foreign_key => :user_id,
+    :primary_key => :id
+  )
+
+  has_many(
+    :answered_questions,
+    :through => :responses,
+    :source => :question
+  )
 
   attr_reader :password
 
@@ -66,5 +77,11 @@ class User < ActiveRecord::Base
 
   def ensure_session_token
     self.session_token ||= generate_session_token
+  end
+
+  def answer(question)
+    response = Response.find_by(question_id: question.id, user_id: self.id)
+
+    response.answer
   end
 end

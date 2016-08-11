@@ -11,8 +11,19 @@
 #
 
 class Response < ActiveRecord::Base
-  has_many :users
-  has_many :questions
+  belongs_to(
+    :question,
+    :class_name => "Question",
+    :foreign_key => :question_id,
+    :primary_key => :id
+  )
+
+  belongs_to(
+    :user,
+    :class_name => "User",
+    :foreign_key => :user_id,
+    :primary_key => :id
+  )
 
   validates :answer, :question_id, :user_id, presence: true
 

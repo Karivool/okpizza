@@ -51,7 +51,7 @@ UserStore.findFiltered = function (filter) {
 UserStore.__onDispatch = userload => {
   switch (userload.actionType) {
     case UserConstants.USER_TAKEN_IN:
-      setUser(userload.user);
+      // setUser(userload.user);
       UserStore.__emitChange();
       break;
     case UserConstants.ALL_USERS_TAKEN_IN:
@@ -62,7 +62,7 @@ UserStore.__onDispatch = userload => {
       findFiltered(userload.users);
       UserStore.__emitChange();
       break;
-    case UserConstants.USERNAME_TAKEN_IN:
+    case UserConstants.USERID_TAKEN_IN:
       resetUser(userload.user);
       UserStore.__emitChange();
       break;

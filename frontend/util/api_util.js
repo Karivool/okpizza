@@ -89,12 +89,11 @@ const ApiUtil = {
     });
   },
 
-  fetchUserByName(username, callback) {
+  fetchUserById(userid, callback) {
     $.ajax({
-      url: `api/user/username`,
+      url: `api/users/${userid}`,
       method: "GET",
       dataType: "json",
-      data: { user: {username: username} },
       success (user) {
         callback(user);
       },

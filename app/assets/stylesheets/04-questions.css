@@ -1,8 +1,8 @@
-.questions-index{
+.questions-index {
   font-family: 'Open-Sans', sans-serif;
 }
 
-.question-each{
+.question-each {
   width: 50%;
   border-bottom: 1px solid #ccd0d9;
   margin-left: 30px;
@@ -12,7 +12,7 @@
   border-radius: 3px;
 }
 
-.question-asked{
+.question-asked {
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   font-size: 16px;
@@ -21,20 +21,56 @@
   margin-bottom: 15px;
 }
 
-.answers-given{
+.answers-given {
   font-size: 14px;
   position: relative;
   line-height: 32px;
   margin-left: 18px;
 }
 
-.chosen-answer{
+.choices-given {
+  font-size: 14px;
+  position: relative;
+  line-height: 32px;
+}
+
+.radio-button {
+  margin-right: 5px;
+}
+
+.chosen-answer {
   color: #00d280;
   list-style-type: circle;
 }
 
-.unchosen-answer{
+.unchosen-answer {
   color: #949aa6;
   list-style-type: initial;
   text-decoration: line-through;
+}
+
+.questions-answered-p {
+  color: #5e6573;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  width: 50%;
+  font-size: 20px;
+}
+
+.question-form  {
+  background: #FFF;
+  border-bottom: 1px solid #ccd0d9;
+  border-radius: 3px;
+  font-family: inherit;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  padding: 30px;
+  width: 50%;
+}
+
+.answer-button {
+  background-color: #3260c7;
+  border-radius: 3px;
+  color: white;
+  padding: 10px 33px;
 }

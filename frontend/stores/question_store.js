@@ -27,6 +27,11 @@ const getQuestionsFromResponses = function (questions) {
   });
 };
 
+const getUnansweredQuestionsFromResponses = function (questions) {
+  _question = {};
+  _question[0] = questions[0];
+};
+
 const setQuestion = function (question) {
   _question[question.id] = question;
 };
@@ -43,6 +48,12 @@ QuestionStore.answered = function (responses) {
   });
 };
 
+QuestionStore.unanswered = function (responses) {
+  return Object.keys(_question).map(function (questionId) {
+    return _question[questionId];
+  });
+};
+
 QuestionStore.__onDispatch = questionload => {
   switch (questionload.actionType) {
     case QuestionConstants.QUESTION_TAKEN_IN:
@@ -55,6 +66,10 @@ QuestionStore.__onDispatch = questionload => {
       break;
     case QuestionConstants.ANSWERED_QUESTIONS_TAKEN_IN:
       getQuestionsFromResponses(questionload.questions);
+      QuestionStore.__emitChange();
+      break;
+    case QuestionConstants.UNANSWERED_QUESTIONS_TAKEN_IN:
+      getUnansweredQuestionsFromResponses(questionload.questions);
       QuestionStore.__emitChange();
       break;
   }

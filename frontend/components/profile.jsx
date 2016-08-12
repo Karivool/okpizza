@@ -18,6 +18,7 @@ const Profile = React.createClass({
   getInitialState: function () {
     return ({
       questions: [],
+      unanswered: [],
       user: {},
       imageFile: null,
       imageUrl: null
@@ -28,8 +29,10 @@ const Profile = React.createClass({
     const userId = this.props.params.userId;
     this.userListener = UserStore.addListener(this.getProfileInfo);
     this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
+    this.unansweredListener = QuestionStore.addListener(this.getUnansweredQuestions);
     UserActions.fetchUserById(userId);
     QuestionActions.fetchAnsweredQuestions(userId);
+    QuestionActions.fetchUnansweredQuestions(userId);
     this._onChange();
   },
 
@@ -41,6 +44,7 @@ const Profile = React.createClass({
   componentWillUnmount () {
     this.userListener.remove();
     this.questionListener.remove();
+    this.unansweredListener.remove();
   },
 
   getProfileInfo() {
@@ -49,6 +53,10 @@ const Profile = React.createClass({
 
   getAnsweredQuestions() {
     this.setState({ questions: QuestionStore.answered() });
+  },
+
+  getUnansweredQuestions() {
+    this.setState({ unanswered: QuestionStore.unanswered() });
   },
 
   _onChange() {
@@ -77,6 +85,7 @@ const Profile = React.createClass({
 
     const user = this.state.user;
     const questions = this.state.questions;
+    const unanswered = this.state.unanswered;
     const birthdate = ( user === undefined || user.birthdate === undefined) ? "--" : Helpers.getBday(user.birthdate) ;
 
     return (
@@ -106,7 +115,7 @@ const Profile = React.createClass({
           </div>
 
           <div className="profile-body">
-            { React.cloneElement(this.props.children, {user: user, questions: questions } )}
+            { React.cloneElement(this.props.children, {user: user, questions: questions, unanswered: unanswered } )}
           </div>
         </div>
         <div className="profile-footer">

@@ -4,43 +4,34 @@ const Navbar = require('./navbar.jsx');
 const QuestionStore = require('../stores/question_store.js');
 const QuestionActions = require('../actions/question_actions.js');
 const QuestionIndexItem = require('./question_index_item.jsx');
+const QuestionForm = require('./question_form.jsx');
 
 const QuestionsIndex = React.createClass({
   getInitialState () {
     return { questions: this.props.questions,
+             unanswered: this.props.unanswered,
              user: this.props.user };
   },
 
-  // componentDidMount () {
-  //   this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
-  //   QuestionActions.fetchAnsweredQuestions(this.props.user.id);
-  //   this._onChange();
-  // },
-  //
-  // componentWillUnmount () {
-  //   this.questionListener.remove();
-  // },
-  //
-  // componentWillReceiveProps () {
-  // },
-
-  getQuestions() {
-    this.setState({ questions: QuestionStore.all() });
+  getUnansweredQuestions() {
+    this.setState({ questions: QuestionStore.unanswered() });
   },
 
   getAnsweredQuestions() {
     this.setState({ questions: QuestionStore.answered() });
   },
 
-  // _onChange() {
-  //   this.forceUpdate();
-  // },
-
   render: function () {
+    const unanswered = this.props.unanswered;
     const questions = this.props.questions;
     const user = this.props.user;
     return (
       <div className="questions-index">
+        { unanswered.map(function (question) {
+            return (<QuestionForm key={question.id} unanswered={unanswered} />);
+          })
+        }
+        <p className="questions-answered-p">Answered Questions</p>
         <div className="questions-listing">
           { questions.map(function (question) {
             return (<QuestionIndexItem key={question.id} question={question} />);

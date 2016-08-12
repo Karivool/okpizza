@@ -1,44 +1,35 @@
 const React = require('react');
 const Link = require('react-router').Link;
-const Navbar = require('./navbar.jsx');
 const QuestionStore = require('../stores/question_store.js');
-const QuestionActions = require('../actions/question_actions.js');
+const hashHistory = require('react-router').hashHistory;
 
 const QuestionForm = React.createClass({
-  getInitialState () {
-    return { questions: this.props.questions,
-             user: this.props.user };
-  },
 
-  componentDidMount () {
-    // this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
-    // QuestionActions.fetchAnsweredQuestions(this.props.user.id);
-    // this._onChange();
-  },
+  render () {
+    const unanswered = this.props.unanswered[0];
+    const answers = unanswered.answers;
 
-  componentWillUnmount () {
-    // this.questionListener.remove();
-  },
-
-  componentWillReceiveProps () {
-  },
-
-  getQuestions() {
-    // this.setState({ questions: QuestionStore.all() });
-  },
-
-  getAnsweredQuestions() {
-    // this.setState({ questions: QuestionStore.answered() });
-  },
-
-  _onChange() {
-    // this.forceUpdate();
-  },
-
-  render: function () {
     return (
       <div className="question-form">
-        Question_Form
+        <div className="question-asked">
+          { unanswered.question }<br/>
+          <div className="choices-given">
+            { answers.map(function (answer, idx) {
+              return (
+                <div>
+                <input type="radio" name="radio-group" className="radio-button" id={ "answer_" + idx } key={idx} false>
+                </input>
+                <label className="unanswered-choice" htmlFor={ "answer_" + idx}>
+                  { answer.answer[0] }
+                </label><br/>
+                </div>
+              );
+            })
+          }
+          </div>
+        </div>
+        <p/>
+        <button className="answer-button">Answer</button>
       </div>
     );
   }

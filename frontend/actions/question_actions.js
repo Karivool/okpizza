@@ -19,10 +19,22 @@ module.exports = {
     this.takeInAnsweredQuestions);
   },
 
+  fetchUnansweredQuestions (id) {
+    ApiUtil.fetchQuestionsByNoResponse (id,
+    this.takeInUnansweredQuestions);
+  },
+
   takeInAnsweredQuestions (questions) {
     Dispatcher.dispatch({
       actionType:
       QuestionConstants.ANSWERED_QUESTIONS_TAKEN_IN,
+      questions: questions
+    });
+  },
+
+  takeInUnansweredQuestions (questions) {
+    Dispatcher.dispatch({
+      actionType: QuestionConstants.UNANSWERED_QUESTIONS_TAKEN_IN,
       questions: questions
     });
   },

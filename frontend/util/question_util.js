@@ -23,7 +23,6 @@ const ApiUtil = {
         callback(question);
       },
       error(){
-
       }
     });
   },
@@ -38,6 +37,21 @@ const ApiUtil = {
         callback(questions);
       },
       error(failure){
+        console.log(failure.responseText);
+      }
+    });
+  },
+
+  fetchQuestionsByNoResponse(userid, callback) {
+    $.ajax({
+      url: `api/questions`,
+      method: "GET",
+      dataType: "json",
+      data: { user_id: userid, non_answers: true },
+      success (questions) {
+        callback(questions);
+      },
+      error(failure) {
         console.log(failure.responseText);
       }
     });

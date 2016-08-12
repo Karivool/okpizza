@@ -3,26 +3,25 @@ const Link = require('react-router').Link;
 const Navbar = require('./navbar.jsx');
 const QuestionStore = require('../stores/question_store.js');
 const QuestionActions = require('../actions/question_actions.js');
-const QuestionIndexItem = require('./question_index_item.jsx');
 
-const QuestionsIndex = React.createClass({
+const QuestionForm = React.createClass({
   getInitialState () {
     return { questions: this.props.questions,
              user: this.props.user };
   },
 
-  // componentDidMount () {
-  //   this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
-  //   QuestionActions.fetchAnsweredQuestions(this.props.user.id);
-  //   this._onChange();
-  // },
-  //
-  // componentWillUnmount () {
-  //   this.questionListener.remove();
-  // },
-  //
-  // componentWillReceiveProps () {
-  // },
+  componentDidMount () {
+    this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
+    QuestionActions.fetchAnsweredQuestions(this.props.user.id);
+    this._onChange();
+  },
+
+  componentWillUnmount () {
+    this.questionListener.remove();
+  },
+
+  componentWillReceiveProps () {
+  },
 
   getQuestions() {
     this.setState({ questions: QuestionStore.all() });
@@ -32,13 +31,12 @@ const QuestionsIndex = React.createClass({
     this.setState({ questions: QuestionStore.answered() });
   },
 
-  // _onChange() {
-  //   this.forceUpdate();
-  // },
+  _onChange() {
+    this.forceUpdate();
+  },
 
   render: function () {
     const questions = this.props.questions;
-    console.log(questions);
     const user = this.props.user;
     return (
       <div className="questions-index">
@@ -53,4 +51,4 @@ const QuestionsIndex = React.createClass({
   }
 });
 
-module.exports = QuestionsIndex;
+module.exports = QuestionForm;

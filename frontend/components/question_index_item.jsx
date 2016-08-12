@@ -1,6 +1,6 @@
 const React = require('react');
 const Link = require('react-router').Link;
-const QuestionActions = require('../actions/question_actions.js');
+const QuestionStore = require('../stores/question_store.js');
 const hashHistory = require('react-router').hashHistory;
 
 const QuestionsIndexItem = React.createClass({

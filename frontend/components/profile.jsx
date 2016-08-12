@@ -5,6 +5,8 @@ const UserStore = require('../stores/user_store.js');
 const SessionStore = require('../stores/session_store.js');
 const UserActions = require('../actions/user_actions.js');
 const UserIndexItem = require('./user_index_item.jsx');
+const QuestionStore = require('../stores/question_store.js');
+const QuestionActions = require('../actions/question_actions.js');
 const Helpers = require ('./helpers.jsx');
 
 const Profile = React.createClass({
@@ -14,40 +16,39 @@ const Profile = React.createClass({
   },
 
   getInitialState: function () {
-    let viewed;
-    if (this.props) {
-      viewed = this.props.params.username;
-    }
-
     return ({
-      userName: viewed,
-      userInfo: viewed,
-      viewTab: "about",
+      questions: [],
+      user: {},
       imageFile: null,
       imageUrl: null
     });
   },
 
   componentDidMount () {
+    const userId = this.props.params.userId;
     this.userListener = UserStore.addListener(this.getProfileInfo);
+    this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
+    UserActions.fetchUserById(userId);
+    QuestionActions.fetchAnsweredQuestions(userId);
     this._onChange();
   },
 
   componentWillReceiveProps (newProps) {
-    if (newProps.params){
-      this.setState({userName: newProps.params.username });
-      this.setState({userInfo: newProps.params});
-    } else {
-      this.setState({userName: undefined});
-    }
+
+    // this.setState({user: newProps.params.userId });
   },
 
   componentWillUnmount () {
     this.userListener.remove();
+    this.questionListener.remove();
   },
 
   getProfileInfo() {
-    this.setState({ userName: UserStore.viewProfile() });
+    this.setState({ user: UserStore.viewProfile() });
+  },
+
+  getAnsweredQuestions() {
+    this.setState({ questions: QuestionStore.answered() });
   },
 
   _onChange() {
@@ -65,19 +66,6 @@ const Profile = React.createClass({
     };
   },
 
-  routeHandler() {
-    if (this.state.userName) {
-      let user = this.state.userName;
-
-      if (typeof(user) === "object") {
-        return `/profile/${user.username}`;
-      } else {
-        return "/profile/user";
-      }
-    }
-    return "/profile";
-  },
-
   handleSubmit: function (e) {
     let formData = new FormData();
     formData.append("user[image]", this.state.imageFile);
@@ -86,20 +74,10 @@ const Profile = React.createClass({
 
   // <input type="file" onChange={ this.updateFile }/>
   render: function() {
-    let user = SessionStore.currentUser();
-    let birthdate = Helpers.getBday(user.birthdate);
-    let routeToGo;
-    if (this.state.userName !== undefined) {
-      let finder = this.state.userName;
-      if (typeof(finder) === "object") {
-        user = finder;
-        birthdate = Helpers.getBday(user.birthdate);
-      } else if (typeof(finder) === "string"){
-        finder = UserActions.fetchUserByName(finder);
-      }
-    }
 
-    routeToGo = this.routeHandler();
+    const user = this.state.user;
+    const questions = this.state.questions;
+    const birthdate = ( user === undefined || user.birthdate === undefined) ? "--" : Helpers.getBday(user.birthdate) ;
 
     return (
       <div className="user-profile">
@@ -117,18 +95,18 @@ const Profile = React.createClass({
             </div>
             <div className="profile-tabs">
               <Link
-                to={`${routeToGo}` + "/about"}
+                to={`profile/${user.id}/about`}
                 className="profile-tab-link"
                 params={ {user: user} }>About</Link>
               <Link
-                to={`${routeToGo}` + "/questions"}
+                to={`profile/${user.id}/questions`}
                 className="profile-tab-link">Questions</Link>
             </div>
             <img src={ this.state.imageUrl }/>
           </div>
 
           <div className="profile-body">
-            { React.cloneElement(this.props.children, {user: user } )}
+            { React.cloneElement(this.props.children, {user: user, questions: questions } )}
           </div>
         </div>
         <div className="profile-footer">

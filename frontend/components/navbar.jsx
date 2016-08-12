@@ -24,7 +24,7 @@ const Navbar = React.createClass({
           <img className="profile-mini-pic" src={ user.image_url }/>
         </div>
         <div className="profile-click">
-          <Link to="/profile" className="profile-button">Profile</Link>
+          <Link to={`/profile/${user.id}`} className="profile-button">Profile</Link>
         </div>
         <div className="sign-out">
           <button onClick={this._signOut} className="sign-out-button">Log out</button>

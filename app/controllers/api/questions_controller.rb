@@ -1,9 +1,15 @@
 class Api::QuestionsController < ApplicationController
   def index
     user = User.find(params[:user_id])
-    @responses = user.responses
-    @questions = user.answered_questions
-    render "api/questions/index"
+    if params[:non_answers]
+      ids = user.answered_question_ids
+      @questions = Question.where.not(id: ids)
+      render "api/questions/unanswered"
+    else
+      @responses = user.responses
+      @questions = user.answered_questions
+      render "api/questions/index"
+    end
   end
 
   def create

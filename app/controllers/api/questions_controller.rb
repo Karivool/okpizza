@@ -17,7 +17,6 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
-    debugger
     @question = Question.find(params[:questions][:question_id])
     render "api/questions/show"
   end

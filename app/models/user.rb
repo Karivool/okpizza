@@ -79,8 +79,8 @@ class User < ActiveRecord::Base
     self.session_token ||= generate_session_token
   end
 
-  def answer(question)
-    response = Response.find_by(question_id: question.id, user_id: self.id)
+  def answer(question, user_id)
+    response = Response.find_by(question_id: question.id, user_id: user_id)
 
     response.answer
   end

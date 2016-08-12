@@ -1,6 +1,5 @@
 json.array! @questions do |question|
-
-  chosen = current_user.answer(question)
+  chosen = current_user.answer(question, @responses.first.user_id)
 
   json.id question.id
   json.question question.question

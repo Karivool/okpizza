@@ -82,7 +82,7 @@ const Profile = React.createClass({
     return (
       <div className="user-profile">
         <Navbar />
-        <div className="profile-content">
+        <div className="profile-content group">
           <div className="profile-header">
             <img src= { user.image_url } className="user-picture"></img>
             <div className="profile-info">

@@ -38,7 +38,6 @@ const SignUpForm = React.createClass({
   handleSubmit(e) {
     e.preventDefault();
     SessionActions.signUp(this.state);
-    this.redirectIfLoggedIn();
   },
 
   _onChange() {
@@ -153,7 +152,7 @@ const SignUpForm = React.createClass({
                 <input type="submit"
                   className="submit-button"
                   value="Let's go"
-                  />
+                  onClick = { this.handleSubmit } />
               </div>
             </form>
           </div>

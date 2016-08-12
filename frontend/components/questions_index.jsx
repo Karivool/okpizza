@@ -38,7 +38,6 @@ const QuestionsIndex = React.createClass({
 
   render: function () {
     const questions = this.props.questions;
-    console.log(questions);
     const user = this.props.user;
     return (
       <div className="questions-index">

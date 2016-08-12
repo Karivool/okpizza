@@ -21,8 +21,8 @@
 * ~~Question~~
 
 ### Actions
-* `ApiActions.receiveAllQuestions`
-* `ApiActions.receiveSingleQuestion`
+* ~~`ApiActions.receiveAllQuestions`~~
+* ~~`ApiActions.receiveSingleQuestion`~~
 * ~~`QuestionActions.fetchAllQuestions`~~
 * ~~`QuestionActions.fetchSingleQuestion`~~
 * ~~`QuestionActions.createQuestion`~~

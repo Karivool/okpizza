@@ -41,6 +41,7 @@ group :development, :test do
   gem 'annotate'
   gem 'better_errors'
   gem 'rails_12factor'
+  gem 'pry-rails'
 end
 
 group :development do

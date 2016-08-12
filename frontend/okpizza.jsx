@@ -24,15 +24,10 @@ const routes = (
       <Route path="/login" component={ LoginForm } />
       <Route path="/signup" component={ SignUpForm } />
       <Route path="/index" component={ UsersIndex } onEnter={ _ensureLoggedIn }/>
-      <Route path="/profile" component={ Profile } onEnter={ _ensureLoggedIn }>
+      <Route path="/profile/:userId" component={ Profile } onEnter={ _ensureLoggedIn }>
         <IndexRoute component={ AboutProfile } onEnter={ _ensureLoggedIn }/>
-        <Route path="/profile/about" component={ AboutProfile } onEnter={ _ensureLoggedIn }/>
-        <Route path="/profile/questions" component={ QuestionsIndex } onEnter={ _ensureLoggedIn }/>
-      </Route>
-      <Route path="/profile/:username" component={ Profile } onEnter={ _ensureLoggedIn }>
-        <IndexRoute component={ AboutProfile } onEnter={ _ensureLoggedIn }/>
-        <Route path="/profile/:username/about" component={ AboutProfile } onEnter={ _ensureLoggedIn }/>
-        <Route path="/profile/:username/questions" component={ QuestionsIndex } onEnter={ _ensureLoggedIn }/>
+        <Route path="/profile/:userId/about" component={ AboutProfile } onEnter={ _ensureLoggedIn }/>
+        <Route path="/profile/:userId/questions" component={ QuestionsIndex } onEnter={ _ensureLoggedIn }/>
       </Route>
     </Route>
   </Router>

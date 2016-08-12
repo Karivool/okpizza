@@ -11,41 +11,34 @@ const QuestionForm = React.createClass({
   },
 
   componentDidMount () {
-    this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
-    QuestionActions.fetchAnsweredQuestions(this.props.user.id);
-    this._onChange();
+    // this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
+    // QuestionActions.fetchAnsweredQuestions(this.props.user.id);
+    // this._onChange();
   },
 
   componentWillUnmount () {
-    this.questionListener.remove();
+    // this.questionListener.remove();
   },
 
   componentWillReceiveProps () {
   },
 
   getQuestions() {
-    this.setState({ questions: QuestionStore.all() });
+    // this.setState({ questions: QuestionStore.all() });
   },
 
   getAnsweredQuestions() {
-    this.setState({ questions: QuestionStore.answered() });
+    // this.setState({ questions: QuestionStore.answered() });
   },
 
   _onChange() {
-    this.forceUpdate();
+    // this.forceUpdate();
   },
 
   render: function () {
-    const questions = this.props.questions;
-    const user = this.props.user;
     return (
-      <div className="questions-index">
-        <div className="questions-listing">
-          { questions.map(function (question) {
-            return (<QuestionIndexItem key={question.id} question={question} />);
-          })
-        }
-        </div>
+      <div className="question-form">
+        Question_Form
       </div>
     );
   }

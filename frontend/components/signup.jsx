@@ -37,6 +37,7 @@ const SignUpForm = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
+
     SessionActions.signUp(this.state);
   },
 

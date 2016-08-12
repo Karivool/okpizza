@@ -5,10 +5,12 @@
 
 .profile-content {
   background-color: #f3f5f9;
-  width: 940px;
   border-radius: 3px;
+  height: 100%;
   margin: 0 auto;
   padding-top: 80px;
+  padding-bottom: 80px;
+  width: 940px;
 }
 
 .profile-header {
@@ -64,15 +66,15 @@
   float: left;
 }
 .body-info-label {
-  font-weight: 600;
-  font-family: 'Open Sans',sans-serif;
   color: #474d59;
+  font-family: 'Open Sans',sans-serif;
   font-size: 18px;
+  font-weight: 600;
   line-height: 40px;
 }
 
 .body-info-text {
-
+  margin-bottom: 10px;
 }
 
 .profile-tabs{

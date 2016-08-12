@@ -16,7 +16,7 @@ const QuestionForm = React.createClass({
           <div className="choices-given">
             { answers.map(function (answer, idx) {
               return (
-                <div>
+                <div key={idx}>
                 <input type="radio" name="radio-group" className="radio-button" id={ "answer_" + idx } key={idx} false>
                 </input>
                 <label className="unanswered-choice" htmlFor={ "answer_" + idx}>

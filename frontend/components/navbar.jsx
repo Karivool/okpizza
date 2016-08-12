@@ -8,6 +8,12 @@ const UserStore = require('../stores/user_store.js');
 
 const Navbar = React.createClass({
 
+  // getInitialState: function () {
+  // },
+  //
+  // componentWillReceiveProps (newProps) {
+  // },
+
   _signOut() {
     SessionActions.signOut();
   },

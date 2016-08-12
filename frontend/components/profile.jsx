@@ -8,6 +8,7 @@ const UserIndexItem = require('./user_index_item.jsx');
 const QuestionStore = require('../stores/question_store.js');
 const QuestionActions = require('../actions/question_actions.js');
 const Helpers = require ('./helpers.jsx');
+const hashHistory = require('react-router').hashHistory;
 
 const Profile = React.createClass({
 
@@ -20,6 +21,7 @@ const Profile = React.createClass({
       questions: [],
       unanswered: [],
       user: {},
+      userId: null,
       imageFile: null,
       imageUrl: null
     });
@@ -37,8 +39,9 @@ const Profile = React.createClass({
   },
 
   componentWillReceiveProps (newProps) {
-
-    // this.setState({user: newProps.params.userId });
+    UserActions.fetchUserById(newProps.params.userId);
+    QuestionActions.fetchAnsweredQuestions(newProps.params.userId);
+    QuestionActions.fetchUnansweredQuestions(newProps.params.userId);
   },
 
   componentWillUnmount () {
@@ -53,6 +56,7 @@ const Profile = React.createClass({
 
   getAnsweredQuestions() {
     this.setState({ questions: QuestionStore.answered() });
+
   },
 
   getUnansweredQuestions() {

@@ -21,16 +21,25 @@ const QuestionsIndex = React.createClass({
     this.setState({ questions: QuestionStore.answered() });
   },
 
+  showQuestionForm(unanswered, user) {
+    if (user.id === currentUser.id) {
+    return (
+      <div className="show-question-form">
+        { unanswered.map(function (question) {
+            return (<QuestionForm key={question.id} unanswered={unanswered} />);
+          })
+        }
+      </div>
+    );}
+  },
+
   render: function () {
     const unanswered = this.props.unanswered;
     const questions = this.props.questions;
     const user = this.props.user;
     return (
       <div className="questions-index">
-        { unanswered.map(function (question) {
-            return (<QuestionForm key={question.id} unanswered={unanswered} />);
-          })
-        }
+        { this.showQuestionForm(unanswered, user) }
         <p className="questions-answered-p">Answered Questions</p>
         <div className="questions-listing">
           { questions.map(function (question) {

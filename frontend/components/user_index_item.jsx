@@ -13,7 +13,7 @@ const UsersIndexItem = React.createClass({
     const user = this.props.user;
     const birthdate = Helpers.getBday(user.birthdate);
     let photo = user.image_url;
-    if (user.id >= 2 && user.id <= 25) {
+    if (user.id >= 2 && user.id <= 26) {
       photo = pics[user.id - 2];
     }
 

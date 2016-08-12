@@ -88,12 +88,18 @@ const Profile = React.createClass({
     const unanswered = this.state.unanswered;
     const birthdate = ( user === undefined || user.birthdate === undefined) ? "--" : Helpers.getBday(user.birthdate) ;
 
+    const pics = [window.pic1, window.pic2, window.pic3, window.pic4, window.pic5, window.pic6, window.pic7, window.pic8, window.pic9, window.pic10, window.pic11, window.pic12, window.pic13, window.pic14, window.pic15, window.pic16, window.pic17, window.pic18, window.pic19, window.pic20, window.pic21, window.pic22, window.pic23, window.pic24, window.pic25];
+    let photo = user.image_url;
+    if (user.id >= 2 && user.id <= 26) {
+      photo = pics[user.id - 2];
+    }
+
     return (
       <div className="user-profile">
         <Navbar />
         <div className="profile-content group">
           <div className="profile-header">
-            <img src= { user.image_url } className="user-picture"></img>
+            <img src= { photo } className="user-picture"></img>
             <div className="profile-info">
               <p className="profile-username">
                 { user.username }

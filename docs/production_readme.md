@@ -31,15 +31,45 @@ class User < ActiveRecord::Base
 
 ### Profile Viewing
 
-TODO
+Browse profiles! Users are retrieved through `ajax calls` and populated on the index page. From here, find the pizza or human of your dreams, and sneak their profile to your artichoke heart's content. Check out their details, edit yours, and find the match made in pizza heaven!
+
+```javascript
+fetchFilteredUsers(callback) {
+  $.ajax({
+    url: `api/users`,
+    method: "GET",
+    success (users){
+      callback(users);
+    },
+    error(renderError){
+      const errors = renderError.responseJSON;
+      console.log(errors);
+      error("signup", errors);
+    }
+  });
+}
+```
 
 ### Question Answering
 
-TODO
+Profile data isn't simply enough to know whether or not a potential suitor is really what they say they are under the box. By answering questions, you can see whether or not you have similar answers, thus, similar values with somepizza. Questions you've answered are retrieved via backend calls through ajax, and handled smoothly by ActiveRecord to ensure you know what you've said, and how.
+
+```ruby
+  user = User.find(params[:user_id])
+  if params[:non_answers]
+    ids = user.answered_question_ids
+    @questions = Question.where.not(id: ids)
+    render "api/questions/unanswered"
+  else
+    @responses = user.responses
+    @questions = user.answered_questions
+    render "api/questions/index"
+  end
+```
 
 ### Messaging
 
-TODO
+TODO. Someday soon, you'll be able to message other users and have a REAL conversation with REAL pizzas!
 
 ## Future Directions for the Project
 

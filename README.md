@@ -10,19 +10,19 @@ OKPizza is a saucy web application inspired by OKCupid that will be built using 
 
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
-- [ ] A production README, replacing this README
+- [x] A production README, replacing this README
 - [ ] Profile Options
   - [ ] Ability to select from different dropdown options
   - [x] Adequate seed data to demonstrate the dropdown features
   - [x] Adequate CSS styling
 - [ ] Questions features
   - [ ] Ability to answer questions
-  - [ ] Adequate seed data so there are some questions made and answered
-  - [ ] Adequate CSS styling
+  - [x] Adequate seed data so there are some questions made and answered
+  - [x] Adequate CSS styling
 - [ ] User browsing
   - [ ] Ability to browser other user profiles based on filters
-  - [ ] Adequate seed data to demonstrate diverse user profiles
-  - [ ] Adequate CSS styling
+  - [x] Adequate seed data to demonstrate diverse user profiles
+  - [x] Adequate CSS styling
 - [ ] Messaging features
   - [ ] Ability to message other logged in users
   - [ ] Adequate seed data to begin demonstration of messaging features
@@ -73,19 +73,19 @@ the API.
   - [x] `UserIndexItem`
   - [ ] `ProfileEdit`
 - [ ] update Users info to the DB when user updates their own profile
-- [ ] style users components
+- [x] style users components
 
 ### Phase 3: Questions (2 days, W2 M/T 6pm)
 
 **Objective:** Users can answer questions to be matched up with other users.
 
-- [ ] create `Question` model and join table
+- [x] create `Question` model and join table
 - build out API, Flux loop, and components for:
-- [ ] Seeing questions you can answer
-- [ ] Questions you have answered
+- [x] Seeing questions you can answer
+- [x] Questions you have answered
 - [ ] Users should see who others who answered questions similarly to them
-- [ ] Style CSS
-- [ ] Seed questions adequately and make sure they all work right
+- [x] Style CSS
+- [x] Seed questions adequately and make sure they all work right
 
 Phase 3 lets users see questions and answer them to get better matches.
 
@@ -111,7 +111,7 @@ Phase 4 adds user interaction so users can hook up and get a slice or find someo
 
 - [ ] Ensure everything is in working order
 - [ ] Make sure the bare minimum needed is present
-- [ ] Good CSS
+- [x] Good CSS
 - [ ] Start on bonus features if possible!
 
 ### Bonus Features (TBD)

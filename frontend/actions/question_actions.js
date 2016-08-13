@@ -24,6 +24,18 @@ module.exports = {
     this.takeInUnansweredQuestions);
   },
 
+  submitAnswer(answer, questionId) {
+    const response = parseInt(answer) + 1;
+    ApiUtil.createResponse(response, questionId, this.takeInResponse);
+  },
+
+  takeInResponse (response) {
+    Dispatcher.dispatch({
+      actionType: QuestionConstants.RESPONSE_TAKEN_IN,
+      response: response
+    });
+  },
+
   takeInAnsweredQuestions (questions) {
     Dispatcher.dispatch({
       actionType:

@@ -36,6 +36,9 @@ const setQuestion = function (question) {
   _question[question.id] = question;
 };
 
+const loadNewQuestion = function (response) {
+};
+
 QuestionStore.all = function () {
   return Object.keys(_questions).map(function (questionId) {
     return _questions[questionId];
@@ -70,6 +73,10 @@ QuestionStore.__onDispatch = questionload => {
       break;
     case QuestionConstants.UNANSWERED_QUESTIONS_TAKEN_IN:
       getUnansweredQuestionsFromResponses(questionload.questions);
+      QuestionStore.__emitChange();
+      break;
+    case QuestionConstants.RESPONSE_TAKEN_IN:
+      loadNewQuestion(questionload.response);
       QuestionStore.__emitChange();
       break;
   }

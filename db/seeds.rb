@@ -482,6 +482,134 @@ Question.create(
   ans_four: "Yes",
 )
 
+Question.create(
+  question: "What do you find most attractive to your tastes?",
+  ans_one: "A pizza gyrating saucily",
+  ans_two: "A pizza slice on top of another pizza",
+  ans_three: "A super cheesy pizza",
+  ans_four: "A pizza box, being taken by a human who trips, causing the box lid to fling open as the pizza inside flies through the air before splatting on the sidewalk upside down.",
+)
+
+Question.create(
+  question: "You would describe yourself most as a...",
+  ans_one: "Personal pizza",
+  ans_two: "Extra large pizza",
+  ans_three: "Deep dish pizza",
+  ans_four: "Unedible pizza",
+)
+
+Question.create(
+  question: "You are the kind of pizza who...",
+  ans_one: "everyone wants to get a mouthful of.",
+  ans_two: "is ignored during pizza parties.",
+  ans_three: "eaten as a last resort.",
+  ans_four: "ends up with its crusty pieces in the garbage",
+)
+
+Question.create(
+  question: "After some time in the oven, you often come out:",
+  ans_one: "Half-baked",
+  ans_two: "Undercooked",
+  ans_three: "Extra-crispy",
+  ans_four: "Hot and saucy",
+)
+
+Question.create(
+  question: "What is your most outstanding pizza quality?",
+  ans_one: "Sauciness",
+  ans_two: "Cheesiness",
+  ans_three: "Doughiness",
+  ans_four: "Messiness",
+)
+
+Question.create(
+  question: "What is your weakest point as a pizza?",
+  ans_one: "Holding up lots of toppings",
+  ans_two: "Having a crust that isn't too floppy or hard",
+  ans_three: "Not leaving a feeling of constant dehydration in people after being consumed",
+  ans_four: "Tasting good",
+)
+
+Question.create(
+  question: "An irate, angry customer, who is clearly in the wrong and has no idea what they're talking about, comes into the store you're at and demands to be given you, a pizza, as compensation in the name of Customer Service. You are meant to be delivered to A Very Nice Customer, not This Very Mean And Bad Customer. What do you do?",
+  ans_one: "Refuse to go with them. You're not my customer! The customer isn't always right.",
+  ans_two: "Attack them viciously while you're still piping hot. That'll teach the windbag!",
+  ans_three: "Try to appease them into leaving you be. You'd rather not be consumed by such a Mean Person.",
+  ans_four: "Bravely sacrifice yourself to make them happy. This is what you were meant to do.",
+)
+
+Question.create(
+  question: "You are in the classic video game, DOOM. You are the Large Pizza, meant to heal the player when they pick you up to restore health. How much of their health would you restore?",
+  ans_one: "10%",
+  ans_two: "25%",
+  ans_three: "100%",
+  ans_four: "-100%. LOLOLOLOL",
+)
+
+Question.create(
+  question: "As a gourmet pizza baked by Gordon Ramsey, you would taste like..",
+  ans_one: "an authentic Sicilian masterpiece",
+  ans_two: "homemade tomato basil pizza with parsley",
+  ans_three: "Brooklyn style pizza baked to perfection",
+  ans_four: "Gordon Ramsey",
+)
+
+Question.create(
+  question: "If your toppings had to be unconventional animal meat, it would be:",
+  ans_one: "dog",
+  ans_two: "cat",
+  ans_three: "ostrich",
+  ans_four: "Martin Shkreli",
+)
+
+Question.create(
+  question: "Sexy is..",
+  ans_one: "a pizza with a thick crust",
+  ans_two: "a pizza with extra sauce",
+  ans_three: "a pizza with lots of toppings",
+  ans_four: "none pizza with left beef",
+)
+
+Question.create(
+  question: "What turns you off most about a pizza consumer?",
+  ans_one: "Leaving the end crust uneaten",
+  ans_two: "Eating half the slice and leaving it in the box",
+  ans_three: "Picking off toppings",
+  ans_four: "Refusing to eat anything other than pepperoni or cheese pizza",
+)
+
+Question.create(
+  question: "Is it ever okay to discriminate against a pizza?",
+  ans_one: "Yes, pizzacution is sometimes necessary.",
+  ans_two: "No, pizzacution is always wrong, no matter how unappetizing the pizza.",
+  ans_three: "Sometimes, it depends.",
+  ans_four: "Who cares? Pizzas don't have feelings.",
+)
+
+Question.create(
+  question: "Is it possible for pizzas and humans to co-exist?",
+  ans_one: "No, pizzas are too tasty.",
+  ans_two: "No, humans are too hungry.",
+  ans_three: "Maybe, some pizzas and humans can get along.",
+  ans_four: "Yes! Pizzas and humans are meant to be friends.",
+)
+
+Question.create(
+  question: "What drink goes best with your slices?",
+  ans_one: "Barley tea.",
+  ans_two: "Milk.",
+  ans_three: "Beer.",
+  ans_four: "Soda.",
+)
+
+Question.create(
+  question: "You're part of the Bad Pizza Gang. Big Boss Pizza, Tom Ato approaches you and accuses you of cheesiness and threatens to slice you out of the picture. How do you respond?",
+  ans_one: "Beg for forgiveness. Another chance, please!!",
+  ans_two: "Go gracefully. No need to make a scene in front of Boss Ato.",
+  ans_three: "Argue saucefully about how you are not cheesy at all.",
+  ans_four: "Take Boss Tom Ato out... for dinner! At Chuck E Cheese.",
+)
+
 ##########################################################
 ####### RESPONSE SEEDS                        ############
 ##########################################################

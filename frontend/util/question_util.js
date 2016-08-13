@@ -1,6 +1,5 @@
 const ApiUtil = {
 
-
   fetchAllQuestions(callback) {
     $.ajax({
       url: `api/questions`,
@@ -52,6 +51,22 @@ const ApiUtil = {
         callback(questions);
       },
       error(failure) {
+        console.log(failure.responseText);
+      }
+    });
+  },
+
+  createResponse(response, questionId, callback) {
+    const userId = currentUser.id;
+    $.ajax({
+      url: "api/responses",
+      method: "POST",
+      dataType: "json",
+      data: { response: { answer: response, question_id: questionId, user_id: userId } },
+      success (response) {
+        callback(response);
+      },
+      error (failure) {
         console.log(failure.responseText);
       }
     });

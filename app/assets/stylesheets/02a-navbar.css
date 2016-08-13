@@ -27,24 +27,34 @@
   background-color: gainsboro;
 }
 
+.dropdown-menu {
+  /*display: none;*/
+  color: black;
+  float: right;
+  width: auto;
+  position: fixed;
+  left: 81.6%;
+  top: 14.6%;
+}
+
+.user-nav-detail dropdown-menu:hover > sign-out profile-click
+{
+  display:block;
+}
+
 .sign-out {
   float: right;
   background: white;
   width: 180px;
   padding: 10px 20px;
   font-family: sans-serif;
-  margin-right: -220px;
-  margin-top: 105px;
   box-shadow: 0px 1px 1px black;
 }
 
 .profile-click {
-  float: right;
   background: white;
   width: 180px;
   padding: 10px 20px;
   font-family: sans-serif;
-  margin-right: -72px;
-  margin-top: 67px;
   box-shadow: 0px 1px 1px black;
 }

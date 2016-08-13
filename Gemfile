@@ -34,13 +34,16 @@ gem 'paperclip', '~> 5.0.0.beta1'
 gem 'figaro'
 gem 'aws-sdk', '>= 2.0'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a  console
   gem 'byebug'
   gem 'binding_of_caller'
   gem 'annotate'
   gem 'better_errors'
-  gem 'rails_12factor'
   gem 'pry-rails'
 end
 

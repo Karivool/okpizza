@@ -32,22 +32,24 @@ const Profile = React.createClass({
     this.userListener = UserStore.addListener(this.getProfileInfo);
     this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
     this.unansweredListener = QuestionStore.addListener(this.getUnansweredQuestions);
-    UserActions.fetchUserById(userId);
-    QuestionActions.fetchAnsweredQuestions(userId);
-    QuestionActions.fetchUnansweredQuestions(userId);
-    this._onChange();
+    this.handleActions(userId);
   },
 
   componentWillReceiveProps (newProps) {
-    UserActions.fetchUserById(newProps.params.userId);
-    QuestionActions.fetchAnsweredQuestions(newProps.params.userId);
-    QuestionActions.fetchUnansweredQuestions(newProps.params.userId);
+    const userId = newProps.params.userId;
+    this.handleActions(userId);
   },
 
   componentWillUnmount () {
     this.userListener.remove();
     this.questionListener.remove();
     this.unansweredListener.remove();
+  },
+
+  handleActions(userId) {
+    UserActions.fetchUserById(userId);
+    QuestionActions.fetchAnsweredQuestions(userId);
+    QuestionActions.fetchUnansweredQuestions(userId);
   },
 
   getProfileInfo() {

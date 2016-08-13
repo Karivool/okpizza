@@ -8,12 +8,6 @@ const UserStore = require('../stores/user_store.js');
 
 const Navbar = React.createClass({
 
-  // getInitialState: function () {
-  // },
-  //
-  // componentWillReceiveProps (newProps) {
-  // },
-
   _signOut() {
     SessionActions.signOut();
   },
@@ -28,12 +22,14 @@ const Navbar = React.createClass({
         </div>
         <div className="user-nav-detail">
           <img className="profile-mini-pic" src={ user.image_url }/>
-        </div>
-        <div className="profile-click">
-          <Link to={`/profile/${user.id}`} className="profile-button">Profile</Link>
-        </div>
-        <div className="sign-out">
-          <button onClick={this._signOut} className="sign-out-button">Log out</button>
+          <div className="dropdown-menu">
+            <div className="profile-click">
+              <Link to={`/profile/${user.id}`} className="profile-button">Profile</Link>
+            </div>
+            <div className="sign-out">
+              <button onClick={this._signOut} className="sign-out-button">Log out</button>
+            </div>
+          </div>
         </div>
       </div>
     );

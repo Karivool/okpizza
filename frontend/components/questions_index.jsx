@@ -23,14 +23,23 @@ const QuestionsIndex = React.createClass({
 
   showQuestionForm(unanswered, user) {
     if (user.id === currentUser.id) {
-    return (
-      <div className="show-question-form">
-        { unanswered.map(function (question) {
-            return (<QuestionForm key={question.id} unanswered={unanswered} />);
-          })
-        }
-      </div>
-    );}
+      if (unanswered.length === 0 || unanswered[0] === undefined) {
+        return (
+          <div className="show-question-form">
+            <div className="question-each">
+              Sorry! You answered all the questions.<br/>
+            </div>
+          </div>);}
+      else {
+        return (
+          <div className="show-question-form">
+            { unanswered.map(function (question) {
+                return (<QuestionForm key={question.id} unanswered={unanswered} />);
+              })
+            }
+          </div>);
+      }
+    }
   },
 
   render: function () {

@@ -1,126 +1,84 @@
 # OKPizza
 
-[Heroku link][heroku]
+[OKPizza live][heroku]
 
 [heroku]: https://okpizza.herokuapp.com/
 
-## Minimum Viable Product
+OKPizza is a full-stack web app inspired by OKCupid, but with a saucy, yet cheesy twist. Hook up with the pizza of your dreams, or find a human looking for a pizza with toppings just like yours!
 
-OKPizza is a saucy web application inspired by OKCupid that will be built using Ruby on Rails and React.js.  By the end of Week 9, this app will, with any luck, satisfy the following criteria:
+Created with:
+* Ruby on Rails
+* PostgreSQL
+* React.js
+* Flux
 
-- [x] Hosting on Heroku
-- [x] New account creation, login, and guest/demo login
-- [x] A production README, replacing this README
-- [ ] Profile Options
-  - [ ] Ability to select from different dropdown options
-  - [x] Adequate seed data to demonstrate the dropdown features
-  - [x] Adequate CSS styling
-- [ ] Questions features
-  - [ ] Ability to answer questions
-  - [x] Adequate seed data so there are some questions made and answered
-  - [x] Adequate CSS styling
-- [ ] User browsing
-  - [ ] Ability to browser other user profiles based on filters
-  - [x] Adequate seed data to demonstrate diverse user profiles
-  - [x] Adequate CSS styling
-- [ ] Messaging features
-  - [ ] Ability to message other logged in users
-  - [ ] Adequate seed data to begin demonstration of messaging features
-  - [ ] Adequate CSS styling
+## Features & Implementation
 
-## Design Docs
-* [View Wireframes][views]
-* [React Components][components]
-* [Flux Cycles][flux-cycles]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
+Single-Page App
 
-[views]: docs/views.md
-[components]: docs/components.md
-[flux-cycles]: docs/flux-cycles.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+OKPizza is rendered in real time all on one page. For those who can't be bothered to wait for multiple pages to render, take solice in the fact that only ONE page renders here, over and over again.
 
-## Implementation Timeline
+The root page, where all the action happens, constantly listens to `SessionStore` and content is displayed based on the calls made to the `currentUser`. Feel like you're in a pizza box thanks to backend Auth ensuring no one knows the hack codes to get into your account.
 
-### Phase 1: Backend setup and Front End User Authentication (2 days, W1 T/W 6pm)
+```ruby
+class User < ActiveRecord::Base
+  def password=(password)
+    @password = password
+    self.password_digest = BCrypt::Password.create(password)
+  end
+ end
+```
 
-**Objective:** Functioning rails project with front-end Authentication
+### Profile Viewing
 
-- [x] create new project
-- [x] create `User` model
-- [x] authentication backend setup
-- [x] create `StaticPages` controller and root view
-- [x] set up webpack & flux scaffold with skeleton files
-- [x] setup `APIUtil` to interact with the API
-- [x] set up flux cycle for frontend auth
-- [x] user signup/signin components
-- [x] style signin/signup components
-- [x] seed users
+Browse profiles! Users are retrieved through `ajax calls` and populated on the index page. From here, find the pizza or human of your dreams, and sneak their profile to your artichoke heart's content. Check out their details, edit yours, and find the match made in pizza heaven!
 
-### Phase 2: Users Model, API, and components (2 days, W1 Th/F 6pm)
+```javascript
+fetchFilteredUsers(callback) {
+  $.ajax({
+    url: `api/users`,
+    method: "GET",
+    success (users){
+      callback(users);
+    },
+    error(renderError){
+      const errors = renderError.responseJSON;
+      console.log(errors);
+      error("signup", errors);
+    }
+  });
+}
+```
 
-**Objective:** Users can be created, edited and (maybe) destroyed through
-the API.
+### Question Answering
 
-- [x] create `User` model
-- [x] seed the database with a decent amount of fun test data
-- [x] CRUD API for users (`UsersController`)
-- [x] jBuilder views for users
-- [x] test out API interaction in the console.
-- implement each user component, building out the flux loop as needed.
-  - [x] `UsersIndex`
-  - [x] `UserIndexItem`
-  - [ ] `ProfileEdit`
-- [ ] update Users info to the DB when user updates their own profile
-- [x] style users components
+Profile data isn't simply enough to know whether or not a potential suitor is really what they say they are under the box. By answering questions, you can see whether or not you have similar answers, thus, similar values with somepizza. Questions you've answered are retrieved via backend calls through ajax, and handled smoothly by ActiveRecord to ensure you know what you've said, and how.
 
-### Phase 3: Questions (2 days, W2 M/T 6pm)
+```ruby
+  user = User.find(params[:user_id])
+  if params[:non_answers]
+    ids = user.answered_question_ids
+    @questions = Question.where.not(id: ids)
+    render "api/questions/unanswered"
+  else
+    @responses = user.responses
+    @questions = user.answered_questions
+    render "api/questions/index"
+  end
+```
 
-**Objective:** Users can answer questions to be matched up with other users.
+### Messaging
 
-- [x] create `Question` model and join table
-- build out API, Flux loop, and components for:
-- [x] Seeing questions you can answer
-- [x] Questions you have answered
-- [ ] Users should see who others who answered questions similarly to them
-- [x] Style CSS
-- [x] Seed questions adequately and make sure they all work right
+TODO. Someday soon, you'll be able to message other users and have a REAL conversation with REAL pizzas!
 
-Phase 3 lets users see questions and answer them to get better matches.
+## Future Directions for the Project
 
-### Phase 4: Messages (2 days, W2 W/Th 6pm)
+On top of the features you get now with OKPizza, here are some other nifty tricks I hope to put into the app:
 
-**Objective:** Messages belongs to users, and can be viewed by users who are making said messages.
+### Block users
 
-- [ ] create `Message` model and join table
-- build out API, Flux loop, and components for:
-  - [ ] Message CRUD (excluding editing and deleting perhaps)
-  - [ ] Users can currently message any user they desire
-  - [ ] viewing messages by user messaged
-  - [ ] Users should be able to view messages in real time
-- [ ] Use CSS to style new components
-- [ ] Seed messages
+Sometimes, a human, and even pizzas, may be unpleasant and ill fit for your tastes. In that case, forget they ever existed through the use of the block feature. No more Bad Pizza or Bad Human!
 
-Phase 4 adds user interaction so users can hook up and get a slice or find someone to have some slices.
+### Weighted questions and match %
 
-
-### Phase 5: - Final touchups, bonus features (1 day, W2 F 6pm)
-
-**Objective:** Ensure project is as polished as it can get at this point. If ahead of schedule, begin work on bonus features
-
-- [ ] Ensure everything is in working order
-- [ ] Make sure the bare minimum needed is present
-- [x] Good CSS
-- [ ] Start on bonus features if possible!
-
-### Bonus Features (TBD)
-- [ ] Likes
-- [ ] See visitors
-- [ ] Block users
-
-[phase-one]: docs/phases/phase1.md
-[phase-two]: docs/phases/phase2.md
-[phase-three]: docs/phases/phase3.md
-[phase-four]: docs/phases/phase4.md
-[phase-five]: docs/phases/phase5.md
+Depending on the seriousness of an answer, users will be able to see their likelihood of being a good match changed. You will also be able to determine how important a question is to you to help with finding the Right Pizza or Human.

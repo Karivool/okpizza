@@ -31,7 +31,7 @@ const Navbar = React.createClass({
   },
 
   render() {
-    const user = SessionStore.currentUser();
+    const user = currentUser;
 
     return (
       <div className="navbar">

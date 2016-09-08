@@ -12,9 +12,13 @@ const Profile = require('./profile.jsx');
 const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
 
-window.current_user = SessionStore.currentUser;
+// window.currentUser = SessionStore.currentUser;
 
 const App = React.createClass({
+
+  getInitialState: function () {
+    return { currentUser: SessionStore.currentUser() };
+  },
 
   componentDidMount() {
     this.handleListeners();
@@ -22,7 +26,15 @@ const App = React.createClass({
   },
 
   handleListeners() {
-    this.sessionListener = SessionStore.addListener(this._onChange);
+    this.sessionListener = SessionStore.addListener(function () { this.getCurrentUser();}.bind(this));
+  },
+
+  getCurrentUser() {
+    let currentUser = SessionStore.currentUser();
+
+    if (currentUser) {
+      this.setState({ currentUser: currentUser });
+    }
   },
 
   componentWillUnmount() {

@@ -16,6 +16,7 @@ const AboutProfile = require('./components/about.jsx');
 const QuestionsIndex = require('./components/questions_index.jsx');
 const SessionStore = require('./stores/session_store.js');
 const SessionActions = require('./actions/session_actions.js');
+const ApiUtil = require('./util/api_util.js');
 
 const routes = (
   <Router history= { hashHistory }>
@@ -35,7 +36,9 @@ const routes = (
 
 function _ensureLoggedIn(nextState, replace) {
   if (!SessionStore.isUserLoggedIn()) {
-    replace('/');
+    if (currentUser === undefined) {
+      replace('/');
+    }
   }
 }
 
@@ -46,10 +49,6 @@ function _ensureLoggedOut(nextState, replace) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (window.currentUser) {
-    SessionActions.takeInCurrentUser(window.currentUser);
-  }
-
   const root = document.getElementById('content');
   ReactDOM.render(
     <Router history={hashHistory}>{routes}</Router>,

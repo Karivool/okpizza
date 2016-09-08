@@ -8,11 +8,30 @@ const UserStore = require('../stores/user_store.js');
 
 const Navbar = React.createClass({
 
+  getInitialState() {
+    return {
+      menuShown: false
+    };
+  },
+
   _signOut() {
     SessionActions.signOut();
   },
 
-  render: function() {
+  showMenu() {
+    let menuShown = this.state.menuShown;
+    console.log("LOL");
+    if (menuShown) {
+      $('.dropdown-menu').css({'display':'none'});
+      this.state.menuShown = false;
+      return;
+    } else {
+      $('.dropdown-menu').css({'display':'block'});
+      this.state.menuShown = true;
+    }
+  },
+
+  render() {
     const user = SessionStore.currentUser();
 
     return (
@@ -20,7 +39,7 @@ const Navbar = React.createClass({
         <div className="mini-logo">
           <a href="#/index"><img src={okPLogo}/></a>
         </div>
-        <div className="user-nav-detail">
+        <div className="user-nav-detail" onClick={this.showMenu}>
           <img className="profile-mini-pic" src={ user.image_url }/>
           <div className="dropdown-menu">
             <div className="profile-click">

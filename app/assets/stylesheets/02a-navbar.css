@@ -28,13 +28,15 @@
 }
 
 .dropdown-menu {
-  /*display: none;*/
+  display: none;
+  position: absolute;
   color: black;
   float: right;
   width: auto;
-  position: fixed;
-  left: 81.6%;
-  top: 14.6%;
+  position: absolute;
+  top: 71px;
+  right: 2px;
+  z-index: 900;
 }
 
 .user-nav-detail dropdown-menu:hover > sign-out profile-click

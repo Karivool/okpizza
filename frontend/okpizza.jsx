@@ -49,6 +49,10 @@ function _ensureLoggedOut(nextState, replace) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  if (window.currentUser) {
+    SessionActions.takeInCurrentUser(window.currentUser);
+  }
+
   const root = document.getElementById('content');
   ReactDOM.render(
     <Router history={hashHistory}>{routes}</Router>,

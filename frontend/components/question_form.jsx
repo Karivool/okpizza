@@ -15,6 +15,9 @@ const QuestionForm = React.createClass({
     router: React.PropTypes.object.isRequired
   },
 
+  componentDidMount () {
+  },
+
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.answer !== null) {

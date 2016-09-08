@@ -12,7 +12,7 @@ const Profile = require('./profile.jsx');
 const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
 
-// window.currentUser = SessionStore.currentUser;
+window.currentUser = SessionStore.currentUser;
 
 const App = React.createClass({
 
@@ -22,7 +22,7 @@ const App = React.createClass({
 
   componentDidMount() {
     this.handleListeners();
-    this._onChange();
+    // this._onChange();
   },
 
   handleListeners() {
@@ -41,9 +41,9 @@ const App = React.createClass({
     this.sessionListener.remove();
   },
 
-  _onChange() {
-    this.forceUpdate();
-  },
+  // _onChange() {
+  //   this.forceUpdate();
+  // },
 
   sessionRenders() {
   },

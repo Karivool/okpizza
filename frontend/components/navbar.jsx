@@ -20,13 +20,12 @@ const Navbar = React.createClass({
 
   showMenu() {
     let menuShown = this.state.menuShown;
-    console.log("LOL");
     if (menuShown) {
-      $('.dropdown-menu').css({'display':'none'});
+      $('.dropdown-menu').css({'visibility':'hidden', 'opacity':0});
       this.state.menuShown = false;
       return;
     } else {
-      $('.dropdown-menu').css({'display':'block'});
+      $('.dropdown-menu').css({'visibility':'visible', 'opacity':1});
       this.state.menuShown = true;
     }
   },

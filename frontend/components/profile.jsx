@@ -20,7 +20,7 @@ const Profile = React.createClass({
     return ({
       questions: [],
       unanswered: [],
-      user: {},
+      viewedUser: {},
       userId: null,
       imageFile: null,
       imageUrl: null
@@ -53,7 +53,7 @@ const Profile = React.createClass({
   },
 
   getProfileInfo() {
-    this.setState({ user: UserStore.viewProfile() });
+    this.setState({ viewedUser: UserStore.viewProfile() });
   },
 
   getAnsweredQuestions() {
@@ -82,22 +82,24 @@ const Profile = React.createClass({
 
   handleSubmit: function (e) {
     let formData = new FormData();
-    formData.append("user[image]", this.state.imageFile);
+    formData.append("viewedUser[image]", this.state.imageFile);
     ApiUtil.editProfile(this.state);
   },
 
   // <input type="file" onChange={ this.updateFile }/>
   render: function() {
 
-    const user = this.state.user;
+    const user = SessionStore.currentUser();
+
+    const viewedUser = this.state.viewedUser;
     const questions = this.state.questions;
     const unanswered = this.state.unanswered;
-    const birthdate = ( user === undefined || user.birthdate === undefined) ? "--" : Helpers.getBday(user.birthdate) ;
+    const birthdate = ( viewedUser === undefined || viewedUser.birthdate === undefined) ? "--" : Helpers.getBday(viewedUser.birthdate) ;
 
     const pics = [window.pic1, window.pic2, window.pic3, window.pic4, window.pic5, window.pic6, window.pic7, window.pic8, window.pic9, window.pic10, window.pic11, window.pic12, window.pic13, window.pic14, window.pic15, window.pic16, window.pic17, window.pic18, window.pic19, window.pic20, window.pic21, window.pic22, window.pic23, window.pic24, window.pic25];
-    let photo = user.image_url;
-    if (user.id >= 2 && user.id <= 26) {
-      photo = pics[user.id - 2];
+    let photo = viewedUser.image_url;
+    if (viewedUser.id >= 2 && viewedUser.id <= 26) {
+      photo = pics[viewedUser.id - 2];
     }
 
     return (
@@ -108,26 +110,26 @@ const Profile = React.createClass({
             <img src= { photo } className="user-picture"></img>
             <div className="profile-info">
               <p className="profile-username">
-                { user.username }
+                { viewedUser.username }
               </p>
               <p className="profile-deets">
-                { birthdate } • { user.city_name }, { user.state_name } • { user.gender }
+                { birthdate } • { viewedUser.city_name }, { viewedUser.state_name } • { viewedUser.gender }
               </p>
             </div>
             <div className="profile-tabs">
               <Link
-                to={`profile/${user.id}/about`}
+                to={`profile/${viewedUser.id}/about`}
                 className="profile-tab-link"
-                params={ {user: user} }>About</Link>
+                params={ {viewedUser: viewedUser} }>About</Link>
               <Link
-                to={`profile/${user.id}/questions`}
+                to={`profile/${viewedUser.id}/questions`}
                 className="profile-tab-link">Questions</Link>
             </div>
             <img src={ this.state.imageUrl }/>
           </div>
 
           <div className="profile-body">
-            { React.cloneElement(this.props.children, {user: user, questions: questions, unanswered: unanswered } )}
+            { React.cloneElement(this.props.children, {viewedUser: viewedUser, questions: questions, unanswered: unanswered } )}
           </div>
         </div>
         <div className="profile-footer">

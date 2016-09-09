@@ -11,7 +11,7 @@ const QuestionsIndex = React.createClass({
   getInitialState () {
     return { questions: this.props.questions,
              unanswered: this.props.unanswered,
-             user: this.props.user };
+             viewedUser: this.props.viewedUser };
   },
 
   getUnansweredQuestions() {
@@ -22,8 +22,8 @@ const QuestionsIndex = React.createClass({
     this.setState({ questions: QuestionStore.answered() });
   },
 
-  showQuestionForm(unanswered, user, currentUser) {
-    if (user.id === currentUser.id) {
+  showQuestionForm(unanswered, viewedUser, currentUser) {
+    if (viewedUser.id === currentUser.id) {
       if (unanswered.length === 0 || unanswered[0] === undefined) {
         return (
           <div className="show-question-form">
@@ -48,10 +48,10 @@ const QuestionsIndex = React.createClass({
 
     const unanswered = this.props.unanswered;
     const questions = this.props.questions;
-    const user = this.props.user;
+    const viewedUser = this.props.viewedUser;
     return (
       <div className="questions-index">
-        { this.showQuestionForm(unanswered, user, currentUser) }
+        { this.showQuestionForm(unanswered, viewedUser, currentUser) }
         <p className="questions-answered-p">Answered Questions</p>
         <div className="questions-listing">
           { questions.map(function (question) {

@@ -56,8 +56,8 @@ const ApiUtil = {
     });
   },
 
-  createResponse(response, questionId, callback) {
-    const userId = currentUser.id;
+  createResponse(response, questionId, id, callback) {
+    const userId = id;
     $.ajax({
       url: "api/responses",
       method: "POST",

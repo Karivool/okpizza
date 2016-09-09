@@ -1,6 +1,7 @@
 const ApiUtil = require('../util/question_util.js');
 const Dispatcher = require('../dispatcher/dispatcher.js');
 const QuestionConstants = require('../constants/question_constants.js');
+const SessionStore = require('../stores/session_store.js');
 const ErrorActions = require('./error_actions.js');
 
 module.exports = {
@@ -14,19 +15,22 @@ module.exports = {
     ApiUtil.fetchSingleQuestion(id, this.takeInSingleQuestion);
   },
 
-  fetchAnsweredQuestions (id) {
-    ApiUtil.fetchQuestionsByResponse (id,
+  fetchAnsweredQuestions () {
+    let currentUser = SessionStore.currentUser();
+    ApiUtil.fetchQuestionsByResponse (currentUser.id,
     this.takeInAnsweredQuestions);
   },
 
-  fetchUnansweredQuestions (id) {
-    ApiUtil.fetchQuestionsByNoResponse (id,
+  fetchUnansweredQuestions () {
+    let currentUser = SessionStore.currentUser();
+    ApiUtil.fetchQuestionsByNoResponse (currentUser.id,
     this.takeInUnansweredQuestions);
   },
 
   submitAnswer(answer, questionId) {
+    let currentUser = SessionStore.currentUser();
     const response = parseInt(answer) + 1;
-    ApiUtil.createResponse(response, questionId, this.takeInResponse);
+    ApiUtil.createResponse(response, questionId, currentUser.id, this.takeInResponse);
   },
 
   takeInResponse (response) {

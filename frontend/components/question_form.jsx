@@ -8,9 +8,10 @@ const QuestionForm = React.createClass({
   getInitialState () {
     return({
       answer: null,
-      chosen: true
+      chosen: true,
     });
   },
+
 
   contextTypes: {
     router: React.PropTypes.object.isRequired
@@ -19,10 +20,11 @@ const QuestionForm = React.createClass({
   handleSubmit(e) {
     e.preventDefault();
     this.state.chosen = !this.state.chosen;
+    let calledback;
     if (this.state.answer !== null) {
       QuestionActions.submitAnswer(this.state.answer, this.props.unanswered[0].id);
-      QuestionActions.fetchUnansweredQuestions(currentUser.id);
-      QuestionActions.fetchAnsweredQuestions(currentUser.id);
+      QuestionActions.fetchUnansweredQuestions();
+      QuestionActions.fetchAnsweredQuestions();
       this.state.answer = null;
       this.state.answer = 0;
       this.state.answer = null;

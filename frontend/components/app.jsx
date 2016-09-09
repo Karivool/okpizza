@@ -12,8 +12,6 @@ const Profile = require('./profile.jsx');
 const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
 
-window.currentUser = SessionStore.currentUser;
-
 const App = React.createClass({
 
   getInitialState: function () {
@@ -22,7 +20,6 @@ const App = React.createClass({
 
   componentDidMount() {
     this.handleListeners();
-    // this._onChange();
   },
 
   handleListeners() {
@@ -40,10 +37,6 @@ const App = React.createClass({
   componentWillUnmount() {
     this.sessionListener.remove();
   },
-
-  // _onChange() {
-  //   this.forceUpdate();
-  // },
 
   sessionRenders() {
   },

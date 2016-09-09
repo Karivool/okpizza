@@ -36,9 +36,7 @@ const routes = (
 
 function _ensureLoggedIn(nextState, replace) {
   if (!SessionStore.isUserLoggedIn()) {
-    if (currentUser === undefined) {
-      replace('/');
-    }
+    replace('/');
   }
 }
 
@@ -49,12 +47,10 @@ function _ensureLoggedOut(nextState, replace) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (window.currentUser) {
-    SessionActions.takeInCurrentUser(window.currentUser);
+  if (typeof(currentUser) !== "undefined") {
+    SessionActions.takeInCurrentUser(currentUser);
   }
 
   const root = document.getElementById('content');
-  ReactDOM.render(
-    <Router history={hashHistory}>{routes}</Router>,
-    root);
+  ReactDOM.render(routes, root);
 });

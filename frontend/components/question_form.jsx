@@ -7,7 +7,8 @@ const hashHistory = require('react-router').hashHistory;
 const QuestionForm = React.createClass({
   getInitialState () {
     return({
-      answer: null
+      answer: null,
+      chosen: true
     });
   },
 
@@ -15,16 +16,17 @@ const QuestionForm = React.createClass({
     router: React.PropTypes.object.isRequired
   },
 
-  componentDidMount () {
-  },
-
   handleSubmit(e) {
     e.preventDefault();
+    this.state.chosen = !this.state.chosen;
     if (this.state.answer !== null) {
       QuestionActions.submitAnswer(this.state.answer, this.props.unanswered[0].id);
-      this.state.answer = null;
       QuestionActions.fetchUnansweredQuestions(currentUser.id);
       QuestionActions.fetchAnsweredQuestions(currentUser.id);
+      this.state.answer = null;
+      this.state.answer = 0;
+      this.state.answer = null;
+      this.forceUpdate();
     }
   },
 

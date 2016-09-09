@@ -31,7 +31,7 @@ const Navbar = React.createClass({
   },
 
   render() {
-    const user = typeof currentUser !== "undefined" ? currentUser : SessionStore.currentUser();
+    const user = SessionStore.currentUser();
 
     return (
       <div className="navbar">

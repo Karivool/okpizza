@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_attached_file :image, default_url: "http://i.imgur.com/jONmE1S.png" #"assets/No_Image.png"
+  has_attached_file :image, default_url: "https://s3.amazonaws.com/okpizza-dev/No_Image.png" #"assets/No_Image.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token

@@ -66,3 +66,19 @@
   font-family: sans-serif;
   box-shadow: 0px 1px 1px black;
 }
+
+.profile-button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 10px 156px 10px 19px;
+  margin: -20px;
+}
+
+.sign-out-button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 10px 148px 10px 18px;
+  margin: -20px;
+}

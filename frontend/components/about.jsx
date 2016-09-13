@@ -4,6 +4,8 @@ const Navbar = require('./navbar.jsx');
 const QuestionStore = require('../stores/question_store.js');
 const QuestionActions = require('../actions/question_actions.js');
 
+import { currentUser } from '../stores/session_store';
+
 const AboutProfile = React.createClass({
   getInitialState () {
     return { viewedUser: this.props.viewedUser };
@@ -26,7 +28,7 @@ const AboutProfile = React.createClass({
   render: function () {
     const viewedUser = this.props.viewedUser;
     const editIcon = "https://s3.amazonaws.com/okpizza-dev/neonpizza.png";
-    const isCurrentUser = viewedUser.id === currentUser.id;
+    const isCurrentUser = viewedUser.id === currentUser().id;
     const aboutEl = [
       [viewedUser.summary, "My self-summary"],
       [viewedUser.doing, "What I am doing with my time"],
@@ -41,9 +43,15 @@ const AboutProfile = React.createClass({
         <div className="profile-body-section">
             { aboutEl.map(function (mapItem, idx) {
               if (isCurrentUser === true) {
-                  return [<p key={idx} className="body-info-label">{mapItem[1]} <img className="edit-icon" src={editIcon}></img></p>, <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>];
+                  return [
+                    <p key={idx} className="body-info-label">{mapItem[1]} <img className="edit-icon" src={editIcon}></img></p>,
+                    <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>
+                  ];
                 } else {
-                  return [<p key={idx} className="body-info-label">{mapItem[1]}</p>, <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>];
+                  return [
+                    <p key={idx} className="body-info-label">{mapItem[1]}</p>,
+                    <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>
+                  ];
                 }
               })
             }

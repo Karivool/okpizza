@@ -9,17 +9,23 @@ const SessionStore = require('../stores/session_store.js');
 
 const QuestionsIndex = React.createClass({
   getInitialState () {
-    return { questions: this.props.questions,
-             unanswered: this.props.unanswered,
-             viewedUser: this.props.viewedUser };
+    return {
+      questions: this.props.questions,
+      unanswered: this.props.unanswered,
+      viewedUser: this.props.viewedUser
+    };
   },
 
   getUnansweredQuestions() {
-    this.setState({ questions: QuestionStore.unanswered() });
+    this.setState({
+      questions: QuestionStore.unanswered()
+    });
   },
 
   getAnsweredQuestions() {
-    this.setState({ questions: QuestionStore.answered() });
+    this.setState({
+      questions: QuestionStore.answered()
+    });
   },
 
   showQuestionForm(unanswered, viewedUser, currentUser) {
@@ -30,25 +36,35 @@ const QuestionsIndex = React.createClass({
             <div className="question-each">
               Sorry! You answered all the questions.<br/>
             </div>
-          </div>);}
+          </div>
+        );
+      }
+
       else {
         return (
           <div className="show-question-form">
-            { unanswered.map(function (question) {
-                return (<QuestionForm key={question.id} unanswered={unanswered} />);
+            {
+              unanswered.map(question => {
+                return (
+                  <QuestionForm
+                    key={ question.id }
+                    unanswered={ unanswered }
+                  />
+                );
               })
             }
-          </div>);
+          </div>
+        );
       }
     }
   },
 
   render: function () {
     const currentUser = typeof currentUser !== "undefined" ? currentUser : SessionStore.currentUser();
-
     const unanswered = this.props.unanswered;
     const questions = this.props.questions;
     const viewedUser = this.props.viewedUser;
+
     return (
       <div className="questions-index">
         { this.showQuestionForm(unanswered, viewedUser, currentUser) }

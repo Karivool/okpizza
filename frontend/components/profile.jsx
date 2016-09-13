@@ -10,6 +10,8 @@ const QuestionActions = require('../actions/question_actions.js');
 const Helpers = require ('./helpers.jsx');
 const hashHistory = require('react-router').hashHistory;
 
+import { editProfile } from '../util/api_util';
+
 const Profile = React.createClass({
 
   contextTypes: {
@@ -27,16 +29,19 @@ const Profile = React.createClass({
     });
   },
 
-  componentDidMount () {
+  componentDidMount() {
     const userId = this.props.params.userId;
+
     this.userListener = UserStore.addListener(this.getProfileInfo);
     this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
     this.unansweredListener = QuestionStore.addListener(this.getUnansweredQuestions);
+
     this.handleActions(userId);
   },
 
-  componentWillReceiveProps (newProps) {
+  componentWillReceiveProps(newProps) {
     const userId = newProps.params.userId;
+
     this.handleActions(userId);
   },
 
@@ -82,21 +87,26 @@ const Profile = React.createClass({
 
   handleSubmit: function (e) {
     let formData = new FormData();
+
     formData.append("viewedUser[image]", this.state.imageFile);
-    ApiUtil.editProfile(this.state);
+
+    editProfile(this.state);
   },
 
   // <input type="file" onChange={ this.updateFile }/>
   render: function() {
 
     const user = SessionStore.currentUser();
-
     const viewedUser = this.state.viewedUser;
     const questions = this.state.questions;
     const unanswered = this.state.unanswered;
     const birthdate = ( viewedUser === undefined || viewedUser.birthdate === undefined) ? "--" : Helpers.getBday(viewedUser.birthdate) ;
 
-    const pics = [window.pic1, window.pic2, window.pic3, window.pic4, window.pic5, window.pic6, window.pic7, window.pic8, window.pic9, window.pic10, window.pic11, window.pic12, window.pic13, window.pic14, window.pic15, window.pic16, window.pic17, window.pic18, window.pic19, window.pic20, window.pic21, window.pic22, window.pic23, window.pic24, window.pic25];
+    let pics = [];
+    for (let i = 0; i < 25; i++) {
+      pics.push(window[`pic${i + 1}`]);
+    }
+    // const pics = [window.pic1, window.pic2, window.pic3, window.pic4, window.pic5, window.pic6, window.pic7, window.pic8, window.pic9, window.pic10, window.pic11, window.pic12, window.pic13, window.pic14, window.pic15, window.pic16, window.pic17, window.pic18, window.pic19, window.pic20, window.pic21, window.pic22, window.pic23, window.pic24, window.pic25];
     let photo = viewedUser.image_url;
     if (viewedUser.id >= 2 && viewedUser.id <= 26) {
       photo = pics[viewedUser.id - 2];

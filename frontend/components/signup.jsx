@@ -160,21 +160,21 @@ const SignUpForm = React.createClass({
         </div>
         <div className="saucy-reasons group">
           <div className="saucy-reason-each">
-            <img src={window.saucyPic1} className="saucy-image"></img>
+            <img src="https://s3.amazonaws.com/okpizza-dev/attract-1.png" className="saucy-image"></img>
             <p className="saucy-texts">
               Sign up in a flash and browse saucy profiles, free! What could be better than free pizza?
             </p>
             <br></br>
           </div>
           <div className="saucy-reason-each">
-            <img src={window.saucyPic2} className="saucy-image"></img>
+            <img src="https://s3.amazonaws.com/okpizza-dev/attract-2.png" className="saucy-image"></img>
             <p className="saucy-texts">
               Whether you are in for a one slice night, commitment to an entire box or a pizza party, we got you covered.
             </p>
             <br></br>
           </div>
           <div className="saucy-reason-each">
-            <img src={window.saucyPic3} className="saucy-image"></img>
+            <img src="https://s3.amazonaws.com/okpizza-dev/attract-3.png" className="saucy-image"></img>
             <p className="saucy-texts">
               Amazing pizzas and humans come together, bringing you back, hungry for more.
             </p>

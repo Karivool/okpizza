@@ -45,7 +45,15 @@ const AboutProfile = React.createClass({
               if (isCurrentUser === true) {
                   return [
                     <p key={idx} className="body-info-label">{mapItem[1]} <img className="edit-icon" src={editIcon}></img></p>,
-                    <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>
+                    <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>, <form action="/my-handling-form-page" method="post">
+    <div>
+        <label for="name">Info section:</label>
+        <input type="text" id="name" name="user_info" />
+    </div>
+    <div class="button">
+        <button type="submit">Submit</button>
+    </div>
+</form>
                   ];
                 } else {
                   return [

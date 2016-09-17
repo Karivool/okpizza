@@ -8,7 +8,10 @@ const UsersIndexItem = React.createClass({
   // <img className="match-image" src={ user.image_url }/>
 
   render () {
-    const pics = [window.pic1, window.pic2, window.pic3, window.pic4, window.pic5, window.pic6, window.pic7, window.pic8, window.pic9, window.pic10, window.pic11, window.pic12, window.pic13, window.pic14, window.pic15, window.pic16, window.pic17, window.pic18, window.pic19, window.pic20, window.pic21, window.pic22, window.pic23, window.pic24, window.pic25];
+    let pics = [];
+    for (let i = 0; i < 25; i++) {
+      pics.push(window[`pic${i + 1}`]);
+    }
 
     const user = this.props.user;
     const birthdate = Helpers.getBday(user.birthdate);

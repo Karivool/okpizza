@@ -25,18 +25,33 @@ const AboutProfile = React.createClass({
   //   }
   // },
 
+  infoForm () {
+    return (
+      <form onSubmit={ this.handleSubmit } className="about-info-box">
+        <div>
+          <label for="name">Info section:</label>
+          <input type="text" id="name" name="user_info" />
+        </div>
+        <div class="button">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    );
+  },
+
+
   render: function () {
     const viewedUser = this.props.viewedUser;
     const editIcon = "https://s3.amazonaws.com/okpizza-dev/neonpizza.png";
     const isCurrentUser = viewedUser.id === currentUser().id;
     const aboutEl = [
-      [viewedUser.summary, "My self-summary"],
-      [viewedUser.doing, "What I am doing with my time"],
-      [viewedUser.favorites, "Favorite cooks, movies, shows, music, pizza"],
-      [viewedUser.sixthings, "The six things I could do without"],
-      [viewedUser.thinking, "I spend a lot of time thinking about"],
-      [viewedUser.typical, "On a typical night I am"],
-      [viewedUser.messageif, "You should message me if"]
+      [viewedUser.summary, "My self-summary", this.infoForm()],
+      [viewedUser.doing, "What I am doing with my time", this.infoForm()],
+      [viewedUser.favorites, "Favorite cooks, movies, shows, music, pizza", this.infoForm()],
+      [viewedUser.sixthings, "The six things I could do without", this.infoForm()],
+      [viewedUser.thinking, "I spend a lot of time thinking about", this.infoForm()],
+      [viewedUser.typical, "On a typical night I am", this.infoForm()],
+      [viewedUser.messageif, "You should message me if", this.infoForm()]
     ];
     return (
       <div className="questions-index">
@@ -45,15 +60,7 @@ const AboutProfile = React.createClass({
               if (isCurrentUser === true) {
                   return [
                     <p key={idx} className="body-info-label">{mapItem[1]} <img className="edit-icon" src={editIcon}></img></p>,
-                    <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>, <form action="/my-handling-form-page" method="post">
-    <div>
-        <label for="name">Info section:</label>
-        <input type="text" id="name" name="user_info" />
-    </div>
-    <div class="button">
-        <button type="submit">Submit</button>
-    </div>
-</form>
+                    <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>
                   ];
                 } else {
                   return [

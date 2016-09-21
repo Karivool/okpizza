@@ -5,6 +5,9 @@ const UserConstants = require('../constants/user_constants.js');
 let _user = {};
 let _users = {};
 
+// const currentUser = {};
+// const allUsers = {};
+
 const UserStore = new Store(AppDispatcher);
 
 const resetUsers = function (users) {

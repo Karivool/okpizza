@@ -1,10 +1,20 @@
 const AppDispatcher = require('../dispatcher/dispatcher.js');
 const Store = require('flux/utils').Store;
-const QuestionConstants = require('../constants/question_constants.js');
+import {
+  QUESTION_TAKEN_IN,
+  ALL_QUESTIONS_TAKEN_IN,
+  ANSWERED_QUESTIONS_TAKEN_IN,
+  UNANSWERED_QUESTIONS_TAKEN_IN,
+  RESPONSE_TAKEN_IN
+} from '../constants/question_constants.js';
+
 const ApiUtil = require('../util/question_util.js');
 
 let _question = {};
 let _questions = {};
+
+// const currentQuestion = {};
+// const allQuestions = {};
 
 const QuestionStore = new Store(AppDispatcher);
 
@@ -52,30 +62,42 @@ QuestionStore.answered = function (responses) {
 };
 
 QuestionStore.unanswered = function (responses) {
-  return Object.keys(_question).map(function (questionId) {
+  let unansweredQuestions = Object.keys(_question).map(function (questionId) {
     return _question[questionId];
   });
+
+  if (unansweredQuestions.length === 0) {
+    return null;
+  }
+
+  else {
+    return unansweredQuestions[Math.floor(Math.random()*unansweredQuestions.length)];
+  }
 };
 
 QuestionStore.__onDispatch = questionload => {
   switch (questionload.actionType) {
-    case QuestionConstants.QUESTION_TAKEN_IN:
+    case QUESTION_TAKEN_IN:
       setQuestion(questionload.question);
       QuestionStore.__emitChange();
       break;
-    case QuestionConstants.ALL_QUESTIONS_TAKEN_IN:
+
+    case ALL_QUESTIONS_TAKEN_IN:
       resetQuestions(questionload.questions);
       QuestionStore.__emitChange();
       break;
-    case QuestionConstants.ANSWERED_QUESTIONS_TAKEN_IN:
+
+    case ANSWERED_QUESTIONS_TAKEN_IN:
       getQuestionsFromResponses(questionload.questions);
       QuestionStore.__emitChange();
       break;
-    case QuestionConstants.UNANSWERED_QUESTIONS_TAKEN_IN:
+
+    case UNANSWERED_QUESTIONS_TAKEN_IN:
       getUnansweredQuestionsFromResponses(questionload.questions);
       QuestionStore.__emitChange();
       break;
-    case QuestionConstants.RESPONSE_TAKEN_IN:
+
+    case RESPONSE_TAKEN_IN:
       loadNewQuestion(questionload.response);
       QuestionStore.__emitChange();
       break;

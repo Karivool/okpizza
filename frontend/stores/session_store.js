@@ -16,10 +16,12 @@ const _signout = function() {
 
 SessionStore.__onDispatch = sessload => {
   switch (sessload.actionType) {
+
     case SessionConstants.USER_TAKEN_IN:
       _login(sessload.user);
       SessionStore.__emitChange();
       break;
+
     case SessionConstants.SIGNOUT:
       _signout();
       SessionStore.__emitChange();

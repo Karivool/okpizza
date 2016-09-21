@@ -27,10 +27,10 @@ const QuestionForm = React.createClass({
     if (this.state.answer !== null) {
       QuestionActions.submitAnswer(
         this.state.answer,
-        this.props.unanswered[0].id
+        this.props.unanswered.id
       );
       QuestionActions.fetchUnansweredQuestions();
-      QuestionActions.fetchAnsweredQuestions();
+      QuestionActions.fetchAnsweredQuestions(this.props.userId);
 
       this.setState({
         answer: null
@@ -65,7 +65,7 @@ const QuestionForm = React.createClass({
   },
 
   render () {
-    const unanswered = this.props.unanswered[0];
+    const unanswered = this.props.unanswered;
     const answers = unanswered.answers;
 
     return (

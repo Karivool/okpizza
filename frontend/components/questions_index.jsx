@@ -7,30 +7,42 @@ const QuestionIndexItem = require('./question_index_item.jsx');
 const QuestionForm = require('./question_form.jsx');
 const SessionStore = require('../stores/session_store.js');
 
+import {
+  fetchAnsweredQuestions,
+  fetchUnansweredQuestions
+ } from '../actions/question_actions';
+
 const QuestionsIndex = React.createClass({
-  getInitialState () {
+  getInitialState() {
     return {
-      questions: this.props.questions,
-      unanswered: this.props.unanswered,
-      viewedUser: this.props.viewedUser
+      questions: [],
+      unanswered: {}
     };
   },
 
-  getUnansweredQuestions() {
-    this.setState({
-      questions: QuestionStore.unanswered()
-    });
+  componentWillMount() {
+    // all answered questions
+    // an unanswered question
+    this.questionListener = QuestionStore.addListener(this.getQuestions);
+
+    fetchAnsweredQuestions(this.props.viewedUser.id);
+    fetchUnansweredQuestions();
   },
 
-  getAnsweredQuestions() {
+  componentWillUnmount() {
+    this.questionListener.remove();
+  },
+
+  getQuestions() {
     this.setState({
+      unanswered: QuestionStore.unanswered(),
       questions: QuestionStore.answered()
     });
   },
 
   showQuestionForm(unanswered, viewedUser, currentUser) {
     if (viewedUser.id === currentUser.id) {
-      if (unanswered.length === 0 || unanswered[0] === undefined) {
+      if (!unanswered) {
         return (
           <div className="show-question-form">
             <div className="question-each">
@@ -40,19 +52,14 @@ const QuestionsIndex = React.createClass({
         );
       }
 
-      else {
+      else if (Object.keys(unanswered).length > 0) {
         return (
           <div className="show-question-form">
-            {
-              unanswered.map(question => {
-                return (
-                  <QuestionForm
-                    key={ question.id }
-                    unanswered={ unanswered }
-                  />
-                );
-              })
-            }
+            <QuestionForm
+              key={ unanswered.id }
+              userId={ this.props.viewedUser.id }
+              unanswered={ unanswered }
+            />
           </div>
         );
       }
@@ -61,8 +68,8 @@ const QuestionsIndex = React.createClass({
 
   render: function () {
     const currentUser = typeof currentUser !== "undefined" ? currentUser : SessionStore.currentUser();
-    const unanswered = this.props.unanswered;
-    const questions = this.props.questions;
+    const unanswered = this.state.unanswered;
+    const questions = this.state.questions;
     const viewedUser = this.props.viewedUser;
 
     return (
@@ -70,14 +77,24 @@ const QuestionsIndex = React.createClass({
         { this.showQuestionForm(unanswered, viewedUser, currentUser) }
         <p className="questions-answered-p">Answered Questions</p>
         <div className="questions-listing">
-          { questions.map(function (question) {
-            return (<QuestionIndexItem key={question.id} question={question} />);
-          })
-        }
+          {
+            questions.map(function (question) {
+              return (
+                <QuestionIndexItem
+                  key={question.id}
+                  question={question}
+                />
+              );
+            })
+          }
         </div>
       </div>
     );
   }
 });
+
+// QuestionsIndex.propTypes = {
+//   viewedUser: React.PropTypes.object.isRequired
+// };
 
 module.exports = QuestionsIndex;

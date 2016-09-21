@@ -4,6 +4,14 @@ const QuestionStore = require('../stores/question_store.js');
 const hashHistory = require('react-router').hashHistory;
 
 const QuestionsIndexItem = React.createClass({
+  componentWillMount() {
+    this.counter = 0;
+  },
+
+  componentWillReceiveProps() {
+    console.log(this.counter);
+    this.counter++;
+  },
 
   render () {
     const question = this.props.question;

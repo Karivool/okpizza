@@ -29,11 +29,11 @@ const Profile = React.createClass({
     });
   },
 
-  componentDidMount() {
+  componentWillMount() {
     const userId = this.props.params.userId;
 
     this.userListener = UserStore.addListener(this.getProfileInfo);
-    this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
+    // this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
     this.unansweredListener = QuestionStore.addListener(this.getUnansweredQuestions);
 
     this.handleActions(userId);
@@ -45,7 +45,7 @@ const Profile = React.createClass({
     this.handleActions(userId);
   },
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     this.userListener.remove();
     this.questionListener.remove();
     this.unansweredListener.remove();
@@ -58,21 +58,27 @@ const Profile = React.createClass({
   },
 
   getProfileInfo() {
-    this.setState({ viewedUser: UserStore.viewProfile() });
+    this.setState({
+      viewedUser: UserStore.viewProfile()
+    });
   },
 
   getAnsweredQuestions() {
-    this.setState({ questions: QuestionStore.answered() });
+    this.setState({
+      questions: QuestionStore.answered()
+    });
 
   },
 
   getUnansweredQuestions() {
-    this.setState({ unanswered: QuestionStore.unanswered() });
+    this.setState({
+      unanswered: QuestionStore.unanswered()
+    });
   },
 
-  _onChange() {
-    this.forceUpdate();
-  },
+  // _onChange() {
+  //   this.forceUpdate();
+  // },
 
   updateFile: function (e) {
     let file = e.currentTarget.files[0];
@@ -100,6 +106,7 @@ const Profile = React.createClass({
     const viewedUser = this.state.viewedUser;
     const questions = this.state.questions;
     const unanswered = this.state.unanswered;
+
     const birthdate = ( viewedUser === undefined || viewedUser.birthdate === undefined) ? "--" : Helpers.getBday(viewedUser.birthdate) ;
 
     let pics = [];
@@ -130,7 +137,7 @@ const Profile = React.createClass({
               <Link
                 to={`profile/${viewedUser.id}/about`}
                 className="profile-tab-link"
-                params={ {viewedUser: viewedUser} }>About</Link>
+                params={ { viewedUser: viewedUser } }>About</Link>
               <Link
                 to={`profile/${viewedUser.id}/questions`}
                 className="profile-tab-link">Questions</Link>
@@ -139,8 +146,9 @@ const Profile = React.createClass({
           </div>
 
           <div className="profile-body">
-            { React.cloneElement(this.props.children, {viewedUser: viewedUser, questions: questions, unanswered: unanswered } )}
+            { React.cloneElement(this.props.children, { viewedUser: viewedUser }) }
           </div>
+
         </div>
         <div className="profile-footer">
           © OkPizza 2016

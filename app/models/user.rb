@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
 
   has_one(
     :user_info,
-    :class_name => "UserInfo",
+    :class_name => "Info",
     :foreign_key => :user_id,
     :primary_key => :id
   )

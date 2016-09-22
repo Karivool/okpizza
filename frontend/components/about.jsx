@@ -31,13 +31,11 @@ const AboutProfile = React.createClass({
     this.userInfoListener.remove();
   },
 
-  // componentWillReceiveProps (newProps) {
-  //   if (newProps.params){
-  //     this.setState({viewedUserName: newProps.params.viewedUsername });
-  //   } else {
-  //     this.setState({viewedUserName: undefined});
-  //   }
-  // },
+  componentWillReceiveProps (newProps) {
+    if (parseInt(newProps.params.userId) !== newProps.viewedUser.id) {
+      InfoActions.fetchUserInfo(this.props.params.userId);
+    }
+  },
 
   infoForm () {
     return (

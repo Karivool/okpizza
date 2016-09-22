@@ -8,7 +8,10 @@ import { currentUser } from '../stores/session_store';
 
 const AboutProfile = React.createClass({
   getInitialState () {
-    return { viewedUser: this.props.viewedUser };
+    return {
+      viewedUser: this.props.viewedUser,
+      userInfo: {}
+    };
   },
 
   // componentDidMount () {
@@ -45,13 +48,13 @@ const AboutProfile = React.createClass({
     const editIcon = "https://s3.amazonaws.com/okpizza-dev/neonpizza.png";
     const isCurrentUser = viewedUser.id === currentUser().id;
     const aboutEl = [
-      [viewedUser.summary, "My self-summary", this.infoForm()],
-      [viewedUser.doing, "What I am doing with my time", this.infoForm()],
-      [viewedUser.favorites, "Favorite cooks, movies, shows, music, pizza", this.infoForm()],
-      [viewedUser.sixthings, "The six things I could do without", this.infoForm()],
-      [viewedUser.thinking, "I spend a lot of time thinking about", this.infoForm()],
-      [viewedUser.typical, "On a typical night I am", this.infoForm()],
-      [viewedUser.messageif, "You should message me if", this.infoForm()]
+      [userInfo.summary, "My self-summary", this.infoForm()],
+      [userInfo.doing, "What I am doing with my time", this.infoForm()],
+      [userInfo.favorites, "Favorite cooks, movies, shows, music, pizza", this.infoForm()],
+      [userInfo.sixthings, "The six things I could do without", this.infoForm()],
+      [userInfo.thinking, "I spend a lot of time thinking about", this.infoForm()],
+      [userInfo.typical, "On a typical night I am", this.infoForm()],
+      [userInfo.messageif, "You should message me if", this.infoForm()]
     ];
     return (
       <div className="questions-index">

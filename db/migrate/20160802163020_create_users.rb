@@ -10,7 +10,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :orientation, null: false
       t.string :city_name, null: false
       t.string :state_name, null: false
-      t.string :summary
 
       t.timestamps null: false
     end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809234922) do
+ActiveRecord::Schema.define(version: 20160922035654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,18 @@ ActiveRecord::Schema.define(version: 20160809234922) do
   add_index "responses", ["question_id"], name: "index_responses_on_question_id", using: :btree
   add_index "responses", ["user_id"], name: "index_responses_on_user_id", using: :btree
 
+  create_table "user_infos", force: :cascade do |t|
+    t.string   "summary"
+    t.string   "doing"
+    t.string   "favorite"
+    t.string   "sixthings"
+    t.string   "thinking"
+    t.string   "typical"
+    t.string   "messageif"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "username",           null: false
     t.string   "password_digest",    null: false
@@ -49,7 +61,6 @@ ActiveRecord::Schema.define(version: 20160809234922) do
     t.string   "orientation",        null: false
     t.string   "city_name",          null: false
     t.string   "state_name",         null: false
-    t.string   "summary"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"

@@ -5,6 +5,7 @@ class CreateUserInfo < ActiveRecord::Migration
         t.string :doing
         t.string :favorite
         t.string :sixthings
+        t.string :thinking
         t.string :typical
         t.string :messageif
 

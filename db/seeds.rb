@@ -18,7 +18,7 @@ User.create(
   state_name: "England"
 )
 
-UserInfo.create(
+Info.create(
   summary: "Hell0, I w0uld like t0 see what it's like t0 be with and enj0y a pizza.",
   doing: "Tipping my hat at miladies, exp0siting at length ab0ut fluid mechanics",
   favorite: "I d0n't kn0w yet",
@@ -41,7 +41,7 @@ User.create(
   state_name: "California",
 )
 
-UserInfo.create(
+Info.create(
   summary: "I'm the best pie you'll ever have. Worth every penny, and don't take  my shape into account. When fun is to be had, I can tell you I'm definitely not square.",
   doing: "Teaching other pizzas how to sell themselves.",
   favorite: "A Slice to Remember, both in book and movie form. As for pizzas, anything that is Red Baron brand! :)",
@@ -64,7 +64,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "I'll teach you all the ways a pizza can love a human being.",
   doing: "Researching how sentient pizzas came to be.",
   favorite: "The movie adaptation of PineappleHamlet comes to mind. I'm also a fan of Breadthoveen.",
@@ -87,7 +87,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "They all say my toppings aren't fun. I say they haven't even begun to know the meaning of the word.",
   doing: "tryin ta get the big bux by being hired at Yahoogle.",
   favorite: "anything fun like House of Cardboard Boxes",
@@ -110,7 +110,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "I'm the kinda guy who when someone asks, 'Pizza or hot dogs?', I simply answer, 'Yes.'",
   doing: "Blurring the line between snack food and meal",
   favorite: "I'm a big fan of Pizzip Zimbreado and his prisoner's pizza dilemma documentary.",
@@ -133,7 +133,7 @@ User.create(
   state_name: "Maryland",
 )
 
-UserInfo.create(
+Info.create(
   summary: "When life gives you bagels, make a pizza. Or two. Or four.",
   doing: "Trying not to be overshadowed by the bigger pizzas",
   favorite: "Anything that helps me relax in my pizza box",
@@ -156,7 +156,7 @@ User.create(
   state_name: "New Jersey",
 )
 
-UserInfo.create(
+Info.create(
   summary: "Eatza me, Juuuuuuliooooo!",
   doing: "Being the CEO of Jounce, lol",
   favorite: "Anything intellectual like me lol, or Game of Scones",
@@ -179,7 +179,7 @@ User.create(
   state_name: "New Jersey",
 )
 
-UserInfo.create(
+Info.create(
   summary: "I strive to be the best pizza you can eat. Gluten free, GMO free, cancer free, chemical free, everything is free... even the love ;)",
   doing: "Informing other pizzas about how Monsanto is refining our flour",
   favorite: "Anything that exposes the evils of the pizza companies",
@@ -202,7 +202,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "I'M NOT ANGRY. I JUST CAN'T CONTROL MY VOLUME IS ALL. WHAT DO YOU MEAN I'M SCREAMING AND CRITICIZING?!",
   doing: "TRYING TO TELL PEOPLE I DON'T NEED TO CALM DOWN!!",
   favorite: "I DON'T KNOW, I CAN'T THINK OF ANY RIGHT NOW!!",
@@ -225,7 +225,7 @@ User.create(
   state_name: "Illinois",
 )
 
-UserInfo.create(
+Info.create(
   summary: "Majoring in Pieology, Compizza Science, Socipizzagy, and Pizzaneering while lookin for a pal who's bubbly and deep!",
   doing: "Currently, teaching other pizzas all the knowledge of our world!",
   favorite: "tbd",
@@ -248,7 +248,7 @@ User.create(
   state_name: "Florida",
 )
 
-UserInfo.create(
+Info.create(
   summary: "For twelve shifts, you have been asking, who is Les Wrong? This is Les Wrong speaking. I am a pizza who loves his pie. I am the pizza who does not sacrifice his dough or his slices. I am the pizza who has deprived you of  starvings and thus has destroyed your hunger, and if you wish to know why you are feeding-you who dread gluten-I am the pizza who will now tell you.",
   doing: "You have heard it said that this is an age of moral crisis. You have said it yourself, half in fear, half in hope that the words had no meaning. You have cried that pizza's sins are destroying the world and you have cursed gluten nature for its unwillingness to practice the virtues you demanded. Since virtue, to you, consists of hunger, you have demanded more hungers at every successive disaster. In the name of a return to morality, you have hungered all those evils which you held as the cause of your plight. You have hungered justice to mercy. You have hungered independence to unity. You have hungered reason to faith. You have hungered wealth to feed. You have hungered self-esteem to self-denial. You have hungered happiness to dieting.",
   favorite: "All the pizzas who have rotted, the pizzas you trashed, yet dreaded to toss, it is I who have taken them away from you. Do not attempt to find us. We do not choose to be found. Do not cry that it is our duty to feed you. We do not recognize such duty. Do not cry that you need us. We do not consider need a claim. Do not cry that you own us. You don't. Do not beg us to return. We are on strike, we, the pizzas of the hive mind.",
@@ -271,7 +271,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "You like burritos? I'm a burrito too! Let's make out.",
   doing: "Trying to prove burritos are superior to pizzas",
   favorite: "I really like burritos. and Music. Iron Breaden is so sick,",
@@ -294,7 +294,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "I'm not bad, I was just baked that way.",
   doing: "Toasting up in the oven.",
   favorite: "Anything involving philosophy. It keeps my morals in check.",
@@ -317,7 +317,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "I'm the kinda pie that keeps you wondering nya, who's that pizza nya? A bit of fish, a bit of garnish nya, and you got me, a tasty treat, nya.",
   doing: "Writing a program that can calculate the trajectory at which a person's mouth reaches a pizza based on tastiness and appeal, nya.",
   favorite: "Anything with cats or fish, nya.",
@@ -340,7 +340,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "When the chips are down, so is Nicky. I got the ooze and the gooze  that keeps you chewin bite after bite and the lyrics of love that's gonna make you sing oo ow ow out of the baking pan, into the fireee.",
   doing: "What am I doing? What am I doing? What am I doing, you ask. Yet, the question remains, what are you doing? What are you doing? Tell me that now, yeaaah.",
   favorite: "Anything that gets, down to your soul, it's what that I want, it's that what I need. You think you gonna crave it, but I'm gonna crave it, you sing that I crave it, I'm hottin that now.",
@@ -363,7 +363,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "I got the best of both worlds, whether you're looking to rub your   hand up and down my hairy arm, or feel the sausages and olives on my topping arm.",
   doing: "Climbing stacks of pizza boxes while trying not to fall.",
   favorite: "Kinda into The Hunger James right now.",
@@ -386,7 +386,7 @@ User.create(
   state_name: "Pennsylvania",
 )
 
-UserInfo.create(
+Info.create(
   summary: "Pick me if you want a smokin pizza.",
   doing: "Smoking",
   favorite: "Smokey the Bread, Thank You For Smoking, Smoke and the City, Smoketon Jon, Smokey BBQ Pizza.",
@@ -409,7 +409,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "You wanna pizza me? Forget about it! I'll slice you up! Dough maybe I'll be forgiving and crust that you just want to meet up. I'm saucy like that, but I've already got a milady, so don't hedge your bets, I'm not down to have fund with you!",
   doing: "Trying to recover from this Witzelsucht condition, I guess",
   favorite: "Doesn't really matter",
@@ -432,7 +432,7 @@ User.create(
   state_name: "New Jersey",
 )
 
-UserInfo.create(
+Info.create(
   summary: "God I taste good. Whenever I lick my lips and taste how cheesy I am, I just want to shout, 'CREEEEEEEeeeeaAAAAaamMMMMMmmmm MMmeeeeeEEeee!'",
   doing: "Wondering if anyone could possibly be more cheesy than me. I think not!",
   favorite: "Anything with CHEEEEeeEEeEEsSSEEE!",
@@ -455,7 +455,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "Lemons? You tryin to say I'm a sourpuss?! When I go home to my  dearie, she says, 'how you doin pumpkin?' and I say, 'Great! There isn't mush room for anything else!'",
   doing: "Being the most oddball pizza I can be. Aahhhhh!",
   favorite: "Cooks: Mario Breadtali, Rachael Bready, Pizza Deen, ToppIna Garten\nMovies: Breadie and Chive, Reservoir Pizzas, Breadheart\nShows: Game of Scones, Cheese Is The New Olive, Breadking Bad\nMusic: Pizza Floyd, Led Pizzelin, Elvis Pizzley, The Pizztles",
@@ -478,7 +478,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "Lookin for one slice nights. I have a little of everything you crave, ladies, pies, and gents, hit me up!",
   doing: "Making it big in the Chinese Pizza Food business!",
   favorite: "I gotta lot. Just ask me!",
@@ -501,7 +501,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "When my dad told me I could be anything, I told him I wanted to be a  pizza. He told me he wasn't having any of it. I told him, you aren't having any of me either! No one is sTopping me now!",
   doing: "Being the best pizza I can be!",
   favorite: "I really love the movie, Generation Pizza. It goes great with the soundtrack of Breadtney Spizza's, Whoops I Sliced It Again.",
@@ -524,7 +524,7 @@ User.create(
   state_name: "California",
 )
 
-UserInfo.create(
+Info.create(
   summary: "Crust me - I'm delicious!",
   doing: "Looking for the right pie to come along!",
   favorite: "The P Word, Cheese is the New Olive, Pals, and Pizzabox 20",
@@ -547,7 +547,7 @@ User.create(
   state_name: "Massachusetts",
 )
 
-UserInfo.create(
+Info.create(
   summary: "I love cheesy jokes, long walks down the frozen food aisle, and sipping soft drinks by the cozy microwave.",
   doing: "working on making it big in the Big Apple",
   favorite: "dunno, like a lot of things lol",
@@ -570,7 +570,7 @@ User.create(
   state_name: "New Jersey",
 )
 
-UserInfo.create(
+Info.create(
   summary: "Like what you see? Give me an upboat and hit me up, I'll make your mouthhole happy!",
   doing: "Making vidya games, lettin my pet ratties nibble me",
   favorite: "Whatever I'm in the mood for",
@@ -593,7 +593,7 @@ User.create(
   state_name: "New York",
 )
 
-UserInfo.create(
+Info.create(
   summary: "Fun, tasty non-pienarist who loves arugula and nice toppings. If you like what you see, give me a call. You can do it! :)",
   doing: "Being the Big Boss Pizza :)",
   favorite: "If you get to know me I'll tell you :)",

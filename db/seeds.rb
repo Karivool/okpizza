@@ -26,6 +26,7 @@ UserInfo.create(
   thinking: "what tie c0l0ur matches my dress shirt",
   typical: "being tr0lled by an 0verly saucy pizza",
   messageif: "y0u're n0t an infuriating, pun sp0uting, 0verly saucy pizza",
+  user_id: 1
 )
 
 User.create(
@@ -48,6 +49,7 @@ UserInfo.create(
   thinking: "shooting down flying beagles",
   typical: "warming my head up in a microwave",
   messageif: "you're a hard worker who wants a pizza that's dangerously tasty",
+  user_id: 2
 )
 
 User.create(
@@ -70,6 +72,7 @@ UserInfo.create(
   thinking: "How a sentient pizza can exist.",
   typical: "Researching how sentient pizzas came to be.",
   messageif: "You think you'd like someone who researches how us pizzas came to be.",
+  user_id: 3
 )
 
 User.create(
@@ -92,6 +95,7 @@ UserInfo.create(
   thinking: "how to get a job at Yahoogle",
   typical: "doing boxworking",
   messageif: "you wanna hire me at Yahoogle",
+  user_id: 4
 )
 
 User.create(
@@ -114,6 +118,7 @@ UserInfo.create(
   thinking: "Why no one relishes my hot dogs.",
   typical: "Getting cozy with mustard",
   messageif: "You're into fun bite-sized conversations.",
+  user_id: 5
 )
 
 User.create(
@@ -136,6 +141,7 @@ UserInfo.create(
   thinking: "How to talk to other pizzas",
   typical: "Not talking to other pizzas",
   messageif: "You think us bagel pizzas are just as good as you regulars",
+  user_id: 6
 )
 
 User.create(
@@ -158,6 +164,7 @@ UserInfo.create(
   thinking: "How to steal Pizza Lady's pizzas",
   typical: "Making Jounce the #1 on Foodbes Top 100",
   messageif: "Your smart like me, lol",
+  user_id: 7
 )
 
 User.create(
@@ -180,6 +187,7 @@ UserInfo.create(
   thinking: "How to be a healthy, nutritious, good for you pizza",
   typical: "Making sure I'm as tasty as can be",
   messageif: "You want to have a healthy, GMO free lifestyle with me :)",
+  user_id: 8
 )
 
 User.create(
@@ -202,6 +210,7 @@ UserInfo.create(
   thinking: "WHAT?!",
   typical: "TRYING TO GET SOME SLEEP!",
   messageif: "YOU DON'T THINK I'M AN ANGRY PIZZA!",
+  user_id: 9
 )
 
 User.create(
@@ -224,6 +233,7 @@ UserInfo.create(
   thinking: "tbd",
   typical: "Busy!",
   messageif: "tbd",
+  user_id: 10
 )
 
 User.create(
@@ -246,6 +256,7 @@ UserInfo.create(
   thinking: "A code of values accepted by choice is a code of morality.",
   typical: "This wish-which you share, yet submerge as an evil-is the only remnant of the good within you, but it is a wish one must learn to digest.",
   messageif: "Whoever you are, you who are hearing me now, I am speaking to whatever living remnant is left uncorrupted within you, to the remnant of the pizza, to your mind, and I say: There is a morality of reason, a morality proper to pizzas, and Pizza's Life is its standard of bargain value.",
+  user_id: 11
 )
 
 User.create(
@@ -268,6 +279,7 @@ UserInfo.create(
   thinking: "Burritos",
   typical: "being hot, tasty, and so full for u",
   messageif: "You wanna make out with me. Cause I'm a burrito!",
+  user_id: 12
 )
 
 User.create(
@@ -290,6 +302,7 @@ UserInfo.create(
   thinking: "What it means to be a forbidden crust.",
   typical: "Keeping the coals burning.",
   messageif: "You like your pizzas bad to the core.",
+  user_id: 13
 )
 
 User.create(
@@ -312,6 +325,7 @@ UserInfo.create(
   thinking: "Why am I a surprise? Nya.",
   typical: "Being about, watching the cats mew, nya.",
   messageif: "You think I'd be a purrrrfect treat for you, nya.",
+  user_id: 14
 )
 
 User.create(
@@ -334,6 +348,7 @@ UserInfo.create(
   thinking: "The lyrics, yeah, the lyrics, yeah. The lyrics that will make my next big hit song O!",
   typical: "Rockin to the beat of the cherry plum tomatoes that give my artichoke heart the booze.",
   messageif: "You wanna rock with me, yeaaaah!",
+  user_id: 15
 )
 
 User.create(
@@ -356,6 +371,7 @@ UserInfo.create(
   thinking: "The best way to do a Reduxion of my pizza app",
   typical: "Recharging my cyborg batteries",
   messageif: "You think you'd enjoy my company",
+  user_id: 16
 )
 
 User.create(
@@ -378,6 +394,7 @@ UserInfo.create(
   thinking: "Smoking",
   typical: "Smoking",
   messageif: "You like smoking",
+  user_id: 17
 )
 
 User.create(
@@ -400,6 +417,7 @@ UserInfo.create(
   thinking: "Puns",
   typical: "Talking to friends",
   messageif: "You want me to be your Pizza Pal",
+  user_id: 18
 )
 
 User.create(
@@ -422,6 +440,7 @@ UserInfo.create(
   thinking: "How it's possible I'm so cheesy",
   typical: "Tasting myself",
   messageif: "You want to taste how CHEEEeeeeEEeEeSSsSsyY I am.",
+  user_id: 19
 )
 
 User.create(
@@ -444,6 +463,7 @@ UserInfo.create(
   thinking: "My pumpkin pie!",
   typical: "Unwinding and reading up on a good book or two!",
   messageif: "You are a psychopizza who wants to join up for a dark, violent, saucefest hunt.",
+  user_id: 20
 )
 
 User.create(
@@ -466,6 +486,7 @@ UserInfo.create(
   thinking: "How to make Kung Pao Pizza and General Qin's Chicken Pizza big hits!",
   typical: "Surfin the internet, watchin some good anime",
   messageif: "You think you and I would be a good fit!",
+  user_id: 21
 )
 
 User.create(
@@ -488,6 +509,7 @@ UserInfo.create(
   thinking: "That time I said, 'No YOU shut the pizz up, dad!'",
   typical: "Cozying up with my human lover.",
   messageif: "You want to join! There's room for three!",
+  user_id: 22
 )
 
 User.create(
@@ -510,6 +532,7 @@ UserInfo.create(
   thinking: "The physics of throwing pizzas",
   typical: "Reading up on the origins of pizzas",
   messageif: "You think I'm delicious",
+  user_id: 23
 )
 
 User.create(
@@ -532,6 +555,7 @@ UserInfo.create(
   thinking: "what i'm doing with my life... lol",
   typical: "trying to figure out Pizzmat's Last Theorem",
   messageif: "you wanna chill",
+  user_id: 24
 )
 
 User.create(
@@ -554,6 +578,7 @@ UserInfo.create(
   thinking: "Where life as a none pizza with left beef will take me",
   typical: "Trying to keep my rep alive",
   messageif: "You bear witness to my bareness and still want me",
+  user_id: 25
 )
 
 User.create(
@@ -576,6 +601,7 @@ UserInfo.create(
   thinking: "What terrible pizzas to kick out of Pizza Academy.",
   typical: "Kicking out said terrible pizzas.",
   messageif: ":)",
+  user_id: 26
 )
 
 ##########################################################
@@ -869,6 +895,22 @@ Question.create(
   ans_three: "Argue saucefully about how you are not cheesy at all.",
   ans_four: "Take Boss Tom Ato out... for dinner! At Chuck E Cheese.",
 )
+
+Question.create(
+  question: "You are set up with a blind taste. When you meet the pizza in question however, they turn out to have toppings the complete opposite of what you like! Do you continue with the blind taste?",
+  ans_one: "Yes, I am willing to give it a try.",
+  ans_two: "Yeah, I guess so, I don't want to offend the pie.",
+  ans_three: "No, I duck out after going 'to the kitchen.'",
+  ans_four: "No, I get up and leave without a word.",
+)
+
+# Question.create(
+#   question: "",
+#   ans_one: "",
+#   ans_two: "",
+#   ans_three: "",
+#   ans_four: "",
+# )
 
 ##########################################################
 ####### RESPONSE SEEDS                        ############

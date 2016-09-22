@@ -47,9 +47,12 @@ ActiveRecord::Schema.define(version: 20160922035654) do
     t.string   "thinking"
     t.string   "typical"
     t.string   "messageif"
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "user_infos", ["user_id"], name: "index_user_infos_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",           null: false

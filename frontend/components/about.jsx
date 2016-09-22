@@ -12,27 +12,18 @@ const AboutProfile = React.createClass({
   getInitialState () {
     return {
       viewedUser: this.props.viewedUser,
-      userInfo: {
-        // summary: {},
-        // doing: {},
-        // favorite: {},
-        // sixthings: {},
-        // thinking: {},
-        // typical: {},
-        // messageif: {}
-      }
+      userInfo: {}
     };
   },
 
   componentDidMount () {
     this.userInfoListener = InfoStore.addListener(this.getUserInfo);
-    console.log("component did mount");
+    InfoActions.fetchUserInfo(this.props.params.userId);
   },
 
-  getUserInfo() {
-    debugger
+  getUserInfo () {
     this.setState({
-      userInfo: InfoActions.fetchUserInfo()
+      userInfo: InfoStore.viewInfo()
     });
     console.log("in get User Info");
   },

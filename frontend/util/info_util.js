@@ -2,7 +2,7 @@ const ApiUtil = {
 
   fetchUserInfo(userid, callback) {
     $.ajax({
-      url: `api/user_infos/${userid}`,
+      url: `api/infos/${userid}`,
       method: "GET",
       success (userinfo) {
         callback(userinfo);
@@ -14,7 +14,7 @@ const ApiUtil = {
 
   createUserInfo(userid, success, error) {
     $.ajax({
-      url: "api/user_infos",
+      url: "api/infos",
       method: "POST",
       dataType: "json",
       data: { userid },

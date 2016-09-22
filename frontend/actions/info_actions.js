@@ -9,7 +9,7 @@ const ErrorActions = require('./error_actions.js');
 // Action Creators
 
 export function fetchUserInfo(userId) {
-  ApiUtil.fetchQuestionsByResponse(
+  ApiUtil.fetchUserInfo(
     userId,
     takeInUserInfo
   );

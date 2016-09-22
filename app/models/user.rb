@@ -12,7 +12,6 @@
 #  orientation        :string           not null
 #  city_name          :string           not null
 #  state_name         :string           not null
-#  summary            :string
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  image_file_name    :string
@@ -34,6 +33,13 @@ class User < ActiveRecord::Base
     :answered_questions,
     :through => :responses,
     :source => :question
+  )
+
+  has_one(
+    :user_info,
+    :class_name => "UserInfo",
+    :foreign_key => :user_id,
+    :primary_key => :id
   )
 
   attr_reader :password

@@ -25,7 +25,6 @@ const AboutProfile = React.createClass({
     this.setState({
       userInfo: InfoStore.viewInfo()
     });
-    console.log("in get User Info");
   },
 
   componentWillUnmount () {
@@ -62,13 +61,13 @@ const AboutProfile = React.createClass({
     const isCurrentUser = viewedUser.id === currentUser().id;
 
     const aboutEl = [
-      [userInfo.summary, "My self-summary", this.infoForm()],
-      [userInfo.doing, "What I am doing with my time", this.infoForm()],
-      [userInfo.favorite, "Favorite cooks, movies, shows, music, pizza", this.infoForm()],
-      [userInfo.sixthings, "The six things I could do without", this.infoForm()],
-      [userInfo.thinking, "I spend a lot of time thinking about", this.infoForm()],
-      [userInfo.typical, "On a typical night I am", this.infoForm()],
-      [userInfo.messageif, "You should message me if", this.infoForm()]
+      [userInfo[0], "My self-summary", this.infoForm()],
+      [userInfo[1], "What I am doing with my time", this.infoForm()],
+      [userInfo[2], "Favorite cooks, movies, shows, music, pizza", this.infoForm()],
+      [userInfo[3], "The six things I could do without", this.infoForm()],
+      [userInfo[4], "I spend a lot of time thinking about", this.infoForm()],
+      [userInfo[5], "On a typical night I am", this.infoForm()],
+      [userInfo[6], "You should message me if", this.infoForm()]
     ];
     return (
       <div className="questions-index">

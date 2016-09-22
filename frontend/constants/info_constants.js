@@ -1,0 +1,1 @@
+export const USER_INFO_TAKEN_IN = "USER_INFO_TAKEN_IN";

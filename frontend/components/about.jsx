@@ -33,7 +33,10 @@ const AboutProfile = React.createClass({
 
   componentWillReceiveProps (newProps) {
     if (parseInt(newProps.params.userId) !== newProps.viewedUser.id) {
-      InfoActions.fetchUserInfo(this.props.params.userId);
+      InfoActions.fetchUserInfo(newProps.params.userId);
+      this.setState({
+        userInfo: InfoStore.viewInfo()
+      });
     }
   },
 

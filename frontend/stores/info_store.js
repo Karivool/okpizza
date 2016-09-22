@@ -10,26 +10,26 @@ const InfoStore = new Store(AppDispatcher);
 
 const resetUserInfo = function (userInfo) {
   _userInfo = {};
-  _userInfo[userInfo.id] = userInfo;
+  _userInfo = userInfo;
 };
 
-const setUserInfo = function (userInfo) {
-  _userInfo[userInfo.id] = userInfo;
+const setUserInfo = function (userinfo) {
+  _userInfo = userinfo;
 };
 
 const loadNewUserInfo = function (response) {
 };
 
 InfoStore.viewInfo = function () {
-  return Object.keys(_userInfos).map(function (userInfoId) {
-    return _userInfos[userInfoId];
+  return Object.keys(_userInfo).map(function (userInfoId) {
+    return _userInfo[userInfoId];
   });
 };
 
 InfoStore.__onDispatch = userInfoload => {
   switch (userInfoload.actionType) {
     case USER_INFO_TAKEN_IN:
-      setUserInfo(userInfoload.userInfo);
+      setUserInfo(userInfoload.userinfo);
       InfoStore.__emitChange();
       break;
   }

@@ -33,7 +33,6 @@ const Profile = React.createClass({
     const userId = this.props.params.userId;
 
     this.userListener = UserStore.addListener(this.getProfileInfo);
-    // this.questionListener = QuestionStore.addListener(this.getAnsweredQuestions);
     this.unansweredListener = QuestionStore.addListener(this.getUnansweredQuestions);
 
     this.handleActions(userId);
@@ -75,10 +74,6 @@ const Profile = React.createClass({
     });
   },
 
-  // _onChange() {
-  //   this.forceUpdate();
-  // },
-
   updateFile: function (e) {
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
@@ -112,7 +107,7 @@ const Profile = React.createClass({
     for (let i = 0; i < 25; i++) {
       pics.push(window[`pic${i + 1}`]);
     }
-    // const pics = [window.pic1, window.pic2, window.pic3, window.pic4, window.pic5, window.pic6, window.pic7, window.pic8, window.pic9, window.pic10, window.pic11, window.pic12, window.pic13, window.pic14, window.pic15, window.pic16, window.pic17, window.pic18, window.pic19, window.pic20, window.pic21, window.pic22, window.pic23, window.pic24, window.pic25];
+
     let photo = viewedUser.image_url;
     if (viewedUser.id >= 2 && viewedUser.id <= 26) {
       photo = pics[viewedUser.id - 2];

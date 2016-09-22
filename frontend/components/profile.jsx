@@ -47,7 +47,6 @@ const Profile = React.createClass({
 
   componentWillUnmount() {
     this.userListener.remove();
-    this.questionListener.remove();
     this.unansweredListener.remove();
   },
 

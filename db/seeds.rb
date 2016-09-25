@@ -904,6 +904,22 @@ Question.create(
   ans_four: "No, I get up and leave without a word.",
 )
 
+Question.create(
+  question: "You are set up with a blind taste. When you meet the pizza in question however, they turn out to have toppings the complete opposite of what you like! Do you continue with the blind taste?",
+  ans_one: "Yes, I am willing to give it a try.",
+  ans_two: "Yeah, I guess so, I don't want to offend the pie.",
+  ans_three: "No, I duck out after going 'to the kitchen.'",
+  ans_four: "No, I get up and leave without a word.",
+)
+
+Question.create(
+  question: "You get twenty pizza-mails from a potential pal in one hour. Your reaction?",
+  ans_one: "Creepy... get away from me!",
+  ans_two: "That's kinda weird... but whatever.",
+  ans_three: "Eh, kinda nice.",
+  ans_four: "I do the same!",
+)
+
 # Question.create(
 #   question: "",
 #   ans_one: "",

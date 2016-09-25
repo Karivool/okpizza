@@ -9,8 +9,8 @@ const QuestionsIndexItem = React.createClass({
   },
 
   componentWillReceiveProps() {
-    console.log(this.counter);
-    this.counter++;
+    // console.log(this.counter);
+    // this.counter++;
   },
 
   render () {

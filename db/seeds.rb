@@ -920,6 +920,62 @@ Question.create(
   ans_four: "I do the same!",
 )
 
+Question.create(
+  question: "Your ideal pizza partner would comfort you in times of sadness by...",
+  ans_one: "Kneading your dough",
+  ans_two: "Topping your pizza",
+  ans_three: "Warming you up in your box",
+  ans_four: "Giving you space",
+)
+
+Question.create(
+  question: "How important is it your pizza is/isn't from a chain restaurant?",
+  ans_one: "They have to be a chain restaurant type.",
+  ans_two: "They have to be one of those mom and pop shops.",
+  ans_three: "I'm a real New Yorker dollar place.",
+  ans_four: "Doesn't matter to me.",
+)
+
+Question.create(
+  question: "How willing are you to meet somepie from OkPizza in real life?",
+  ans_one: "Totally willing!",
+  ans_two: "I'd consider it.",
+  ans_three: "Not interested.",
+  ans_four: "I would but... socializing is scary.",
+)
+
+Question.create(
+  question: "Could you date a pizza that uses artifical ingredients or taste enhancers?",
+  ans_one: "Yes, it doesn't matter at all to me.",
+  ans_two: "Yes, but only soft stuff like extra sugar or MSG.",
+  ans_three: "No, I'd rather not.",
+  ans_four: "Definitely no. I H8 things like GMOs and gluten!",
+)
+
+Question.create(
+  question: "Would you strongly prefer to only go out with a pizza similar to yourself?",
+  ans_one: "Yes, that pizza better be a clone of me.",
+  ans_two: "Yes, I don't really like variety.",
+  ans_three: "No, it doesn't matter to me either way.",
+  ans_four: "No! I refuse to date pizzas like me... gross.",
+)
+
+Question.create(
+  question: "Could you cannibalize another pizza given extreme enough circumstances?",
+  ans_one: "Hah, I don't even need that. Bottoms up!",
+  ans_two: "Yes, given the context, I could do it.",
+  ans_three: "Not sure, it's hard to say.",
+  ans_four: "No, never. I can't do that to another pizza!",
+)
+
+Question.create(
+  question: "Approximately how many dinner dates would it take before you're okay with pizza topping action happening?",
+  ans_one: "1-2 dinners",
+  ans_two: "3-5 dinners",
+  ans_three: "6+ dinners",
+  ans_four: "Skip the dinners!",
+)
+
 # Question.create(
 #   question: "",
 #   ans_one: "",

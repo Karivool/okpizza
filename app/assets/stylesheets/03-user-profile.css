@@ -237,6 +237,38 @@
   box-shadow: 0 0 8px rgba(0, 255, 0, 1);
 }
 
+.info-cancel-button {
+  background-color: transparent;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+  width: 120px;
+  height: 50px;
+  color: #5e6573;
+  text-align: center;
+  margin-bottom: 1px;
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 16px;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+}
+
+.info-cancel-button:hover, .info-cancel-button:focus, .info-cancel-button:active {
+  background-color: whitesmoke;
+  box-shadow: 0 0 5px rgba(15, 15, 15, .5);
+}
+
 .edit-form {
-  visibility: visible;
+
 }

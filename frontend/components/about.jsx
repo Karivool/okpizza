@@ -12,7 +12,16 @@ const AboutProfile = React.createClass({
   getInitialState () {
     return {
       viewedUser: this.props.viewedUser,
-      userInfo: {}
+      userInfo: {},
+      formStates: {
+        0: false,
+        1: false,
+        2: false,
+        3: false,
+        4: false,
+        5: false,
+        6: false
+      }
     };
   },
 
@@ -40,15 +49,30 @@ const AboutProfile = React.createClass({
     }
   },
 
-  editForm (idx, text) {
-    return (
-      <div>
-          <textarea className="user-info" defaultValue={text}/>
-        <div className="button">
-          <button type="submit" className="info-submit-button">Submit</button>
+  toggleForm (idx) {
+    let newEditState = this.state.formStates;
+
+    newEditState[idx] = !newEditState[idx];
+    this.setState({
+      formStates: newEditState
+    });
+  },
+
+  editForm(showEdit, textField) {
+    if (showEdit === true) {
+      return (
+        <div className="edit-form">
+          <textarea className="user-info" defaultValue={textField}/>
+          <div className="button">
+            <button type="submit" className="info-submit-button">Submit</button>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        textField
+      );
+    }
   },
 
 
@@ -57,6 +81,7 @@ const AboutProfile = React.createClass({
     const userInfo = this.state.userInfo;
     const editIcon = "https://s3.amazonaws.com/okpizza-dev/neonpizza.png";
     const isCurrentUser = viewedUser.id === currentUser().id;
+    const editStates = this.state.formStates;
 
     const aboutEl = [
       [userInfo[0], "My self-summary"],
@@ -67,14 +92,15 @@ const AboutProfile = React.createClass({
       [userInfo[5], "On a typical night I am"],
       [userInfo[6], "You should message me if"]
     ];
+
     return (
       <div className="questions-index">
         <div className="profile-body-section">
             { aboutEl.map(function (mapItem, idx) {
               if (isCurrentUser === true) {
                   return [
-                    <p key={idx} className="body-info-label">{mapItem[1]} <img id={idx} onClick={this.editForm} className="edit-icon" src={editIcon}></img></p>,
-                    <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>, this.editForm(idx, mapItem[0])
+                    <p key={idx} className="body-info-label">{mapItem[1]} <img id={idx} onClick={this.toggleForm.bind(this, idx)} className="edit-icon" src={editIcon}></img></p>,
+                    <p key={idx + 1} className="body-info-text">{this.editForm(editStates[idx], mapItem[0])}</p>
                   ];
                 } else {
                   return [

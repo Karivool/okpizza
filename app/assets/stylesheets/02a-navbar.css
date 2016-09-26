@@ -82,3 +82,7 @@
   padding: 10px 148px 10px 18px;
   margin: -20px;
 }
+
+.sign-out-button:hover, .profile-button:hover {
+  color: #6a7dcd;
+}

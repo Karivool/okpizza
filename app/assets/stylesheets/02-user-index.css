@@ -26,7 +26,7 @@
 
 .match-display-li:hover, .match-display-li:focus, .match-display-li:active {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  transition: box-shadow 50ms 100ms ease;
+  transition: box-shadow 100ms ease;
 }
 
 .match-display-image {
@@ -34,6 +34,13 @@
   width: 280px;
   padding-right: 10px;
   padding-bottom: 20px;
+}
+
+.match-image:hover {
+  border-radius: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 250ms ease;
+  transition: border-radius 350ms ease;
 }
 
 .match-display-name {

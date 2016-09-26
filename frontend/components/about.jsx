@@ -40,17 +40,14 @@ const AboutProfile = React.createClass({
     }
   },
 
-  infoForm () {
+  editForm (idx, text) {
     return (
-      <form onSubmit={ this.handleSubmit } className="about-info-box">
-        <div>
-          <label for="name">Info section:</label>
-          <input type="text" id="name" name="user_info" />
+      <div>
+          <textarea className="user-info" defaultValue={text}/>
+        <div className="button">
+          <button type="submit" className="info-submit-button">Submit</button>
         </div>
-        <div class="button">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+      </div>
     );
   },
 
@@ -62,13 +59,13 @@ const AboutProfile = React.createClass({
     const isCurrentUser = viewedUser.id === currentUser().id;
 
     const aboutEl = [
-      [userInfo[0], "My self-summary", this.infoForm()],
-      [userInfo[1], "What I am doing with my time", this.infoForm()],
-      [userInfo[2], "Favorite cooks, movies, shows, music, pizza", this.infoForm()],
-      [userInfo[3], "The six things I could do without", this.infoForm()],
-      [userInfo[4], "I spend a lot of time thinking about", this.infoForm()],
-      [userInfo[5], "On a typical night I am", this.infoForm()],
-      [userInfo[6], "You should message me if", this.infoForm()]
+      [userInfo[0], "My self-summary"],
+      [userInfo[1], "What I am doing with my time"],
+      [userInfo[2], "Favorite cooks, movies, shows, music, pizza"],
+      [userInfo[3], "The six things I could do without"],
+      [userInfo[4], "I spend a lot of time thinking about"],
+      [userInfo[5], "On a typical night I am"],
+      [userInfo[6], "You should message me if"]
     ];
     return (
       <div className="questions-index">
@@ -76,8 +73,8 @@ const AboutProfile = React.createClass({
             { aboutEl.map(function (mapItem, idx) {
               if (isCurrentUser === true) {
                   return [
-                    <p key={idx} className="body-info-label">{mapItem[1]} <img className="edit-icon" src={editIcon}></img></p>,
-                    <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>
+                    <p key={idx} className="body-info-label">{mapItem[1]} <img id={idx} onClick={this.editForm} className="edit-icon" src={editIcon}></img></p>,
+                    <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>, this.editForm(idx, mapItem[0])
                   ];
                 } else {
                   return [
@@ -85,7 +82,7 @@ const AboutProfile = React.createClass({
                     <p key={idx + 1} className="body-info-text">{mapItem[0]}</p>
                   ];
                 }
-              })
+              }.bind(this))
             }
         </div>
       </div>

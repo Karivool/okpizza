@@ -58,13 +58,15 @@ const AboutProfile = React.createClass({
     });
   },
 
-  editForm(showEdit, textField) {
+  editForm(showEdit, textField, idx) {
+    console.log(showEdit);
     if (showEdit === true) {
       return (
         <div className="edit-form">
           <textarea className="user-info" defaultValue={textField}/>
-          <div className="button">
+          <div className="buttons">
             <button type="submit" className="info-submit-button">Submit</button>
+            <button onClick={this.toggleForm.bind(this, idx)} className="info-cancel-button">Cancel</button>
           </div>
         </div>
       );
@@ -100,7 +102,7 @@ const AboutProfile = React.createClass({
               if (isCurrentUser === true) {
                   return [
                     <p key={idx} className="body-info-label">{mapItem[1]} <img id={idx} onClick={this.toggleForm.bind(this, idx)} className="edit-icon" src={editIcon}></img></p>,
-                    <p key={idx + 1} className="body-info-text">{this.editForm(editStates[idx], mapItem[0])}</p>
+                    <p key={idx + 1} className="body-info-text">{this.editForm(editStates[idx], mapItem[0], idx)}</p>
                   ];
                 } else {
                   return [

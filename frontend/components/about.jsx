@@ -59,7 +59,6 @@ const AboutProfile = React.createClass({
   },
 
   editForm(showEdit, textField, idx) {
-    console.log(showEdit);
     if (showEdit === true) {
       return (
         <div className="edit-form">

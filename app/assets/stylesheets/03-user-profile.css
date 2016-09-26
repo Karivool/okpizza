@@ -236,3 +236,7 @@
 .info-submit-button:hover, .info-submit-button:focus, .info-submit-button:active {
   box-shadow: 0 0 8px rgba(0, 255, 0, 1);
 }
+
+.edit-form {
+  visibility: visible;
+}

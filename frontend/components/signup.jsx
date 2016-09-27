@@ -22,7 +22,6 @@ const SignUpForm = React.createClass({
 
   componentDidMount() {
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
-    this._onChange();
   },
 
   componentWillUnmount() {
@@ -39,10 +38,6 @@ const SignUpForm = React.createClass({
     e.preventDefault();
 
     SessionActions.signUp(this.state);
-  },
-
-  _onChange() {
-    this.forceUpdate();
   },
 
   guestSignIn() {

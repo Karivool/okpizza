@@ -14,7 +14,6 @@ const UsersIndex = React.createClass({
   componentDidMount () {
     this.userListener = UserStore.addListener(this.getUsers);
     UserActions.fetchAllUsers();
-    this._onChange();
   },
 
   componentWillUnmount () {
@@ -23,10 +22,6 @@ const UsersIndex = React.createClass({
 
   getUsers() {
     this.setState({ users: UserStore.all() });
-  },
-
-  _onChange() {
-    this.forceUpdate();
   },
 
   render: function() {

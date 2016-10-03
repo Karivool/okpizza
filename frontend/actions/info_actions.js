@@ -15,11 +15,25 @@ export function fetchUserInfo(userId) {
   );
 }
 
+export function updateUserInfo(userId, userInfo, fieldType) {
+  ApiUtil.updateUserInfo(
+    userId, userInfo, fieldType,
+    takeInUpdatedInfo
+  );
+}
+
 // Actions
 
 export function takeInUserInfo (userinfo) {
   Dispatcher.dispatch({
     actionType: USER_INFO_TAKEN_IN,
+    userinfo: userinfo
+  });
+}
+
+export function takeInUpdatedInfo (userinfo) {
+  Dispatcher.dispatch({
+    actionType: USER_INFO_UPDATED,
     userinfo: userinfo
   });
 }

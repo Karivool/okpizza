@@ -1,6 +1,6 @@
 const AppDispatcher = require('../dispatcher/dispatcher.js');
 const Store = require('flux/utils').Store;
-import { USER_INFO_TAKEN_IN } from '../constants/info_constants.js';
+import { USER_INFO_TAKEN_IN, USER_INFO_UPDATED} from '../constants/info_constants.js';
 
 const ApiUtil = require('../util/info_util.js');
 

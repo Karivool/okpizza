@@ -58,13 +58,13 @@ const AboutProfile = React.createClass({
     });
   },
 
-  editForm(showEdit, textField, idx) {
+  editForm(showEdit, textField, idx, textType) {
     if (showEdit === true) {
       return (
         <div className="edit-form">
           <textarea className="user-info" defaultValue={textField}/>
           <div className="buttons">
-            <button type="submit" className="info-submit-button">Submit</button>
+            <button type="submit" className="info-submit-button" onClick={this.submitEdit.bind(this, textField, idx, textType)}>Submit</button>
             <button onClick={this.toggleForm.bind(this, idx)} className="info-cancel-button">Cancel</button>
           </div>
         </div>
@@ -76,6 +76,11 @@ const AboutProfile = React.createClass({
     }
   },
 
+  submitEdit(textField, idx, textType) {
+    let updatedField = InfoActions.updateUserInfo(this.props.params.userId, textField, textType);
+
+    debugger
+  },
 
   render: function () {
     const viewedUser = this.props.viewedUser;
@@ -85,13 +90,13 @@ const AboutProfile = React.createClass({
     const editStates = this.state.formStates;
 
     const aboutEl = [
-      [userInfo[0], "My self-summary"],
-      [userInfo[1], "What I am doing with my time"],
-      [userInfo[2], "Favorite cooks, movies, shows, music, pizza"],
-      [userInfo[3], "The six things I could do without"],
-      [userInfo[4], "I spend a lot of time thinking about"],
-      [userInfo[5], "On a typical night I am"],
-      [userInfo[6], "You should message me if"]
+      [userInfo[0], "My self-summary", "summary"],
+      [userInfo[1], "What I am doing with my time", "doing"],
+      [userInfo[2], "Favorite cooks, movies, shows, music, pizza", "favorite"],
+      [userInfo[3], "The six things I could do without", "sixthings"],
+      [userInfo[4], "I spend a lot of time thinking about", "thinking"],
+      [userInfo[5], "On a typical night I am", "typical"],
+      [userInfo[6], "You should message me if", "messageif"]
     ];
 
     return (
@@ -101,7 +106,7 @@ const AboutProfile = React.createClass({
               if (isCurrentUser === true) {
                   return [
                     <p key={idx} className="body-info-label">{mapItem[1]} <img id={idx} onClick={this.toggleForm.bind(this, idx)} className="edit-icon" src={editIcon}></img></p>,
-                    <p key={idx + 1} className="body-info-text">{this.editForm(editStates[idx], mapItem[0], idx)}</p>
+                    <p key={idx + 1} className="body-info-text">{this.editForm(editStates[idx], mapItem[0], idx, mapItem[2])}</p>
                   ];
                 } else {
                   return [

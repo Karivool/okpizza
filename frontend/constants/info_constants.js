@@ -1,1 +1,2 @@
 export const USER_INFO_TAKEN_IN = "USER_INFO_TAKEN_IN";
+export const USER_INFO_UPDATED = "USER_INFO_UPDATED";

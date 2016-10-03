@@ -32,6 +32,10 @@ InfoStore.__onDispatch = userInfoload => {
       setUserInfo(userInfoload.userinfo);
       InfoStore.__emitChange();
       break;
+    case USER_INFO_UPDATED:
+      resetUserInfo(userInfoload.userinfo);
+      InfoStore.__emitChange();
+      break;
   }
 };
 

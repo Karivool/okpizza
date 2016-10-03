@@ -26,5 +26,19 @@ const ApiUtil = {
     });
   },
 
+  updateUserInfo(userid, text, fieldtype, success) {
+    $.ajax({
+      url: `api/infos/${userid}`,
+      method: "PATCH",
+      dataType: "json",
+      data: { userid, text, fieldtype },
+      success,
+      error(renderError) {
+        const errors = renderError.responseJSON;
+        console.log(errors);
+      }
+    });
+  }
+
 };
 module.exports = ApiUtil;

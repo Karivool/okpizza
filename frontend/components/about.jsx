@@ -12,7 +12,7 @@ const AboutProfile = React.createClass({
   getInitialState () {
     return {
       viewedUser: this.props.viewedUser,
-      userInfo: {},
+      userInfo: {}, field: "",
       formStates: {
         0: false,
         1: false,
@@ -61,13 +61,19 @@ const AboutProfile = React.createClass({
   editForm(showEdit, textField, idx, textType) {
     if (showEdit === true) {
       return (
-        <div className="edit-form">
-          <textarea className="user-info" defaultValue={textField}/>
-          <div className="buttons">
-            <button type="submit" className="info-submit-button" onClick={this.submitEdit.bind(this, textField, idx, textType)}>Submit</button>
-            <button onClick={this.toggleForm.bind(this, idx)} className="info-cancel-button">Cancel</button>
+        <form onSubmit={this.submitEdit.bind(this, idx, textType)}>
+          <div className="edit-form">
+            <textarea
+              className="user-info"
+              defaultValue={textField}
+              onChange={this.formEdited}
+              />
+            <div className="buttons">
+              <button type="submit" className="info-submit-button" >Submit</button>
+              <button onClick={this.toggleForm.bind(this, idx)} className="info-cancel-button">Cancel</button>
+            </div>
           </div>
-        </div>
+        </form>
       );
     } else {
       return (
@@ -76,10 +82,17 @@ const AboutProfile = React.createClass({
     }
   },
 
-  submitEdit(textField, idx, textType) {
-    let updatedField = InfoActions.updateUserInfo(this.props.params.userId, textField, textType);
+  submitEdit (idx, textType, e) {
+    e.preventDefault();
+    let updatedField = InfoActions.updateUserInfo(this.props.params.userId, this.state.field, textType);
+  },
 
-    debugger
+  formEdited (e) {
+    console.log(this.state.field);
+    this.setState({
+      field: e.target.value
+    });
+    console.log(this.state.field);
   },
 
   render: function () {

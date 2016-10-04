@@ -16,6 +16,17 @@ class Api::InfosController < ApplicationController
     end
   end
 
+  def update
+    @info = Info.find(params[:id])
+    @info[params[:fieldtype]] = params[:text]
+    if @info.save
+      debugger
+      render "api/infos/show"
+    else
+      render json: @userinfo.errors.full_messages, status: 422
+    end
+  end
+
   def show
     @userinfo = Info.find(params[:id])
     render "api/infos/show"

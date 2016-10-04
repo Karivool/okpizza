@@ -38,6 +38,7 @@ const SignUpForm = React.createClass({
     e.preventDefault();
 
     SessionActions.signUp(this.state);
+    debugger
   },
 
   guestSignIn() {

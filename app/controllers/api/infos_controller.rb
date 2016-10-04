@@ -3,7 +3,7 @@ class Api::InfosController < ApplicationController
   def index
     debugger
     @userinfo = UserInfo.find(params[:id])
-    render "api/user_infos/index"
+    render "api/infos/index"
   end
 
   def create
@@ -17,10 +17,9 @@ class Api::InfosController < ApplicationController
   end
 
   def update
-    @info = Info.find(params[:id])
-    @info[params[:fieldtype]] = params[:text]
-    if @info.save
-      debugger
+    @userinfo = Info.find(params[:id])
+    @userinfo[params[:fieldtype]] = params[:text]
+    if @userinfo.save
       render "api/infos/show"
     else
       render json: @userinfo.errors.full_messages, status: 422

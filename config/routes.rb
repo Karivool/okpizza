@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :questions, only: [:create, :show, :index]
     resource :response, only: [:show, :index]
     resources :responses, only: [:create, :show, :index]
-    resources :infos, only: [:create, :show, :index]
+    resources :infos, only: [:create, :show, :update, :index]
   end
 
   root to: "static_pages#root"

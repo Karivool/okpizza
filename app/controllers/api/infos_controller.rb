@@ -27,7 +27,13 @@ class Api::InfosController < ApplicationController
   end
 
   def show
-    @userinfo = Info.find(params[:id])
+    @userinfo = Info.find_by(id: params[:id])
+    if @userinfo == nil
+      @userinfo = Info.new
+      @userinfo.user_id = params[:id]
+      @userinfo.save
+      debugger
+    end
     render "api/infos/show"
   end
 

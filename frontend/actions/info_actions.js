@@ -15,6 +15,13 @@ export function fetchUserInfo(userId) {
   );
 }
 
+export function createUserInfo(userId) {
+  ApiUtil.createUserInfo(
+    userId,
+    takeInUserInfo
+  );
+}
+
 export function updateUserInfo(userId, userInfo, fieldType) {
   ApiUtil.updateUserInfo(
     userId, userInfo, fieldType,
@@ -24,14 +31,14 @@ export function updateUserInfo(userId, userInfo, fieldType) {
 
 // Actions
 
-export function takeInUserInfo (userinfo) {
+export function takeInUserInfo(userinfo) {
   Dispatcher.dispatch({
     actionType: USER_INFO_TAKEN_IN,
     userinfo: userinfo
   });
 }
 
-export function takeInUpdatedInfo (userinfo) {
+export function takeInUpdatedInfo(userinfo) {
   Dispatcher.dispatch({
     actionType: USER_INFO_UPDATED,
     userinfo: userinfo

@@ -84,15 +84,14 @@ const AboutProfile = React.createClass({
 
   submitEdit (idx, textType, e) {
     e.preventDefault();
-    let updatedField = InfoActions.updateUserInfo(this.props.params.userId, this.state.field, textType);
+    InfoActions.updateUserInfo(this.props.params.userId, this.state.field, textType);
+    this.toggleForm(idx);
   },
 
   formEdited (e) {
-    console.log(this.state.field);
     this.setState({
       field: e.target.value
     });
-    console.log(this.state.field);
   },
 
   render: function () {

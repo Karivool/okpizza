@@ -38,6 +38,10 @@ const LoginForm = React.createClass({
     SessionActions.logIn(this.state);
   },
 
+  guestSignIn() {
+    SessionActions.logIn({username: "Bungh0", password: "lma0lma0umad"});
+  },
+
   errors() {
     const errors = ErrorStore.errors(this.inputHandler);
     const messages = errors.map ( (errorMessage, idx) => {

@@ -1,7 +1,6 @@
 class Api::InfosController < ApplicationController
 
   def index
-    debugger
     @userinfo = UserInfo.find(params[:id])
     render "api/infos/index"
   end
@@ -32,7 +31,6 @@ class Api::InfosController < ApplicationController
       @userinfo = Info.new
       @userinfo.user_id = params[:id]
       @userinfo.save
-      debugger
     end
     render "api/infos/show"
   end

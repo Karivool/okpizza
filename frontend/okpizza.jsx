@@ -14,6 +14,7 @@ const UsersIndex = require('./components/users_index.jsx');
 const Profile = require('./components/profile.jsx');
 const AboutProfile = require('./components/about.jsx');
 const QuestionsIndex = require('./components/questions_index.jsx');
+const MessagesIndex = require('./components/messages_index.jsx');
 const SessionStore = require('./stores/session_store.js');
 const SessionActions = require('./actions/session_actions.js');
 const ApiUtil = require('./util/api_util.js');
@@ -29,6 +30,8 @@ const routes = (
         <IndexRoute component={ AboutProfile } onEnter={ _ensureLoggedIn }/>
         <Route path="/profile/:userId/about" component={ AboutProfile } onEnter={ _ensureLoggedIn }/>
         <Route path="/profile/:userId/questions" component={ QuestionsIndex } onEnter={ _ensureLoggedIn }/>
+      </Route>
+      <Route path="/messages/:userId" component={ MessagesIndex } onEnter={ _ensureLoggedIn }>
       </Route>
     </Route>
   </Router>

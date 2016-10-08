@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resource :response, only: [:show, :index]
     resources :responses, only: [:create, :show, :index]
     resources :infos, only: [:create, :show, :update, :index]
+    resources :messages, only: [:create, :show, :index]
   end
 
   root to: "static_pages#root"

@@ -3,7 +3,7 @@ const Store = require('flux/utils').Store;
 import {
   MESSAGE_TAKEN_IN,
   TAKE_IN_MESSAGE,
-  ALL_FIRST_MESSAGES,
+  ALL_LAST_MESSAGES,
   MESSAGE_SET_TAKEN_IN
 
 } from '../constants/message_constants.js';
@@ -16,7 +16,7 @@ let _firstMessages = {};
 
 const MessageStore = new Store(AppDispatcher);
 
-const resetFirstMessages = function (messages) {
+const resetLastMessages = function (messages) {
   _firstMessages = {};
   messages.forEach(function (message) {
     _firstMessages[message.id] = message;
@@ -42,7 +42,7 @@ MessageStore.__onDispatch = messageLoad => {
     case TAKE_IN_MESSAGE:
 
       break;
-    case ALL_FIRST_MESSAGES:
+    case ALL_LAST_MESSAGES:
 
       break;
     case MESSAGE_SET_TAKEN_IN:

@@ -4,7 +4,7 @@ const Dispatcher = require('../dispatcher/dispatcher.js');
 import {
   MESSAGE_TAKEN_IN,
   TAKE_IN_MESSAGE,
-  ALL_FIRST_MESSAGES,
+  ALL_LAST_MESSAGES,
   MESSAGE_SET_TAKEN_IN
 
 } from '../constants/message_constants.js';

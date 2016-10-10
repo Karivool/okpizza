@@ -3,7 +3,7 @@ const Dispatcher = require('../dispatcher/dispatcher.js');
 
 import {
   MESSAGE_TAKEN_IN,
-  RECEIVE_MESSAGE,
+  TAKE_IN_MESSAGE,
   ALL_FIRST_MESSAGES,
   MESSAGE_SET_TAKEN_IN
 
@@ -14,4 +14,4 @@ const ErrorActions = require('./error_actions.js');
 
 // Action Creators
 
-// Actions 
+// Actions

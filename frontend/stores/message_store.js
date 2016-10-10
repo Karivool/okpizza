@@ -2,7 +2,7 @@ const AppDispatcher = require('../dispatcher/dispatcher.js');
 const Store = require('flux/utils').Store;
 import {
   MESSAGE_TAKEN_IN,
-  RECEIVE_MESSAGE,
+  TAKE_IN_MESSAGE,
   ALL_FIRST_MESSAGES,
   MESSAGE_SET_TAKEN_IN
 
@@ -15,5 +15,40 @@ let _messages = {};
 let _firstMessages = {};
 
 const MessageStore = new Store(AppDispatcher);
+
+const resetFirstMessages = function (messages) {
+  _firstMessages = {};
+  messages.forEach(function (message) {
+    _firstMessages[message.id] = message;
+  });
+};
+
+const resetMessages = function (messages) {
+  _messages = {};
+  _messages[message.id] = messages;
+};
+
+MessageStore.firsts = function () {
+  return Object.keys(_messages).map(function(messageId) {
+    return _messages[messageId];
+  });
+};
+
+MessageStore.__onDispatch = messageLoad => {
+  switch (messageLoad.actionType) {
+    case MESSAGE_TAKEN_IN:
+
+      break;
+    case TAKE_IN_MESSAGE:
+
+      break;
+    case ALL_FIRST_MESSAGES:
+
+      break;
+    case MESSAGE_SET_TAKEN_IN:
+
+      break;
+  }
+};
 
 module.exports = MessageStore;

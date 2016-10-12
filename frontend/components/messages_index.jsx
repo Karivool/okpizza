@@ -47,7 +47,7 @@ const MessagesIndex = React.createClass({
     return (
       <div className="messages-index">
         { this.showMessageForm(viewedUser, currentUser) }
-        <p className="message-title">Messages<p>
+        <p className="message-title">Messages</p>
         <div className="messages-listing">
           {
             messages.map(function (message) {

@@ -93,6 +93,20 @@
   color: #6a7dcd;
 }
 
+.message-inbox-text {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding-top: 16px;
+  padding-left: 20px;
+  font-size: 18px;
+  color: #5e6573;
+}
+
 .message-dropdown-menu {
   display: block;
   position: absolute;
@@ -125,7 +139,16 @@
 }
 
 .message-see-all {
-
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding-top: 14px;
+  font-size: 14px;
+  color: #4c7bd9;
+  text-align: center;
 }
 
 .message-see-all-text {

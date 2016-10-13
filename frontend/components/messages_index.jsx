@@ -20,9 +20,9 @@ const MessagesIndex = React.createClass({
   },
 
   componentWillMount() {
-    this.messageListener = MessageStore.addListener(this.getMessages);
+    // this.messageListener = MessageStore.addListener(this.getMessages);
 
-    fetchfirstMessages(Sessionstore.currentUser);
+    // fetchfirstMessages(Sessionstore.currentUser);
   },
 
   componentWillUnmount() {
@@ -46,6 +46,7 @@ const MessagesIndex = React.createClass({
 
     return (
       <div className="messages-index">
+        <Navbar />
         { this.showMessageForm(viewedUser, currentUser) }
         <p className="message-title">Messages</p>
         <div className="messages-listing">

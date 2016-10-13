@@ -44,7 +44,7 @@ const Navbar = React.createClass({
   },
 
   seeAll() {
-    
+
   },
 
   render() {
@@ -68,10 +68,10 @@ const Navbar = React.createClass({
           </div>
           <div className="message-dropdown-menu">
             <div className="message-click">
-              <Link to={`/message/${user.id}`} className="message-button"></Link>
+              <Link to={`/message/${user.id}`} className="message-button">LOL</Link>
             </div>
             <div className="message-see-all">
-              <button onClick={this.seeAll} className="message-see-all-text">See all messages</button>
+              <button onClick={this.seeAll} className="message-see-all-text">See all</button>
             </div>
           </div>
         </div>

@@ -10,7 +10,8 @@ const Navbar = React.createClass({
 
   getInitialState() {
     return {
-      menuShown: false
+      profileMenuShown: false,
+      messageMenuShown: false
     };
   },
 
@@ -18,16 +19,32 @@ const Navbar = React.createClass({
     SessionActions.signOut();
   },
 
-  showMenu() {
-    let menuShown = this.state.menuShown;
+  showMessageMenu() {
+    let menuShown = this.state.messageMenuShown;
     if (menuShown) {
-      $('.dropdown-menu').css({'visibility':'hidden', 'opacity':0});
-      this.state.menuShown = false;
+      $('.message-dropdown-menu').css({'visibility':'hidden', 'opacity':0});
+      this.setState({messageMenuShown: false});
       return;
     } else {
-      $('.dropdown-menu').css({'visibility':'visible', 'opacity':1});
-      this.state.menuShown = true;
+      $('.message-dropdown-menu').css({'visibility':'visible', 'opacity':1});
+      this.setState({messageMenuShown: true, profileMenuShown: false});
     }
+  },
+
+  showProfileMenu() {
+    let menuShown = this.state.profileMenuShown;
+    if (menuShown) {
+      $('.profile-dropdown-menu').css({'visibility':'hidden', 'opacity':0});
+      this.setState({profileMenuShown: false});
+      return;
+    } else {
+      $('.profile-dropdown-menu').css({'visibility':'visible', 'opacity':1});
+      this.setState({profileMenuShown: true, messageMenuShown: false});
+    }
+  },
+
+  seeAll() {
+    
   },
 
   render() {
@@ -38,14 +55,23 @@ const Navbar = React.createClass({
         <div className="mini-logo">
           <a href="#/index"><img src={okPLogo}/></a>
         </div>
-        <div className="user-nav-detail" onClick={this.showMenu}>
-          <img className="profile-mini-pic" src={ user.image_url }/>
-          <div className="dropdown-menu">
+        <div className="user-nav-detail">
+          <img className="profile-message" onClick={this.showMessageMenu} src="https://s3.amazonaws.com/okpizza-dev/message-unhover.png"></img>
+          <img className="profile-mini-pic" onClick={this.showProfileMenu} src={ user.image_url }/>
+          <div className="profile-dropdown-menu">
             <div className="profile-click">
               <Link to={`/profile/${user.id}`} className="profile-button">Profile</Link>
             </div>
             <div className="sign-out">
               <button onClick={this._signOut} className="sign-out-button">Log out</button>
+            </div>
+          </div>
+          <div className="message-dropdown-menu">
+            <div className="message-click">
+              <Link to={`/message/${user.id}`} className="message-button"></Link>
+            </div>
+            <div className="message-see-all">
+              <button onClick={this.seeAll} className="message-see-all-text">See all messages</button>
             </div>
           </div>
         </div>

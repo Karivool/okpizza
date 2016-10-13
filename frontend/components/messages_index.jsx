@@ -26,7 +26,7 @@ const MessagesIndex = React.createClass({
   },
 
   componentWillUnmount() {
-    this.messageListener.remove();
+    // this.messageListener.remove();
   },
 
   getMessages() {
@@ -47,19 +47,16 @@ const MessagesIndex = React.createClass({
     return (
       <div className="messages-index">
         <Navbar />
-        { this.showMessageForm(viewedUser, currentUser) }
-        <p className="message-title">Messages</p>
-        <div className="messages-listing">
-          {
-            messages.map(function (message) {
-              return (
-                <MessageIndexItem
-                  key={message.id}
-                  message={message}
-                />
-              );
-            })
-          }
+        <div className="profile-content group">
+          <div className="profile-header">
+            <div className="profile-info">
+              <p className="profile-username">
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="profile-footer">
+          © OkPizza 2016
         </div>
       </div>
     );

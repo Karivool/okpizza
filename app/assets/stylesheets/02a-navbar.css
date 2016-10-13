@@ -21,13 +21,20 @@
   float: right;
 }
 
+.profile-message {
+  margin-right: 25px;
+  margin-top: 8px;
+  float: left;
+  width: 30px;
+}
+
 .profile-mini-pic {
   width: 42px;
   border-radius: 20px;
   background-color: gainsboro;
 }
 
-.dropdown-menu {
+.profile-dropdown-menu, .message-dropdown-menu {
   display: block;
   position: absolute;
   color: black;
@@ -42,7 +49,6 @@
   transform: scale(1);
   transform-origin: 200px 0;
   transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
-  ;
 }
 
 .user-nav-detail dropdown-menu:hover > sign-out profile-click
@@ -85,4 +91,37 @@
 
 .sign-out-button:hover, .profile-button:hover {
   color: #6a7dcd;
+}
+
+.message-dropdown-menu {
+  display: block;
+  position: absolute;
+  color: black;
+  float: right;
+  width: auto;
+  top: 71px;
+  right: 2px;
+
+  visibility: hidden;
+  opacity: 0;
+  z-index: 900;
+  transform: scale(1);
+  transform-origin: 200px 0;
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
+}
+
+.message-click {
+
+}
+
+.message-button {
+
+}
+
+.message-see-all {
+
+}
+
+.message-see-all-text {
+
 }

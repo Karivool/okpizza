@@ -1687,3 +1687,45 @@ Response.create(
   question_id: 5,
   user_id: 26,
 )
+
+Message.create(
+  message: "Milady!",
+  user_id: 1,
+  sent_id: 18,
+)
+
+Message.create(
+  message: "Milady, please respond",
+  user_id: 1,
+  sent_id: 18,
+)
+
+Message.create(
+  message: "Milady?",
+  user_id: 1,
+  sent_id: 18,
+)
+
+Message.create(
+  message: "Kari.",
+  user_id: 1,
+  sent_id: 18,
+)
+
+Message.create(
+  message: "KAAAAAAAAAARRRRIIIIIIII",
+  user_id: 1,
+  sent_id: 18,
+)
+
+Message.create(
+  message: "What, Bungh0?! Geez... chill out!",
+  user_id: 18,
+  sent_id: 1,
+)
+
+# Message.create(
+#   message: "",
+#   user_id: ,
+#   sent_id: ,
+# )

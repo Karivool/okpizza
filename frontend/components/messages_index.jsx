@@ -48,7 +48,12 @@ const MessagesIndex = React.createClass({
       <div className="messages-index">
         <Navbar />
         <div className="message-content group">
-          Messages
+          <div className="message-content-header">
+            <p className="message-title">Messages</p>
+            <p className="message-title-sub">Received</p>
+            <p className="message-title-sub">Sent</p>
+            <p className="message-title-sub">Filtered</p>
+          </div>
         </div>
         <div className="profile-footer">
           © OkPizza 2016

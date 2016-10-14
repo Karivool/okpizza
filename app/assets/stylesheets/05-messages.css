@@ -2,3 +2,18 @@
   background-color: #104da1;
   min-height: 100vh;
 }
+
+.message-content {
+  background-color: #f3f5f9;
+  border-radius: 6px;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-bottom: 80px;
+  width: 940px;
+  min-height: 80vh;
+}
+
+.message-title {
+
+}

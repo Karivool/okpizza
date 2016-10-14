@@ -8,7 +8,7 @@ const MessageForm = require('./message_form.jsx');
 const SessionStore = require('../stores/session_store.js');
 
 import {
-  fetchFirstMessages
+  fetchAllFirstMessages
 } from '../actions/message_actions';
 
 const MessagesIndex = React.createClass({
@@ -21,7 +21,7 @@ const MessagesIndex = React.createClass({
   componentWillMount() {
     this.messageListener = MessageStore.addListener(this.getMessages);
 
-    fetchfirstMessages(SessionStore.currentUser);
+    fetchAllFirstMessages(SessionStore.currentUser);
   },
 
   componentWillUnmount() {

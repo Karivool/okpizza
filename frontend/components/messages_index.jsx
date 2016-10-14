@@ -54,6 +54,14 @@ const MessagesIndex = React.createClass({
             <p className="message-title-sub">Sent</p>
             <p className="message-title-sub">Filtered</p>
           </div>
+          { messages.map(function (message) {
+            return (
+              <MessageIndexItem
+                key={message.id}
+                question={message}
+              />
+            );
+          })}
         </div>
         <div className="profile-footer">
           © OkPizza 2016

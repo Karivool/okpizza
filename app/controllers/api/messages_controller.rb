@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+class Api::MessagesController < ApplicationController
   def index
     debugger
     @messageinfo = Message.find(params[:user_id])

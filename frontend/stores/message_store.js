@@ -28,9 +28,9 @@ const resetMessages = function (messages) {
   _messages[message.id] = messages;
 };
 
-MessageStore.firsts = function () {
-  return Object.keys(_messages).map(function(messageId) {
-    return _messages[messageId];
+MessageStore.getLastMessages = function () {
+  return Object.keys(_firstMessages).map(function(messageId) {
+    return _firstMessages[messageId];
   });
 };
 

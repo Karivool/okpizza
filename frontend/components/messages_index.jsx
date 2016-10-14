@@ -7,10 +7,9 @@ const MessageIndexItem = require('./message_index_item.jsx');
 const MessageForm = require('./message_form.jsx');
 const SessionStore = require('../stores/session_store.js');
 
-// import {
-//   fetchAnsweredMessages,
-//   fetchUnansweredMessages
-// } from '../actions/message_actions';
+import {
+  fetchFirstMessages
+} from '../actions/message_actions';
 
 const MessagesIndex = React.createClass({
   getInitialState() {
@@ -20,13 +19,13 @@ const MessagesIndex = React.createClass({
   },
 
   componentWillMount() {
-    // this.messageListener = MessageStore.addListener(this.getMessages);
+    this.messageListener = MessageStore.addListener(this.getMessages);
 
-    // fetchfirstMessages(Sessionstore.currentUser);
+    fetchfirstMessages(SessionStore.currentUser);
   },
 
   componentWillUnmount() {
-    // this.messageListener.remove();
+    this.messageListener.remove();
   },
 
   getMessages() {

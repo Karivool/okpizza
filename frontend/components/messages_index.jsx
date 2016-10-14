@@ -47,7 +47,8 @@ const MessagesIndex = React.createClass({
     return (
       <div className="messages-index">
         <Navbar />
-        <div className="profile-content group">
+        <div className="message-content group">
+          Messages
         </div>
         <div className="profile-footer">
           © OkPizza 2016

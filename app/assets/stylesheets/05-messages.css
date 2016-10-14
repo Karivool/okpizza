@@ -9,11 +9,30 @@
   height: 100%;
   margin: 0 auto;
   margin-top: 20px;
+  padding: 30px;
   padding-bottom: 80px;
-  width: 940px;
+  width: 878px;
   min-height: 80vh;
 }
 
-.message-title {
+.message-content-header {
+  border-bottom: 1px solid;
+  border-color: #a0a0a0;
+}
 
+.message-title {
+  font-size: 28px;
+  font-weight: 100;
+  font-family: 'Open Sans', sans-serif;
+  color: #474d59;
+  padding-bottom: 15px;
+}
+
+.message-title-sub {
+  font-size: 18px;
+  font-weight: 100;
+  font-family: 'Open Sans', sans-serif;
+  color: #474d59;
+  float: left;
+  padding-right: 30px;
 }

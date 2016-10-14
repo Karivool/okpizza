@@ -5,10 +5,10 @@
 
 .profile-content {
   background-color: #f3f5f9;
-  border-radius: 3px;
+  border-radius: 6px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 80px;
+  margin-top: 20px;
   padding-bottom: 80px;
   width: 940px;
 }

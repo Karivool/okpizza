@@ -14,4 +14,18 @@ const ErrorActions = require('./error_actions.js');
 
 // Action Creators
 
+export function fetchFirstMessages(userId) {
+  ApiUtil.fetchAllFirstMessages(
+    userId,
+    allLastMessages
+  );
+}
+
 // Actions
+
+export function allLastMessages(messages) {
+  Dispatcher.dispatch({
+    actionType: ALL_LAST_MESSAGES,
+    messages: messages
+  });
+}

@@ -18,6 +18,7 @@
 .message-content-header {
   border-bottom: 1px solid;
   border-color: #a0a0a0;
+  height: 80px;
 }
 
 .message-title {

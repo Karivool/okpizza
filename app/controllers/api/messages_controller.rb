@@ -1,7 +1,7 @@
 class Api::MessagesController < ApplicationController
   def index
     debugger
-    @messageinfo = Message.find(params[:user_id])
+    @messageinfo = Message.where(user_id: params[:user_id])
     render "api/messages/index"
   end
 

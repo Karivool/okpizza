@@ -20,8 +20,7 @@ const MessagesIndex = React.createClass({
 
   componentWillMount() {
     this.messageListener = MessageStore.addListener(this.getMessages);
-
-    fetchAllFirstMessages(SessionStore.currentUser);
+    fetchAllFirstMessages(SessionStore.currentUser.id);
   },
 
   componentWillUnmount() {

@@ -1,6 +1,5 @@
 class Api::ResponsesController < ApplicationController
   def index
-    debugger
     @responses = Response.all
     render "api/responses/index"
   end

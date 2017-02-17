@@ -25,6 +25,7 @@
   margin-top: 8px;
   float: left;
   width: 30px;
+  cursor: pointer;
 }
 
 .profile-mini-pic {

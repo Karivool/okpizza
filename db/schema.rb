@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 20161007004717) do
   create_table "messages", force: :cascade do |t|
     t.string   "message",    null: false
     t.integer  "user_id",    null: false
-    t.integer  "sent_id",    null: false
+    t.integer  "convo_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "messages", ["sent_id"], name: "index_messages_on_sent_id", using: :btree
+  add_index "messages", ["convo_id"], name: "index_messages_on_convo_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "questions", force: :cascade do |t|

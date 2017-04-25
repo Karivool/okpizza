@@ -1692,74 +1692,74 @@ Response.create(
 
 Message.create(
   message: "Milady!",
+  convo_id: 1,
   user_id: 1,
-  sent_id: 18,
 )
 
 Message.create(
   message: "Milady, please respond",
+  convo_id: 1,
   user_id: 1,
-  sent_id: 18,
 )
 
 Message.create(
   message: "Milady?",
+  convo_id: 1,
   user_id: 1,
-  sent_id: 18,
 )
 
 Message.create(
   message: "Kari.",
+  convo_id: 1,
   user_id: 1,
-  sent_id: 18,
 )
 
 Message.create(
   message: "KAAAAAAAAAARRRRIIIIIIII",
+  convo_id: 1,
   user_id: 1,
-  sent_id: 18,
 )
 
 Message.create(
   message: "What, Bungh0?! Geez... chill out!",
+  convo_id: 1,
   user_id: 18,
-  sent_id: 1,
 )
 
 ###### ONE STANDARD MESSAGE SEED #######################
 
 Message.create(
   message: "HEY",
-  user_id: 1,
-  sent_id: 18,
+  convo_id: 2,
+  user_id: 9,
 )
 
 Message.create(
   message: "DO YOU THINK I SEEM ANGRY",
-  user_id: 1,
-  sent_id: 18,
+  convo_id: 2,
+  user_id: 9,
 )
 
 Message.create(
   message: "I JUST WANT PEOPLE TO UNDERSTAND!!!",
-  user_id: 1,
-  sent_id: 18,
+  convo_id: 2,
+  user_id: 9,
 )
 
 Message.create(
   message: "Wh. N0, but you seem very tense.",
-  user_id: 18,
-  sent_id: 1,
+  convo_id: 2,
+  user_id: 1,
 )
 
 Message.create(
   message: "WHAT, WHY?!?!",
-  user_id: 1,
-  sent_id: 18,
+  convo_id: 2,
+  user_id: 9,
 )
 
 # Message.create(
 #   message: "",
+#   convo_id: ,
 #   user_id: ,
-#   sent_id: ,
 # )

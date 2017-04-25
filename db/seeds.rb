@@ -1688,6 +1688,8 @@ Response.create(
   user_id: 26,
 )
 
+###### ONE STANDARD MESSAGE SEED #######################
+
 Message.create(
   message: "Milady!",
   user_id: 1,
@@ -1722,6 +1724,38 @@ Message.create(
   message: "What, Bungh0?! Geez... chill out!",
   user_id: 18,
   sent_id: 1,
+)
+
+###### ONE STANDARD MESSAGE SEED #######################
+
+Message.create(
+  message: "HEY",
+  user_id: 1,
+  sent_id: 18,
+)
+
+Message.create(
+  message: "DO YOU THINK I SEEM ANGRY",
+  user_id: 1,
+  sent_id: 18,
+)
+
+Message.create(
+  message: "I JUST WANT PEOPLE TO UNDERSTAND!!!",
+  user_id: 1,
+  sent_id: 18,
+)
+
+Message.create(
+  message: "Wh. N0, but you seem very tense.",
+  user_id: 18,
+  sent_id: 1,
+)
+
+Message.create(
+  message: "WHAT, WHY?!?!",
+  user_id: 1,
+  sent_id: 18,
 )
 
 # Message.create(

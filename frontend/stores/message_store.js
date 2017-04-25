@@ -12,14 +12,14 @@ const ApiUtil = require('../util/message_util.js');
 
 let _message = {};
 let _messages = {};
-let _firstMessages = {};
+let _lastMessages = {};
 
 const MessageStore = new Store(AppDispatcher);
 
 const resetLastMessages = function (messages) {
-  _firstMessages = {};
-  messages.forEach(function (message) {
-    _firstMessages[message.id] = message;
+  _lastMessages = {};
+  messages.forEach(function (message, id) {
+    _lastMessages[id] = message;
   });
 };
 
@@ -29,24 +29,25 @@ const resetMessages = function (messages) {
 };
 
 MessageStore.getLastMessages = function () {
-  return Object.keys(_firstMessages).map(function(messageId) {
-    return _firstMessages[messageId];
+  return Object.keys(_lastMessages).map(function(messageId) {
+    return _lastMessages[messageId];
   });
 };
 
 MessageStore.__onDispatch = messageLoad => {
   switch (messageLoad.actionType) {
     case MESSAGE_TAKEN_IN:
-
+      debugger
       break;
     case TAKE_IN_MESSAGE:
-
+      debugger
       break;
     case ALL_LAST_MESSAGES:
-
+      resetLastMessages(messageLoad.messages);
+      MessageStore.__emitChange();
       break;
     case MESSAGE_SET_TAKEN_IN:
-
+      debugger
       break;
   }
 };

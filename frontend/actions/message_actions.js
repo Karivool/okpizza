@@ -14,8 +14,8 @@ const ErrorActions = require('./error_actions.js');
 
 // Action Creators
 
-export function fetchAllFirstMessages(userId) {
-  ApiUtil.fetchAllFirstMessages(
+export function fetchAllLastMessages(userId) {
+  ApiUtil.fetchAllLastMessages(
     userId,
     allLastMessages
   );

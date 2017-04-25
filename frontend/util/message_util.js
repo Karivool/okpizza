@@ -1,5 +1,5 @@
 const ApiUtil = {
-  fetchAllFirstMessages(userid, callback) {
+  fetchAllLastMessages(userid, callback) {
     $.ajax({
       url: `api/messages`,
       method: "GET",

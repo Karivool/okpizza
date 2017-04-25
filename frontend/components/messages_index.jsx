@@ -8,7 +8,7 @@ const MessageForm = require('./message_form.jsx');
 const SessionStore = require('../stores/session_store.js');
 
 import {
-  fetchAllFirstMessages
+  fetchAllLastMessages
 } from '../actions/message_actions';
 
 const MessagesIndex = React.createClass({
@@ -20,7 +20,7 @@ const MessagesIndex = React.createClass({
 
   componentWillMount() {
     this.messageListener = MessageStore.addListener(this.getMessages);
-    fetchAllFirstMessages(SessionStore.currentUser().id);
+    fetchAllLastMessages(SessionStore.currentUser().id);
   },
 
   componentWillUnmount() {
@@ -40,8 +40,8 @@ const MessagesIndex = React.createClass({
   render: function () {
     const currentUser = typeof currentUser !== "undefined" ? currentUser : SessionStore.currentUser();
     const messages = this.state.messages;
-    const viewedUser = this.props.viewedUser;
 
+    console.log(messages);
     return (
       <div className="messages-index">
         <Navbar />
@@ -52,12 +52,12 @@ const MessagesIndex = React.createClass({
             <p className="message-title-sub">Sent</p>
             <p className="message-title-sub">Filtered</p>
           </div>
-          { messages.map(function (message) {
+          { messages.map(function (message, id) {
             return (
               <MessageIndexItem
-                key={message.id}
-                question={message}
-              />
+                key={id}
+                message={message.message}>
+              </MessageIndexItem>
             );
           })}
         </div>

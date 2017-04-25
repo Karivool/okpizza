@@ -1,8 +1,12 @@
 class Api::MessagesController < ApplicationController
   def index
     id = params[:user_id]
+    convos = Convo.select([:convo_id]).where(user_id: id)
+    convos = convos.map{ |record| record.convo_id }
+
     debugger
-    @messageinfo = Message.where("user_id = ?", id)
+
+    @messageinfo = Message.where(convo_id: convos)
     render "api/messages/index"
   end
 

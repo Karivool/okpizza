@@ -1,12 +1,12 @@
 class Api::MessagesController < ApplicationController
   def index
+    id = params[:user_id]
     debugger
-    @messageinfo = Message.where(user_id: params[:user_id])
+    @messageinfo = Message.where("user_id = ? OR sent_id = ?", id, id)
     render "api/messages/index"
   end
 
   def create
-    debugger
     @messageinfo = Message.new(message.params)
 
     if @messageinfo.save
@@ -17,7 +17,6 @@ class Api::MessagesController < ApplicationController
   end
 
   def show
-    debugger
     @messageinfo = Message.find(params[:messages][:user_id])
   end
 

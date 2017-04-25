@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007004717) do
+ActiveRecord::Schema.define(version: 20170425175304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "convos", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "convo_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "convos", ["convo_id"], name: "index_convos_on_convo_id", using: :btree
+  add_index "convos", ["user_id"], name: "index_convos_on_user_id", using: :btree
 
   create_table "infos", force: :cascade do |t|
     t.string   "summary"

@@ -6,8 +6,7 @@ class CreateConvos < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :messages, :user_id
-    add_index :messages, :convo_id
-    end
+    add_index :convos, :user_id
+    add_index :convos, :convo_id
   end
 end

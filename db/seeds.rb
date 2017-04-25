@@ -1758,6 +1758,23 @@ Message.create(
   user_id: 9,
 )
 
+Convo.create(
+  user_id: 1,
+  convo_id: 1,
+)
+Convo.create(
+  user_id: 18,
+  convo_id: 1,
+)
+Convo.create(
+  user_id: 1,
+  convo_id: 2,
+)
+Convo.create(
+  user_id: 9,
+  convo_id: 2,
+)
+
 # Message.create(
 #   message: "",
 #   convo_id: ,

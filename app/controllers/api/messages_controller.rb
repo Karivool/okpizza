@@ -2,7 +2,7 @@ class Api::MessagesController < ApplicationController
   def index
     id = params[:user_id]
     debugger
-    @messageinfo = Message.where("user_id = ? OR sent_id = ?", id, id)
+    @messageinfo = Message.where("user_id = ?", id)
     render "api/messages/index"
   end
 
@@ -23,6 +23,6 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:messages).permit(:message, :user_id, :sent_id)
+    params.require(:messages).permit(:message, :user_id, :convo_id)
   end
 end

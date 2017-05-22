@@ -24,5 +24,3 @@ test/models/user_test.rb
 
 # Ignore application configuration
 /config/application.yml
-
-Gemfile

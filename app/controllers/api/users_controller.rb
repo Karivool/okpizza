@@ -21,6 +21,17 @@ class Api::UsersController < ApplicationController
     render "api/users/show"
   end
 
+  def update
+    @user = User.find(params[:id])
+    debugger
+    @user[params[:image]] = params[:image]
+    if @user.update
+      render "api/users/show"
+    else
+      render json: @user.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def user_params

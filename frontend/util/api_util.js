@@ -116,14 +116,15 @@ const ApiUtil = {
     });
   },
 
-  editUserProfile(userdata, callback) {
+  editUserProfile(image, userid, callback) {
+    debugger
     $.ajax({
-      url: "/api/users",
-      method: "POST",
+      url: `api/users/${userid}`,
+      method: "PATCH",
       dataType: "json",
       contentType: false,
       processData: false,
-      data: formData,
+      data: {  image: image, id: userid },
       success: function() {
         callback();
       }

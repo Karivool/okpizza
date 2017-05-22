@@ -1,5 +1,6 @@
 const React = require('react');
 const Link = require('react-router').Link;
+const ApiUtil = require('../util/api_util');
 const Navbar = require('./navbar.jsx');
 const UserStore = require('../stores/user_store.js');
 const SessionStore = require('../stores/session_store.js');
@@ -9,8 +10,6 @@ const QuestionStore = require('../stores/question_store.js');
 const QuestionActions = require('../actions/question_actions.js');
 const Helpers = require ('./helpers.jsx');
 const hashHistory = require('react-router').hashHistory;
-
-import { editProfile } from '../util/api_util';
 
 const Profile = React.createClass({
 
@@ -77,25 +76,26 @@ const Profile = React.createClass({
   updateFile: function (e) {
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
-    fileReader.onloadend = function () {
-      this.setState({imageFile: file, imageUrl: fileReader.result }.bind(this));
-      if (file) {
-        fileReader.readAsDataURL(file);
-      }
-    };
+    fileReader.onloadend = function (event) {
+      this.setState({imageFile: file, imageUrl: fileReader.result });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
   },
 
   handleSubmit: function (e) {
     let formData = new FormData();
 
     formData.append("viewedUser[image]", this.state.imageFile);
-
-    editProfile(this.state);
+    ApiUtil.editUserProfile(this.state.imageUrl, SessionStore.currentUser().id);
   },
 
   // <input type="file" onChange={ this.updateFile }/>
   render: function() {
-
     const user = SessionStore.currentUser();
     const viewedUser = this.state.viewedUser;
     const questions = this.state.questions;
@@ -137,6 +137,8 @@ const Profile = React.createClass({
                 className="profile-tab-link">Questions</Link>
             </div>
             <img src={ this.state.imageUrl }/>
+            <input type="file" className="login-input" onChange={this.updateFile}/>
+            <button onClick={this.handleSubmit}>Upload image</button>
           </div>
 
           <div className="profile-body">

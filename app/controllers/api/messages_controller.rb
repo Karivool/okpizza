@@ -14,6 +14,8 @@ class Api::MessagesController < ApplicationController
     @messageinfo = Message.new(message.params)
 
     if @messageinfo.save
+      # Pusher.trigger('convo' + convo.id.to_s, 'message_sent', {})
+
       render "api/messages/index"
     else
       render json: @question.errors.full_messages, status: 422

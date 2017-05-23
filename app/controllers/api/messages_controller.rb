@@ -4,15 +4,14 @@ class Api::MessagesController < ApplicationController
     convos = Convo.select([:convo_id]).where(user_id: id)
     convos = convos.map{ |record| record.convo_id }
 
+    @messageinfo = []
+    convos.each { |id| @messageinfo.push(Message.where(convo_id: id).last) }
     debugger
-
-    @messageinfo = Message.where(convo_id: convos)
     render "api/messages/index"
   end
 
   def create
     @messageinfo = Message.new(message.params)
-
     if @messageinfo.save
       # Pusher.trigger('convo' + convo.id.to_s, 'message_sent', {})
 

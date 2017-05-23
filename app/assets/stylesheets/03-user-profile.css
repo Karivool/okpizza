@@ -272,3 +272,8 @@
 .edit-form {
 
 }
+
+.upload-input {
+  border: black 1px solid;
+  cursor: pointer;
+}

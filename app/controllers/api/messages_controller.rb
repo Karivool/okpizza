@@ -6,7 +6,6 @@ class Api::MessagesController < ApplicationController
 
     @messageinfo = []
     convos.each { |id| @messageinfo.push(Message.where(convo_id: id).last) }
-    debugger
     render "api/messages/index"
   end
 

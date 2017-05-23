@@ -118,7 +118,7 @@ const AboutProfile = React.createClass({
               if (isCurrentUser === true) {
                   return [
                     <p key={idx} className="body-info-label">{mapItem[1]} <img id={idx} onClick={this.toggleForm.bind(this, idx)} className="edit-icon" src={editIcon}></img></p>,
-                    <p key={idx + 1} className="body-info-text">{this.editForm(editStates[idx], mapItem[0], idx, mapItem[2])}</p>
+                    <div key={idx + 1} className="body-info-text">{this.editForm(editStates[idx], mapItem[0], idx, mapItem[2])}</div>
                   ];
                 } else {
                   return [

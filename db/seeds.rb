@@ -1775,6 +1775,80 @@ Convo.create(
   convo_id: 2,
 )
 
+###### ONE STANDARD MESSAGE SEED #######################
+
+Message.create(
+  message: "do you smoke",
+  convo_id: 3,
+  user_id: 17,
+)
+
+Message.create(
+  message: "n0",
+  convo_id: 3,
+  user_id: 1,
+)
+
+Message.create(
+  message: "u should",
+  convo_id: 3,
+  user_id: 17,
+)
+
+Message.create(
+  message: "i like it alot",
+  convo_id: 3,
+  user_id: 17,
+)
+
+Message.create(
+  message: "your missing out lol",
+  convo_id: 3,
+  user_id: 17,
+)
+
+Convo.create(
+  user_id: 1,
+  convo_id: 3,
+)
+Convo.create(
+  user_id: 17,
+  convo_id: 3,
+)
+
+Message.create(
+  message: "Hell0 m'pizza. Would you be looking for a handsome and lovely Bungh0 to date? :)",
+  convo_id: 4,
+  user_id: 1,
+)
+
+Message.create(
+  message: "I would indeed, nyaa! It's so lonely here all by my tuna lonesome self nyaa!",
+  convo_id: 4,
+  user_id: 14,
+)
+
+Message.create(
+  message: "Just say the word and I'll be all ready to meet, paws, fish, catnip and all, nyaa!",
+  convo_id: 4,
+  user_id: 14,
+)
+
+Message.create(
+  message: "...Never mind.",
+  convo_id: 4,
+  user_id: 1,
+)
+
+Convo.create(
+  user_id: 1,
+  convo_id: 4,
+)
+Convo.create(
+  user_id: 14,
+  convo_id: 4,
+)
+
 # Message.create(
 #   message: "",
 #   convo_id: ,

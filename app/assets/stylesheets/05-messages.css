@@ -19,6 +19,7 @@
   border-bottom: 1px solid;
   border-color: #a0a0a0;
   height: 80px;
+  margin-bottom: 40px;
 }
 
 .message-title {
@@ -36,4 +37,16 @@
   color: #474d59;
   float: left;
   padding-right: 30px;
+}
+
+.message-item {
+  height: 75px;
+  border-radius: 3px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 5px;
+  overflow: visible;
+  position: relative;
+  transition: background-color 50ms ease,height 200ms ease,margin-bottom 200ms ease,box-shadow 200ms ease;
 }

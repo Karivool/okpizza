@@ -21,6 +21,7 @@ bundle.js.map
 test
 test/fixtures/users.yml
 test/models/user_test.rb
+Gemfile.lock
 
 # Ignore application configuration
 /config/application.yml

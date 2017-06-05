@@ -12,11 +12,16 @@ const MessagesIndexItem = React.createClass({
 
   render () {
     const message = this.props.message;
+    const username = this.props.photo;
 
     return (
-      <ul className="message-item">
-        { message }<br/>
-      </ul>
+      <div className="message-item">
+        <img></img>
+        Conversation with {username}
+        <ul>
+          { message }<br/>
+        </ul>
+      </div>
     );
   }
 });

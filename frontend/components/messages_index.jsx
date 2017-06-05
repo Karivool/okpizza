@@ -56,7 +56,8 @@ const MessagesIndex = React.createClass({
             return (
               <MessageIndexItem
                 key={id}
-                message={message.message}>
+                message={message.message}
+                photo={message.user_id}>
               </MessageIndexItem>
             );
           })}

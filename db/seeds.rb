@@ -53,6 +53,29 @@ Info.create(
 )
 
 User.create(
+  username: "Abel2EatU",
+  email: "abel2eatu@pizza.com",
+  password_digest: "password",
+  session_token: "zzzzzz",
+  birthdate: '1982-05-01',
+  gender: "milord",
+  orientation: "piesexual",
+  city_name: "Atlanta",
+  state_name: "Georgia",
+)
+
+Info.create(
+  summary: "i like girls but i like pizzas 2",
+  doing: "chillin",
+  favorite: "lotta stuff, just hit me up and ask",
+  sixthings: "annoying ppl, vegans, burnt pizza, texas toast, law and order suv, and papa johns lol",
+  thinking: "which pizza is right 4 me",
+  typical: "chillin",
+  messageif: "u wanna chill wit me, im really laid back lol",
+  user_id: 3
+)
+
+User.create(
   username: "BigDerekSchlicer",
   email: "pizzasalant420@pizzamail.com",
   password_digest: "password",
@@ -72,7 +95,7 @@ Info.create(
   thinking: "How a sentient pizza can exist.",
   typical: "Researching how sentient pizzas came to be.",
   messageif: "You think you'd like someone who researches how us pizzas came to be.",
-  user_id: 3
+  user_id: 4
 )
 
 User.create(
@@ -95,7 +118,30 @@ Info.create(
   thinking: "how to get a job at Yahoogle",
   typical: "doing boxworking",
   messageif: "you wanna hire me at Yahoogle",
-  user_id: 4
+  user_id: 5
+)
+
+User.create(
+  username: "ReiterThanUBro",
+  email: "reiter@pizza.com",
+  password_digest: "password",
+  session_token: "zzzzzy",
+  birthdate: '1991-04-03',
+  gender: "milord",
+  orientation: "pizzasexual",
+  city_name: "Hoboken",
+  state_name: "New Jersey",
+)
+
+Info.create(
+  summary: "I enjoyed having a reputation as being wild, but these days I try not to worry about what people think in the privacy of their own brain or what they write in the bizarre publicity of their own newspapers, because all of those things are meaningless.",
+  doing: "This battle for 'common-sense' gun control laws pits emotion and passion against logic and reason. All too often in such a contest, logic loses. So, expect more meaningless, if not harmful, 'gun control' legislation. Good news - if you're a crook.",
+  favorite: "Anyone who thinks they're important is usually just a pompous moron who can't deal with his or her own pathetic insignificance and the fact that what they do is meaningless and inconsequential.",
+  sixthings: "No man or woman is an island. To exist just for yourself is meaningless. You can achieve the most satisfaction when you feel related to some greater purpose in life, something greater than yourself.",
+  thinking: "Punishment is now unfashionable... because it creates moral distinctions among men, which, to the democratic mind, are odious. We prefer a meaningless collective guilt to a meaningful individual responsibility.",
+  typical: "If you're just saying, hey, I'm doing this. I'm working to make money. I'm working to increase my status. If that's all there is, I think you will find out that it's meaningless.",
+  messageif: "All the crap that we've encumbered our lives with, it's really meaningless.",
+  user_id: 6
 )
 
 User.create(
@@ -118,7 +164,7 @@ Info.create(
   thinking: "Why no one relishes my hot dogs.",
   typical: "Getting cozy with mustard",
   messageif: "You're into fun bite-sized conversations.",
-  user_id: 5
+  user_id: 7
 )
 
 User.create(
@@ -141,8 +187,55 @@ Info.create(
   thinking: "How to talk to other pizzas",
   typical: "Not talking to other pizzas",
   messageif: "You think us bagel pizzas are just as good as you regulars",
-  user_id: 6
+  user_id: 8
 )
+
+User.create(
+  username: "BreadLivesBatter",
+  email: "chrisruenes@pizzamail.com",
+  password_digest: "password",
+  session_token: "zzzzzx",
+  birthdate: '1980-01-21',
+  gender: "milord",
+  orientation: "piesexual",
+  city_name: "Seattle",
+  state_name: "Washington",
+)
+
+Info.create(
+  summary: "Hot diggity, do I want me some pizza! If you can make it musical even, that'd be great.",
+  doing: "Making music!",
+  favorite: "I'm pretty much open to everything!",
+  sixthings: "hip hop, classical, rock, pop, jazz, folk",
+  thinking: "What sorta songs to belt out",
+  typical: "Working on my soon to be hit album, Slice Me Baby One More Time",
+  messageif: "You like music and wanna hear me play!",
+  user_id: 9
+)
+
+User.create(
+  username: "PhraseBSausages",
+  email: "terrypraychet@pizzamail.com",
+  password_digest: "password",
+  session_token: "zzzzzw",
+  birthdate: '1990-10-24',
+  gender: "milord",
+  orientation: "piesexual",
+  city_name: "Fort Lee",
+  state_name: "New Jersey",
+)
+
+Info.create(
+  summary: "When I admire the wonders of a pizza or the beauty of the pie, my soul expands in the worship of the baker.",
+  doing: "Prayer is the key of the meal and the bolt of the eating.",
+  favorite: "I never considered a difference of opinion in toppings, in crust thickness, in size, as cause for withdrawing from a pizza.",
+  sixthings: "Your daily slice is your temple and your religion. When you eat into it take with you your all.",
+  thinking: "The Pizzeria is my country, all pizzakind are my brethren, and to eat well is my religion.",
+  typical: "The greatest tragedy in pizzakind's entire history may be the hijacking of toppings by pizzacution.",
+  messageif: "Pizza is a metaphor for that which transcends all levels of intellectual thought. It's as simple as that.",
+  user_id: 10
+)
+
 
 User.create(
   username: "jtrapepperonison",
@@ -164,7 +257,7 @@ Info.create(
   thinking: "How to steal Pizza Lady's pizzas",
   typical: "Making Jounce the #1 on Foodbes Top 100",
   messageif: "Your smart like me, lol",
-  user_id: 7
+  user_id: 11
 )
 
 User.create(
@@ -187,8 +280,32 @@ Info.create(
   thinking: "How to be a healthy, nutritious, good for you pizza",
   typical: "Making sure I'm as tasty as can be",
   messageif: "You want to have a healthy, GMO free lifestyle with me :)",
-  user_id: 8
+  user_id: 12
 )
+
+User.create(
+  username: "xxPongEPongxx",
+  email: "pongster@pizzamail.com",
+  password_digest: "password",
+  session_token: "zzzzzv",
+  birthdate: '1991-11-11',
+  gender: "milady",
+  orientation: "pizzasexual",
+  city_name: "Flushing",
+  state_name: "New York",
+)
+
+Info.create(
+  summary: "I'm an easygoing, pizza loving, fun toppings kinda gal! I'd love to get to know a male pizza or two (if they exist)!",
+  doing: "Trying to find the best restaurants in NYC!",
+  favorite: "Not too familiar with all the pizza stuff yet!",
+  sixthings: "A little negative, maybe negativity?",
+  thinking: "You!",
+  typical: "Reading Yelp reviews!",
+  messageif: "You wanna chat and maybe meet to eat!",
+  user_id: 13
+)
+
 
 User.create(
   username: "KraveitSlicifuangwanttana",

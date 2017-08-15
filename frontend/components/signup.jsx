@@ -72,7 +72,7 @@ const SignUpForm = React.createClass({
             </div>
           </header>
           <div className="main-page-slogan">
-            Find the Pizza of Your Dreams.
+            Find the Pizza (or Pizza Lover) of Your Dreams.
           </div>
           <div className="login-form-container">
             <form onSubmit={ this.handleSubmit } className="login-form-box">

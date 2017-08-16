@@ -56,8 +56,7 @@ const Navbar = React.createClass({
           <a href="#/index"><img src={okPLogo}/></a>
         </div>
         <div className="user-nav-detail">
-
-
+        <img className="profile-message" onClick={this.showMessageMenu} src="https://s3.amazonaws.com/okpizza-dev/message-unhover.png"></img>
           <img className="profile-mini-pic" onClick={this.showProfileMenu} src={ user.image_url }/>
           <div className="profile-dropdown-menu">
             <div className="profile-click">
@@ -67,8 +66,14 @@ const Navbar = React.createClass({
               <button onClick={this._signOut} className="sign-out-button">Log out</button>
             </div>
           </div>
-
-
+          <div className="message-dropdown-menu">
+            <p className="message-inbox-text">Inbox</p>
+            <div className="message-click">
+            </div>
+            <div className="message-see-all">
+              <Link to={`/messages/${user.id}`} onClick={this.seeAll} className="message-see-all-text">See all</Link>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -77,14 +82,3 @@ const Navbar = React.createClass({
 });
 
 module.exports = Navbar;
-
-// <img className="profile-message" onClick={this.showMessageMenu} src="https://s3.amazonaws.com/okpizza-dev/message-unhover.png"></img>
-
-// <div className="message-dropdown-menu">
-//   <p className="message-inbox-text">Inbox</p>
-//   <div className="message-click">
-//   </div>
-//   <div className="message-see-all">
-//     <Link to={`/messages/${user.id}`} onClick={this.seeAll} className="message-see-all-text">See all</Link>
-//   </div>
-// </div>

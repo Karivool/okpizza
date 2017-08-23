@@ -44,13 +44,18 @@ const SignUpForm = React.createClass({
     SessionActions.logIn({username: "Bungh0", password: "lma0lma0umad"});
   },
 
-  errors() {
-    const errors = ErrorStore.errors(this.formType());
-    const messages = errors.map ( (errorMessage, idx) => {
-      return <li key={ idx }>{ errorMsg }</li>;
-    });
-
-    return <ul>{ messages }</ul>;
+  errorHandler() {
+    const errors = ErrorStore.errors();
+    if (errors.length > 0) {
+      const messages = errors.map ( (errorMessage, idx) => {
+        return <li key={ idx }>{ errorMsg }</li>;
+      });
+      return <ul>{ messages }</ul>;
+    } else {
+      return [];
+    }
+    console.log("Hello there, Douglas");
+    console.log(messages);
   },
 
   inputHandler(property, e) {
@@ -78,7 +83,7 @@ const SignUpForm = React.createClass({
             <form onSubmit={ this.handleSubmit } className="login-form-box">
               <br>
               </br>
-              { this.errors () }
+              { this.errorHandler () }
               <div className="login-form">
                 <br>
                 </br>

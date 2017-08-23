@@ -112,15 +112,14 @@ const Profile = React.createClass({
     if (viewedUser.id >= 2 && viewedUser.id <= 26) {
       photo = pics[viewedUser.id - 2];
     }
-    // <input type="file" className="upload-input" onChange={this.updateFile}/>
-    // <button onClick={this.handleSubmit}>Upload image</button>
     return (
       <div className="user-profile">
         <Navbar />
         <div className="profile-content group">
           <div className="profile-header">
             <img src= { photo } className="user-picture"></img>
-
+            <input type="file" className="upload-input" onChange={this.updateFile}/>
+            <button onClick={this.handleSubmit}>Upload image</button>
             <div className="profile-info">
               <p className="profile-username">
                 { viewedUser.username }

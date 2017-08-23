@@ -45,12 +45,12 @@ const SignUpForm = React.createClass({
   },
 
   errors() {
-    // const errors = ErrorStore.errors(this.formType());
-    // const messages = errors.map ( (errorMessage, idx) => {
-    //   return <li key={ idx }>{ errorMsg }</li>;
-    // });
+    const errors = ErrorStore.errors(this.formType());
+    const messages = errors.map ( (errorMessage, idx) => {
+      return <li key={ idx }>{ errorMsg }</li>;
+    });
 
-    // return <ul>{ messages }</ul>;
+    return <ul>{ messages }</ul>;
   },
 
   inputHandler(property, e) {

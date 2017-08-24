@@ -47,15 +47,17 @@ const SignUpForm = React.createClass({
   errorHandler() {
     const errors = ErrorStore.errors();
     if (errors.length > 0) {
+      console.log("Hello there, Douglas. HUA HA HA HAHA");
+      console.log(messages);
       const messages = errors.map ( (errorMessage, idx) => {
         return <li key={ idx }>{ errorMsg }</li>;
       });
       return <ul>{ messages }</ul>;
     } else {
+      console.log("Hey, FUNNIE!");
       return [];
     }
-    console.log("Hello there, Douglas");
-    console.log(messages);
+    console.log("Pattiiiiii...");
   },
 
   inputHandler(property, e) {
@@ -63,6 +65,8 @@ const SignUpForm = React.createClass({
   },
 
   render() {
+
+
     return (
       <div className="homepage-render">
         <div className="splash-page-1">

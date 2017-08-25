@@ -47,6 +47,7 @@ const SignUpForm = React.createClass({
   },
 
   errorHandler() {
+    console.log ("errorHandler hit");
     const errors = ErrorStore.errors();
     if (errors.length > 0) {
       console.log("Hello there, Douglas. HUA HA HA HAHA");

@@ -118,8 +118,7 @@ const Profile = React.createClass({
         <div className="profile-content group">
           <div className="profile-header">
             <img src= { photo } className="user-picture"></img>
-            <input type="file" className="upload-input" onChange={this.updateFile}/>
-            <button onClick={this.handleSubmit}>Upload image</button>
+
             <div className="profile-info">
               <p className="profile-username">
                 { viewedUser.username }
@@ -155,3 +154,6 @@ const Profile = React.createClass({
 });
 
 module.exports = Profile;
+
+// <input type="file" className="upload-input" onChange={this.updateFile}/>
+// <button onClick={this.handleSubmit}>Upload image</button>

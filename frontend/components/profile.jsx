@@ -104,7 +104,7 @@ const Profile = React.createClass({
     const birthdate = ( viewedUser === undefined || viewedUser.birthdate === undefined) ? "--" : Helpers.getBday(viewedUser.birthdate) ;
 
     let pics = [];
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 31; i++) {
       pics.push(window[`pic${i + 1}`]);
     }
 

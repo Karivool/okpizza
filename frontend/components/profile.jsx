@@ -109,7 +109,7 @@ const Profile = React.createClass({
     }
 
     let photo = viewedUser.image_url;
-    if (viewedUser.id >= 2 && viewedUser.id <= 26) {
+    if (viewedUser.id >= 2 && viewedUser.id <= 31) {
       photo = pics[viewedUser.id - 2];
     }
     return (
